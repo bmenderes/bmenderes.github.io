@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>haberler — günlük özet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --kagit:#f3ecdb;
+    --murekkep:#1b1915;
+    --soluk:#5f5949;
+    --cizgi:#bfb298;
+    --kirmizi:#8d2222;
+  }
+  *{box-sizing:border-box}
+  html{background:#d8cdb4}
+  body{
+    margin:0;
+    padding:26px 16px 40px;
+    background:#d8cdb4;
+    background-image:radial-gradient(ellipse at 50% 0%,#e9e0cb 0%,#d4c9b0 100%);
+    color:var(--murekkep);
+    font-family:Lora,Georgia,"Times New Roman",serif;
+    font-size:15px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .gazete{
+    position:relative;
+    max-width:1080px;
+    margin:0 auto;
+    padding:24px clamp(16px,4vw,44px) 16px;
+    background:var(--kagit);
+    background-image:
+      repeating-linear-gradient(0deg,rgba(120,100,60,.028) 0 1px,transparent 1px 3px),
+      radial-gradient(ellipse at 20% 0%,rgba(255,255,255,.5),transparent 60%);
+    border:1px solid #b5a685;
+    box-shadow:0 18px 40px -26px rgba(40,30,10,.7);
+  }
+  .gazete::before{
+    content:"";
+    position:absolute;
+    inset:7px;
+    border:1px solid rgba(0,0,0,.07);
+    pointer-events:none;
+  }
+
+  /* ---- künye başlığı ---- */
+  .ustbilgi,.altbilgi{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    font-size:9.5px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--soluk);
+  }
+  .ustbilgi{padding-bottom:7px}
+  .ustbilgi b{color:var(--kirmizi);font-weight:700;letter-spacing:.2em}
+  .baslik-sarici{
+    border-top:4px solid var(--murekkep);
+    border-bottom:1px solid var(--murekkep);
+    padding:2px 0;
+  }
+  h1{
+    margin:7px 0 5px;
+    font-family:"Playfair Display",Georgia,serif;
+    font-weight:900;
+    font-size:clamp(42px,9.5vw,92px);
+    line-height:.92;
+    letter-spacing:.04em;
+    text-indent:.04em;
+    text-transform:uppercase;
+    text-align:center;
+  }
+  .altbilgi{
+    border-bottom:3px double var(--murekkep);
+    padding:6px 0 5px;
+  }
+
+  /* ---- kaynak şeridi ---- */
+  .kaynaklar{
+    display:flex;
+    align-items:center;
+    margin:0;
+    padding:6px 0;
+    border-bottom:1px solid var(--cizgi);
+    overflow-x:auto;
+    white-space:nowrap;
+    scrollbar-width:thin;
+    -webkit-overflow-scrolling:touch;
+  }
+  .kaynaklar::-webkit-scrollbar{height:3px}
+  .kaynaklar::-webkit-scrollbar-thumb{background:var(--cizgi)}
+  .kaynaklar-etiket{
+    flex:0 0 auto;
+    padding-right:12px;
+    margin-right:2px;
+    border-right:1px solid var(--cizgi);
+    color:var(--kirmizi);
+    font-size:9.5px;
+    font-weight:700;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+  }
+  .kaynak{
+    flex:0 0 auto;
+    padding:0 12px;
+    border-right:1px solid var(--cizgi);
+    color:var(--soluk);
+    font-size:10px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    text-decoration:none;
+  }
+  .kaynak:last-child{border-right:0}
+  .kaynak:hover{color:var(--murekkep);text-decoration:underline;text-underline-offset:3px}
+
+  /* ---- gazete sütunları ---- */
+  .icerik{
+    column-count:3;
+    column-gap:30px;
+    column-rule:1px solid var(--cizgi);
+    padding-top:14px;
+  }
+  .bolum{margin:0 0 20px;break-inside:auto}
+  h2{
+    margin:0 0 5px;
+    padding:3px 0;
+    border-top:2px solid var(--murekkep);
+    border-bottom:1px solid var(--murekkep);
+    font-family:"Playfair Display",Georgia,serif;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    text-align:center;
+    break-after:avoid;
+  }
+  .haber{
+    display:block;
+    margin:0;
+    padding:9px 0;
+    color:inherit;
+    font-size:14.5px;
+    line-height:1.5;
+    text-align:justify;
+    hyphens:auto;
+    text-decoration:none;
+    break-inside:avoid;
+  }
+  .haber + .haber{border-top:1px dotted #c8bb9d}
+  a.haber:hover{background:rgba(80,60,20,.06)}
+  .kaynak-adi{
+    margin-left:.35em;
+    color:var(--kirmizi);
+    font-size:9px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    white-space:nowrap;
+  }
+  .kaynak-adi::before{content:"— "}
+
+  /* manşet: ilk haber */
+  .manset{
+    padding-top:2px;
+    font-family:"Playfair Display",Georgia,serif;
+    font-size:18px;
+    font-weight:700;
+    line-height:1.28;
+    text-align:left;
+    hyphens:none;
+  }
+  .manset::first-letter{
+    float:left;
+    padding:5px 8px 0 0;
+    font-family:"Playfair Display",Georgia,serif;
+    font-size:52px;
+    font-weight:900;
+    line-height:.78;
+  }
+
+  /* boş nüsha */
+  .icerik.bos-durum{column-count:1;column-rule:none}
+  .bos{
+    margin:26px auto;
+    padding:26px 20px;
+    max-width:540px;
+    border-top:3px double var(--murekkep);
+    border-bottom:3px double var(--murekkep);
+    text-align:center;
+  }
+  .bos strong{
+    display:block;
+    margin-bottom:6px;
+    font-family:"Playfair Display",Georgia,serif;
+    font-size:20px;
+    font-weight:700;
+    letter-spacing:.02em;
+  }
+  .bos span{
+    color:var(--soluk);
+    font-size:13px;
+    font-style:italic;
+  }
+  .bos a{
+    display:inline-block;
+    margin-top:12px;
+    color:var(--kirmizi);
+    font-size:10px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    text-decoration:none;
+    border-bottom:1px solid currentColor;
+  }
+  .bos a:hover{color:var(--murekkep)}
+
+  /* ---- alt künye ---- */
+  .kunye{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:12px;
+    margin-top:20px;
+    padding-top:7px;
+    border-top:3px double var(--murekkep);
+    color:var(--soluk);
+    font-size:9.5px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+  }
+  .kunye a{color:inherit;text-decoration:none}
+  .kunye a:hover{text-decoration:underline;text-underline-offset:3px}
+
+  @media (max-width:900px){
+    .icerik{column-count:2}
+  }
+  @media (max-width:620px){
+    body{padding:10px 8px 24px}
+    .gazete{padding:18px 14px 12px}
+    .icerik{column-count:1;column-rule:none}
+    .ustbilgi{font-size:8.5px}
+    .ustbilgi span:nth-child(2){display:none}
+    .altbilgi{font-size:8.5px;gap:8px}
+    .kunye{flex-direction:column;gap:4px}
+  }
+  @media print{
+    body{background:#fff;padding:0}
+    .gazete{box-shadow:none;border:0;max-width:none}
+  }
+</style>
+</head>
+<body>
+  <div class="gazete">
+    <header>
+      <div class="ustbilgi">
+        <span><b>Bağımsız</b> · Günlük</span>
+        <span id="altbilgi-not">Günlük haber özeti</span>
+        <span>Fiyatı 10 kuruş</span>
+      </div>
+
+      <div class="baslik-sarici">
+        <h1>Haberler</h1>
+      </div>
+
+      <div class="altbilgi">
+        <span id="tarih"></span>
+        <span>Sayı: <span id="sayi">—</span></span>
+        <span>13 kaynak</span>
+      </div>
+    </header>
+
+    <nav class="kaynaklar" aria-label="Kaynaklar">
+      <span class="kaynaklar-etiket">Kaynaklar</span>
+      <a class="kaynak" href="https://www.birgun.net/" target="_blank" rel="noopener">birgün</a>
+      <a class="kaynak" href="https://www.evrensel.net/" target="_blank" rel="noopener">evrensel</a>
+      <a class="kaynak" href="https://haber.sol.org.tr/" target="_blank" rel="noopener">sol</a>
+      <a class="kaynak" href="https://bianet.org/" target="_blank" rel="noopener">bianet</a>
+      <a class="kaynak" href="https://artigercek.com/" target="_blank" rel="noopener">artı gerçek</a>
+      <a class="kaynak" href="https://sendika.org/" target="_blank" rel="noopener">sendika.org</a>
+      <a class="kaynak" href="https://medyascope.tv/" target="_blank" rel="noopener">medyascope</a>
+      <a class="kaynak" href="https://www.diken.com.tr/" target="_blank" rel="noopener">diken</a>
+      <a class="kaynak" href="https://t24.com.tr/" target="_blank" rel="noopener">t24</a>
+      <a class="kaynak" href="https://kisadalga.net/" target="_blank" rel="noopener">kısa dalga</a>
+      <a class="kaynak" href="https://medyametre.org/" target="_blank" rel="noopener">medyametre</a>
+      <a class="kaynak" href="https://www.bbc.com/turkce" target="_blank" rel="noopener">bbc türkçe</a>
+      <a class="kaynak" href="https://www.dw.com/tr" target="_blank" rel="noopener">dw türkçe</a>
+    </nav>
+
+    <main class="icerik" id="ozet"></main>
+
+    <footer class="kunye">
+      <span>haberler · günlük özet</span>
+      <span>Tek sayfa · her gün yenilenir</span>
+      <a href="https://bmenderes.github.io/">bmenderes.github.io</a>
+    </footer>
+  </div>
+
+<script>
+  (function () {
+    var aylar = ["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran",
+                 "Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
+    var gunler = ["Pazar","Pazartesi","Salı","Çarşamba","Perşembe","Cuma","Cumartesi"];
+
+    function tarihMetni(d) {
+      return d.getDate() + " " + aylar[d.getMonth()] + " " + d.getFullYear() +
+             " · " + gunler[d.getDay()];
+    }
+
+    function tarihCoz(metin) {
+      var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(metin || ""));
+      if (!m) return null;
+      var d = new Date(+m[1], +m[2] - 1, +m[3]);
+      return isNaN(d.getTime()) ? null : d;
+    }
+
+    function sayiMetni(d) {
+      var yilBasi = new Date(d.getFullYear(), 0, 1);
+      var gun = Math.floor((d - yilBasi) / 864e5) + 1;
+      return d.getFullYear() + "/" + gun;
+    }
+
+    function ciz() {
+      var ozet = (window.OZET && typeof window.OZET === "object") ? window.OZET : {};
+      var haberler = Array.isArray(ozet.haberler) ? ozet.haberler : [];
+      var hedef = document.getElementById("ozet");
+      if (!hedef) return;
+      hedef.innerHTML = "";
+      hedef.classList.remove("bos-durum");
+      var bolumler = [];
+      var indeks = {};
+      var tarih = tarihCoz(ozet.tarih) || new Date();
+
+      document.getElementById("tarih").textContent = tarihMetni(tarih);
+      document.getElementById("sayi").textContent = sayiMetni(tarih);
+
+      haberler.forEach(function (h) {
+        if (!h || !h.metin) return;
+        var ad = h.kategori || "diğer";
+        if (!(ad in indeks)) {
+          indeks[ad] = { ad: ad, maddeler: [] };
+          bolumler.push(indeks[ad]);
+        }
+        indeks[ad].maddeler.push(h);
+      });
+
+      if (!bolumler.length) {
+        hedef.classList.add("bos-durum");
+        var bos = document.createElement("p");
+        bos.className = "bos";
+        var ust = document.createElement("strong");
+        ust.textContent = "Bugünün nüshası henüz baskıda.";
+        var alt = document.createElement("span");
+        alt.textContent = "Özet yayınlandığında bu sayfa kendiliğinden dolar.";
+        bos.appendChild(ust);
+        bos.appendChild(alt);
+        if (!ornek) {
+          var ornekBag = document.createElement("a");
+          ornekBag.href = "#ornek";
+          ornekBag.textContent = "Örnek nüshayı gör";
+          bos.appendChild(ornekBag);
+        }
+        hedef.appendChild(bos);
+        return;
+      }
+
+      var mansetVerildi = false;
+
+      bolumler.forEach(function (b) {
+        var bolum = document.createElement("section");
+        bolum.className = "bolum";
+
+        var baslik = document.createElement("h2");
+        baslik.textContent = b.ad;
+        bolum.appendChild(baslik);
+
+        b.maddeler.forEach(function (h) {
+          var url = typeof h.url === "string" && /^https?:\/\//.test(h.url) ? h.url : "";
+          var oge = document.createElement(url ? "a" : "p");
+          oge.className = "haber";
+          if (!mansetVerildi) {
+            oge.className += " manset";
+            mansetVerildi = true;
+          }
+          if (url) {
+            oge.href = url;
+            oge.target = "_blank";
+            oge.rel = "noopener";
+          }
+          oge.appendChild(document.createTextNode(String(h.metin).trim()));
+          if (h.kaynak) {
+            var kaynak = document.createElement("span");
+            kaynak.className = "kaynak-adi";
+            kaynak.textContent = String(h.kaynak).trim();
+            oge.appendChild(kaynak);
+          }
+          bolum.appendChild(oge);
+        });
+
+        hedef.appendChild(bolum);
+      });
+    }
+
+    /* #ornek veya ?ornek=1 → örnek nüsha (ozet-ornek.js) ile önizleme; normalde ozet.js okunur.
+       Sayfa doğrudan dosyadan (file://) açıldıysa bu bir önizlemedir: gerçek veri yoksa örnek nüsha
+       kendiliğinden yüklenir, böylece tasarım boş görünmez. Yayındaki sayfa (http/https) her zaman
+       ozet.js okur; orada uydurma içerik gösterilmez. */
+    var yerel = location.protocol === "file:";
+    var ornek = /ornek/.test(location.search + location.hash);
+
+    function veriVar() {
+      return !!(window.OZET && Array.isArray(window.OZET.haberler) && window.OZET.haberler.length);
+    }
+
+    function dosyaYukle(ad, sonra) {
+      var s = document.createElement("script");
+      s.src = ad + (location.protocol.indexOf("http") === 0 ? "?v=" + Date.now() : "");
+      s.onload = sonra;
+      s.onerror = sonra;
+      document.head.appendChild(s);
+    }
+
+    function ornekYukle() {
+      var not = document.getElementById("altbilgi-not");
+      if (not) not.textContent = "Örnek nüsha · deneme içeriği";
+      dosyaYukle("ozet-ornek.js", ciz);
+    }
+
+    if (ornek) {
+      ornekYukle();
+    } else {
+      dosyaYukle("ozet.js", function () {
+        if (yerel && !veriVar()) ornekYukle();
+        else ciz();
+      });
+    }
+
+    /* Veri dosyası hiç yüklenemezse (kısıtlı önizleme, engellenen betik) sayfa boş kalmasın. */
+    setTimeout(function () {
+      var hedef = document.getElementById("ozet");
+      if (hedef && !hedef.childNodes.length) ciz();
+    }, 800);
+  })();
+</script>
+</body>
+</html>

@@ -291,7 +291,15 @@
       <a class="kaynak" href="https://www.dw.com/tr" target="_blank" rel="noopener">dw türkçe</a>
     </nav>
 
-    <main class="icerik" id="ozet"></main>
+    <!-- Boş nüsha kutusu HTML'de durur: betik engellenirse ya da çalışmazsa sayfa yine de
+         boş görünmez. Betik çalıştığında ilk iş burayı temizleyip kendi içeriğini çizer. -->
+    <main class="icerik bos-durum" id="ozet">
+      <p class="bos">
+        <strong>Bugünün nüshası henüz baskıda.</strong>
+        <span>Özet yayınlandığında bu sayfa kendiliğinden dolar.</span>
+        <a href="#ornek">Örnek nüshayı gör</a>
+      </p>
+    </main>
 
     <footer class="kunye">
       <span>haberler · günlük özet</span>

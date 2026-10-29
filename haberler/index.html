@@ -180,6 +180,51 @@
   }
   .haber + .haber{border-top:1px dotted #c8bb9d}
   a.haber:hover{background:rgba(80,60,20,.06)}
+
+  /* detay: başlığa tıklayınca açılır (details/summary) */
+  details.haber{display:block}
+  details.haber > summary{
+    display:block;
+    cursor:pointer;
+    list-style:none;
+    outline-offset:4px;
+  }
+  details.haber > summary::-webkit-details-marker{display:none}
+  details.haber > summary:hover{background:rgba(80,60,20,.06)}
+  details.haber > summary::after{
+    content:"+";
+    display:inline-block;
+    margin-left:.4em;
+    color:var(--kirmizi);
+    font-family:Lora,Georgia,serif;
+    font-size:11px;
+    font-weight:700;
+    line-height:1;
+    vertical-align:.15em;
+  }
+  details.haber[open] > summary::after{content:"–"}
+  .haber-detay{
+    margin:7px 0 3px;
+    padding:8px 10px;
+    border-left:2px solid var(--cizgi);
+    background:rgba(120,100,60,.055);
+    font-size:13px;
+    line-height:1.55;
+    text-align:left;
+    hyphens:none;
+  }
+  .haber-detay a{
+    display:inline-block;
+    margin-top:7px;
+    color:var(--kirmizi);
+    font-size:9px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    text-decoration:none;
+    border-bottom:1px solid currentColor;
+  }
+  .haber-detay a:hover{color:var(--murekkep)}
+
   .kaynak-adi{
     margin-left:.35em;
     color:var(--kirmizi);
@@ -200,7 +245,8 @@
     text-align:left;
     hyphens:none;
   }
-  .manset::first-letter{
+  .manset::first-letter,
+  .manset > summary::first-letter{
     float:left;
     padding:5px 8px 0 0;
     font-family:"Playfair Display",Georgia,serif;
@@ -422,24 +468,55 @@
 
         b.maddeler.forEach(function (h) {
           var url = typeof h.url === "string" && /^https?:\/\//.test(h.url) ? h.url : "";
-          var oge = document.createElement(url ? "a" : "p");
-          oge.className = "haber";
+          var detay = typeof h.detay === "string" ? h.detay.trim() : "";
+          var oge, govde;
+
+          if (detay) {
+            /* detay varsa: kısa özet başlık, tıklayınca altında ayrıntı açılır */
+            oge = document.createElement("details");
+            oge.className = "haber";
+            govde = document.createElement("summary");
+            oge.appendChild(govde);
+          } else {
+            oge = document.createElement(url ? "a" : "p");
+            oge.className = "haber";
+            govde = oge;
+            if (url) {
+              oge.href = url;
+              oge.target = "_blank";
+              oge.rel = "noopener";
+            }
+          }
+
           if (!mansetVerildi) {
             oge.className += " manset";
             mansetVerildi = true;
           }
-          if (url) {
-            oge.href = url;
-            oge.target = "_blank";
-            oge.rel = "noopener";
-          }
-          oge.appendChild(document.createTextNode(String(h.metin).trim()));
+
+          govde.appendChild(document.createTextNode(String(h.metin).trim()));
           if (h.kaynak) {
             var kaynak = document.createElement("span");
             kaynak.className = "kaynak-adi";
             kaynak.textContent = String(h.kaynak).trim();
-            oge.appendChild(kaynak);
+            govde.appendChild(kaynak);
           }
+
+          if (detay) {
+            var kutu = document.createElement("div");
+            kutu.className = "haber-detay";
+            kutu.appendChild(document.createTextNode(detay));
+            if (url) {
+              var bag = document.createElement("a");
+              bag.href = url;
+              bag.target = "_blank";
+              bag.rel = "noopener";
+              bag.textContent = "Habere git";
+              kutu.appendChild(document.createElement("br"));
+              kutu.appendChild(bag);
+            }
+            oge.appendChild(kutu);
+          }
+
           bolum.appendChild(oge);
         });
 

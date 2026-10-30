@@ -31,7 +31,7 @@
   }
   .gazete{
     position:relative;
-    max-width:1080px;
+    max-width:1200px;
     margin:0 auto;
     padding:24px clamp(16px,4vw,44px) 16px;
     background:var(--kagit);
@@ -99,7 +99,7 @@
     flex:0 0 auto;
   }
   .logo span{
-    padding-left:.34em; /* harf aralığının sağda bıraktığı boşluğu dengeler */
+    padding-left:.34em;
     font-family:Lora,Georgia,serif;
     font-size:9.5px;
     font-weight:600;
@@ -145,10 +145,86 @@
   .kaynak:last-child{border-right:0}
   .kaynak:hover{color:var(--murekkep);text-decoration:underline;text-underline-offset:3px}
 
-  /* ---- gazete sütunları ---- */
+  /* ---- KATEGORİ MANŞET BANDI (Daha belirgin ve okunaklı) ---- */
+  .mansetler{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    padding:16px 0 12px;
+    border-bottom:3px double var(--murekkep);
+    border-top:1px solid var(--cizgi);
+  }
+  .mansetler[hidden]{display:none}
+  .manset-sutun{
+    min-width:0;
+    padding:0 12px;
+    border-left:1px solid var(--cizgi);
+  }
+  .manset-sutun:first-child{border-left:0;padding-left:0}
+  .manset-sutun:last-child{padding-right:0}
+  .manset-baslik{
+    font-size:11px;
+    letter-spacing:.24em;
+    color:var(--soluk);
+    margin-bottom:8px;
+    padding-bottom:4px;
+    border-bottom:1px dotted var(--cizgi);
+  }
+  .manset-sutun .haber{
+    font-size:14px;
+    padding:8px 0;
+    line-height:1.45;
+  }
+  .manset-sutun .haber.manset-buyuk{
+    font-family:"Playfair Display",Georgia,serif;
+    font-size:17px;
+    font-weight:700;
+    line-height:1.3;
+    text-align:left;
+    hyphens:none;
+  }
+  .manset-buyuk::first-letter,
+  .manset-buyuk > summary::first-letter{
+    float:left;
+    padding:3px 6px 0 0;
+    color:var(--kirmizi);
+    font-family:"Playfair Display",Georgia,serif;
+    font-size:36px;
+    font-weight:900;
+    line-height:.8;
+  }
+
+  /* ---- ANA İÇERİK ALANI (2 sütun: haberler + detay) ---- */
+  .ana-layout{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:30px;
+    padding-top:14px;
+  }
+  
+  .haber-listesi{
+    column-count:2;
+    column-gap:25px;
+    column-rule:1px solid var(--cizgi);
+  }
+  
+  .detay-panel{
+    padding:12px;
+    border-left:2px solid var(--cizgi);
+    background:rgba(120,100,60,.04);
+    min-height:200px;
+  }
+  
+  .detay-ici{
+    padding:8px;
+    font-size:14px;
+    line-height:1.6;
+  }
+
+  /* ---- gazete sütunları (eski .icerik) ---- */
   .icerik{
-    column-count:3;
-    column-gap:30px;
+    column-count:2;
+    column-gap:25px;
     column-rule:1px solid var(--cizgi);
     padding-top:14px;
   }
@@ -205,10 +281,10 @@
   details.haber[open] > summary::after{content:"–"}
   .haber-detay{
     margin:7px 0 3px;
-    padding:8px 10px;
+    padding:10px 12px;
     border-left:2px solid var(--cizgi);
-    background:rgba(120,100,60,.055);
-    font-size:13px;
+    background:rgba(120,100,60,.06);
+    font-size:13.5px;
     line-height:1.55;
     text-align:left;
     hyphens:none;
@@ -217,7 +293,7 @@
     display:inline-block;
     margin-top:7px;
     color:var(--kirmizi);
-    font-size:9px;
+    font-size:9.5px;
     letter-spacing:.16em;
     text-transform:uppercase;
     text-decoration:none;
@@ -307,18 +383,41 @@
   .kunye a{color:inherit;text-decoration:none}
   .kunye a:hover{text-decoration:underline;text-underline-offset:3px}
 
+  /* Responsive - Tablet */
   @media (max-width:900px){
+    .ana-layout{
+      grid-template-columns:1fr;
+      gap:16px;
+    }
+    .detay-panel{
+      border-left:0;
+      border-top:1px solid var(--cizgi);
+      min-height:auto;
+    }
+    .haber-listesi,
     .icerik{column-count:2}
+    .mansetler{grid-template-columns:1fr}
+    .manset-sutun{padding:12px 0;border-left:0}
+    .manset-sutun + .manset-sutun{border-top:1px solid var(--cizgi)}
   }
+  
+  /* Responsive - Mobile */
   @media (max-width:620px){
     body{padding:10px 8px 24px}
     .gazete{padding:18px 14px 12px}
+    .ana-layout{
+      gap:12px;
+    }
+    .haber-listesi,
     .icerik{column-count:1;column-rule:none}
     .ustbilgi{font-size:8.5px}
     .ustbilgi span:nth-child(2){display:none}
     .altbilgi{font-size:8.5px;gap:8px}
+    .mansetler{grid-template-columns:1fr;gap:10px}
+    .manset-sutun{padding:8px 0}
     .kunye{flex-direction:column;gap:4px}
   }
+  
   @media print{
     body{background:#fff;padding:0}
     .gazete{box-shadow:none;border:0;max-width:none}
@@ -371,15 +470,26 @@
       <a class="kaynak" href="https://www.dw.com/tr" target="_blank" rel="noopener">dw türkçe</a>
     </nav>
 
-    <!-- Boş nüsha kutusu HTML'de durur: betik engellenirse ya da çalışmazsa sayfa yine de
-         boş görünmez. Betik çalıştığında ilk iş burayı temizleyip kendi içeriğini çizer. -->
-    <main class="icerik bos-durum" id="ozet">
-      <p class="bos">
-        <strong>Bugünün nüshası henüz baskıda.</strong>
-        <span>Özet yayınlandığında bu sayfa kendiliğinden dolar.</span>
-        <a href="#ornek">Örnek nüshayı gör</a>
-      </p>
-    </main>
+    <!-- Kategori manşet bandı -->
+    <div class="mansetler" id="mansetler" hidden></div>
+
+    <!-- Ana içerik: 2 sütun (haberler + detay paneli) -->
+    <div class="ana-layout">
+      <main class="icerik" id="ozet">
+        <p class="bos">
+          <strong>Bugünün nüshası henüz baskıda.</strong>
+          <span>Özet yayınlandığında bu sayfa kendiliğinden dolar.</span>
+          <a href="#ornek">Örnek nüshayı gör</a>
+        </p>
+      </main>
+      
+      <!-- Detay paneli - sağ tarafta -->
+      <aside class="detay-panel" id="detayPanel">
+        <div class="detay-ici" id="detayIci">
+          <p style="color:var(--soluk);font-style:italic;">Habere tıklayın, detay burada görünür.</p>
+        </div>
+      </aside>
+    </div>
 
     <footer class="kunye">
       <span>haberler · günlük özet</span>
@@ -410,6 +520,125 @@
       var yilBasi = new Date(d.getFullYear(), 0, 1);
       var gun = Math.floor((d - yilBasi) / 864e5) + 1;
       return d.getFullYear() + "/" + gun;
+    }
+
+    function haberOgesi(h, ekSinif) {
+      var url = typeof h.url === "string" && /^https?:\/\//.test(h.url) ? h.url : "";
+      var detay = typeof h.detay === "string" ? h.detay.trim() : "";
+      var metin = typeof h.metin === "string" ? h.metin.trim() : "";
+      var oge, govde;
+
+      if (detay) {
+        oge = document.createElement("details");
+        oge.className = "haber";
+        govde = document.createElement("summary");
+        oge.appendChild(govde);
+        
+        // Detay paneline tıklama eventi ekle
+        oge.addEventListener('toggle', function() {
+          if (oge.open) {
+            // Tüm diğer details'ları kapat
+            document.querySelectorAll('details.haber[open]').forEach(function(d) {
+              if (d !== oge) d.open = false;
+            });
+            // Detay panelini güncelle
+            detayPanelGuncelle(h);
+          } else {
+            // Detay panelini temizle
+            document.getElementById('detayIci').innerHTML = '<p style="color:var(--soluk);font-style:italic;">Habere tıklayın, detay burada görünür.</p>';
+          }
+        });
+      } else {
+        oge = document.createElement(url ? "a" : "p");
+        oge.className = "haber";
+        govde = oge;
+        if (url) {
+          oge.href = url;
+          oge.target = "_blank";
+          oge.rel = "noopener";
+          oge.addEventListener('click', function(e) {
+            e.preventDefault();
+            detayPanelGuncelle(h);
+          });
+        }
+      }
+
+      if (ekSinif) oge.className += " " + ekSinif;
+
+      govde.appendChild(document.createTextNode(metin));
+      if (h.kaynak) {
+        var kaynak = document.createElement("span");
+        kaynak.className = "kaynak-adi";
+        kaynak.textContent = String(h.kaynak).trim();
+        govde.appendChild(kaynak);
+      }
+
+      if (detay) {
+        var kutu = document.createElement("div");
+        kutu.className = "haber-detay";
+        kutu.appendChild(document.createTextNode(detay));
+        if (url) {
+          var bag = document.createElement("a");
+          bag.href = url;
+          bag.target = "_blank";
+          bag.rel = "noopener";
+          bag.textContent = "Habere git";
+          kutu.appendChild(document.createElement("br"));
+          kutu.appendChild(bag);
+        }
+        oge.appendChild(kutu);
+      }
+
+      return oge;
+    }
+
+    function detayPanelGuncelle(h) {
+      var panel = document.getElementById('detayIci');
+      if (!panel) return;
+      
+      panel.innerHTML = '';
+      
+      var metin = document.createElement('p');
+      metin.style.fontWeight = '700';
+      metin.style.marginBottom = '8px';
+      metin.textContent = typeof h.metin === 'string' ? h.metin : '';
+      panel.appendChild(metin);
+      
+      if (h.detay) {
+        var detay = document.createElement('p');
+        detay.style.marginBottom = '12px';
+        detay.style.fontSize = '14px';
+        detay.style.lineHeight = '1.6';
+        detay.textContent = h.detay;
+        panel.appendChild(detay);
+      }
+      
+      if (h.kaynak) {
+        var kaynak = document.createElement('p');
+        kaynak.style.fontSize = '11px';
+        kaynak.style.color = 'var(--soluk)';
+        kaynak.style.letterSpacing = '.1em';
+        kaynak.style.textTransform = 'uppercase';
+        kaynak.textContent = '— ' + h.kaynak;
+        panel.appendChild(kaynak);
+      }
+      
+      if (h.url && typeof h.url === 'string' && /^https?:\/\//.test(h.url)) {
+        var link = document.createElement('a');
+        link.href = h.url;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.style.display = 'inline-block';
+        link.style.marginTop = '8px';
+        link.style.color = 'var(--kirmizi)';
+        link.style.fontSize = '10px';
+        link.style.letterSpacing = '.15em';
+        link.style.textTransform = 'uppercase';
+        link.style.textDecoration = 'none';
+        link.style.borderBottom = '1px solid currentColor';
+        link.textContent = 'Habere Git';
+        panel.appendChild(link);
+      }
     }
 
     function ciz() {
@@ -467,67 +696,90 @@
         bolum.appendChild(baslik);
 
         b.maddeler.forEach(function (h) {
-          var url = typeof h.url === "string" && /^https?:\/\//.test(h.url) ? h.url : "";
-          var detay = typeof h.detay === "string" ? h.detay.trim() : "";
-          var oge, govde;
-
-          if (detay) {
-            /* detay varsa: kısa özet başlık, tıklayınca altında ayrıntı açılır */
-            oge = document.createElement("details");
-            oge.className = "haber";
-            govde = document.createElement("summary");
-            oge.appendChild(govde);
-          } else {
-            oge = document.createElement(url ? "a" : "p");
-            oge.className = "haber";
-            govde = oge;
-            if (url) {
-              oge.href = url;
-              oge.target = "_blank";
-              oge.rel = "noopener";
-            }
-          }
-
+          var ek = "";
           if (!mansetVerildi) {
-            oge.className += " manset";
+            ek = "manset";
             mansetVerildi = true;
           }
-
-          govde.appendChild(document.createTextNode(String(h.metin).trim()));
-          if (h.kaynak) {
-            var kaynak = document.createElement("span");
-            kaynak.className = "kaynak-adi";
-            kaynak.textContent = String(h.kaynak).trim();
-            govde.appendChild(kaynak);
-          }
-
-          if (detay) {
-            var kutu = document.createElement("div");
-            kutu.className = "haber-detay";
-            kutu.appendChild(document.createTextNode(detay));
-            if (url) {
-              var bag = document.createElement("a");
-              bag.href = url;
-              bag.target = "_blank";
-              bag.rel = "noopener";
-              bag.textContent = "Habere git";
-              kutu.appendChild(document.createElement("br"));
-              kutu.appendChild(bag);
-            }
-            oge.appendChild(kutu);
-          }
-
-          bolum.appendChild(oge);
+          bolum.appendChild(haberOgesi(h, ek));
         });
 
         hedef.appendChild(bolum);
       });
     }
 
-    /* #ornek veya ?ornek=1 → örnek nüsha (ozet-ornek.js) ile önizleme; normalde ozet.js okunur.
-       Sayfa doğrudan dosyadan (file://) açıldıysa bu bir önizlemedir: gerçek veri yoksa örnek nüsha
-       kendiliğinden yüklenir, böylece tasarım boş görünmez. Yayındaki sayfa (http/https) her zaman
-       ozet.js okur; orada uydurma içerik gösterilmez. */
+    /* Kategori manşet bandı */
+    var MANSET_DOSYALARI = [
+      { anahtar: "MANSET_SIYASET",   dosya: "siyaset.js",   ad: "Siyaset" },
+      { anahtar: "MANSET_TEKNOLOJI", dosya: "teknoloji.js", ad: "Teknoloji" },
+      { anahtar: "MANSET_SPOR",      dosya: "spor.js",      ad: "Spor" }
+    ];
+
+    function mansetBandiniCiz() {
+      var hedef = document.getElementById("mansetler");
+      if (!hedef) return;
+
+      var sutunlar = [];
+      MANSET_DOSYALARI.forEach(function (m) {
+        var paket = window[m.anahtar];
+        var liste = paket && Array.isArray(paket.mansetler) ? paket.mansetler : [];
+        var gecerli = [];
+        liste.forEach(function (h) {
+          if (h && typeof h.metin === "string" && h.metin.trim()) gecerli.push(h);
+        });
+        if (!gecerli.length) return;
+        sutunlar.push({
+          ad: (typeof paket.baslik === "string" && paket.baslik.trim()) || m.ad,
+          haberler: gecerli.slice(0, 5)
+        });
+      });
+
+      hedef.innerHTML = "";
+      if (!sutunlar.length) {
+        hedef.hidden = true;
+        return;
+      }
+      hedef.hidden = false;
+
+      sutunlar.forEach(function (s) {
+        var sutun = document.createElement("section");
+        sutun.className = "manset-sutun";
+
+        var baslik = document.createElement("h2");
+        baslik.className = "manset-baslik";
+        baslik.textContent = s.ad;
+        sutun.appendChild(baslik);
+
+        s.haberler.forEach(function (h, i) {
+          var oge = haberOgesi(h, i === 0 ? "manset-buyuk" : "");
+          // Manşet bandındaki haberlere de tıklama eventi ekle
+          if (oge.tagName === 'DETAILS') {
+            oge.addEventListener('toggle', function() {
+              if (oge.open) {
+                document.querySelectorAll('.manset-sutun details.haber[open]').forEach(function(d) {
+                  if (d !== oge) d.open = false;
+                });
+                detayPanelGuncelle(h);
+              }
+            });
+          }
+          sutun.appendChild(oge);
+        });
+
+        hedef.appendChild(sutun);
+      });
+    }
+
+    function mansetleriYukle() {
+      var bekleyen = MANSET_DOSYALARI.length;
+      MANSET_DOSYALARI.forEach(function (m) {
+        dosyaYukle(m.dosya, function () {
+          bekleyen--;
+          if (!bekleyen) mansetBandiniCiz();
+        });
+      });
+    }
+
     var yerel = location.protocol === "file:";
     var ornek = /ornek/.test(location.search + location.hash);
 
@@ -549,6 +801,8 @@
       dosyaYukle("ozet-ornek.js", ciz);
     }
 
+    mansetleriYukle();
+
     if (ornek) {
       ornekYukle();
     } else {
@@ -558,7 +812,6 @@
       });
     }
 
-    /* Veri dosyası hiç yüklenemezse (kısıtlı önizleme, engellenen betik) sayfa boş kalmasın. */
     setTimeout(function () {
       var hedef = document.getElementById("ozet");
       if (hedef && !hedef.childNodes.length) ciz();

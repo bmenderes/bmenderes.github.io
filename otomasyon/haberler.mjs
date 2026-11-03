@@ -412,11 +412,21 @@ async function main() {
     let haberler = [];
     let yol = "yedek";
     if (adaylar.length && MODEL_TOKEN) {
-      try {
-        haberler = await modelleUret(kategori.baslik, adaylar);
-        yol = `model(${MODEL})`;
-      } catch (e) {
-        console.log(`::warning::${kategori.anahtar}: model hatası — ${e.message}`);
+      // Ücretsiz katmanlarda dakikalık token sınırı var (HTTP 429): bekleyip 3 kez dene.
+      for (let deneme = 1; deneme <= 3; deneme++) {
+        try {
+          haberler = await modelleUret(kategori.baslik, adaylar);
+          yol = `model(${MODEL})`;
+          break;
+        } catch (e) {
+          if (deneme < 3 && /HTTP 429/.test(e.message)) {
+            console.log(`  ${kategori.anahtar}: sınıra takıldı, 65 sn bekleniyor (deneme ${deneme})`);
+            await new Promise((r) => setTimeout(r, 65000));
+            continue;
+          }
+          console.log(`::warning::${kategori.anahtar}: model hatası — ${e.message}`);
+          break;
+        }
       }
     }
     if (!haberler.length) haberler = yedekUret(adaylar);

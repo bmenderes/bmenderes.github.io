@@ -1,29 +1,12 @@
-/* MANŞET — SİYASET. Otomasyon bu dosyayı yeniden yazar; sayfa bunu okur.
-   Biçim:
-   window.MANSET_SIYASET = {
-     tarih: "YYYY-AA-GG",
-     baslik: "Siyaset",
-     mansetler: [ { metin, detay, kaynak, url, tur, guven, dil, yayin_tarihi, dogrulama } ]
-   };
-   - İlk satır büyük manşet, kalanlar liste olarak basılır (en fazla 5 satır gösterilir).
-   - metin  : ana sayfada görünen manşet (tek cümle, ~140 karakter)
-   - detay  : manşete tıklanınca açılan ayrıntı (1-2 cümle, ~220 karakter)
-   - kaynak : kısa kaynak adı (envanterdeki id)
-   - url    : habere git linki, https://
-   - tur    : hizli-haber, teknik-analiz, sektor-ekonomi, arastirma, resm-kurum, veri-skor
-   - guven  : bagimsiz veya uretici
-   - dil    : tr veya en
-   - yayin_tarihi: YYYY-AA-GG
-   - dogrulama: tek-kaynak veya ikinci-kaynak
-*/
+/* Siyaset manşetleri. Bu dosyayı otomasyon yazar; sayfa bunu okur. */
 window.MANSET_SIYASET = {
-  tarih: "2026-10-29",
+  tarih: "2026-11-03",
   baslik: "Siyaset",
   mansetler: [
-    { metin: "Özgür Özel: Fon soruşturmasında 60'a yakın AKP'li vekil ya da yakınının adı geçiyor, Erdoğan listeyi açıklasın.", detay: "Özel, 'AKP içinde güç odaklarının çatışması var' diyerek fon krizinin iktidar içi bir hesaplaşmaya dönüştüğünü savundu.", kaynak: "kısa dalga", url: "https://kisadalga.net/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
-    { metin: "Erdoğan'ın 29 Ekim mesajı: 'Türkiye Yüzyılı' hedefi yinelendi.", detay: "Erdoğan mesajında Cumhuriyet'in 103. yılında birlik ve beraberlik vurgusu yaptı, Türkiye Yüzyılı programını öne çıkardı.", kaynak: "birgün", url: "https://www.birgun.net/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
-    { metin: "Bakırköy Belediyesi'ne operasyon: Beş başkan yardımcısı dahil 62-68 kişi hakkında gözaltı kararı.", detay: "Operasyon kapsamında belediyede aramalar yapıldı. CHP, soruşturmayı siyasi gerekçeli olarak nitelendirdi.", kaynak: "bbc türkçe", url: "https://www.bbc.com/turkce", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
-    { metin: "Mustafa Sarıgül, YENİ Parti üyeliğini 'askıya aldı'; suçlamalar sürüyor.", detay: "Sarıgül'ün eski koruması, vekili cinsel saldırıyla suçladı. Soruşturma kapsamındaki ifadelerin sızdırılması tartışma yarattı.", kaynak: "bianet", url: "https://bianet.org/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "ikinci-kaynak" },
-    { metin: "Fon soruşturmasında eski AKP milletvekili Ertan Aydın yeniden gözaltına alınıp tutuklandı.", detay: "Aydın'ın daha önce de gözaltına alındığı soruşturmada tutuklama kararı verildi.", kaynak: "bbc türkçe", url: "https://www.bbc.com/turkce", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" }
+    { metin: "Son dakika... Borsa İstanbul A.Ş. eski Genel Müdürü tutuklandı", kaynak: "sozcu", url: "https://www.sozcu.com.tr/son-dakika-korkmaz-enes-ergun-tutuklandi-p375423", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-03", dogrulama: "tek-kaynak" },
+    { metin: "İstanbul'da uyuşturucu operasyonu: 31 gözaltı kararı", kaynak: "ntv", url: "https://www.ntv.com.tr/turkiye/istanbulda-uyusturucu-operasyonu-31-gozalti-karari-1749131", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-03", dogrulama: "tek-kaynak" },
+    { metin: "Tüp yüklü kamyon ile hafif ticari araç çarpıştı: 2 kişi öldü, 12 kişi yaralandı", kaynak: "kisadalga", url: "https://kisadalga.net/haber/gundem/tup-yuklu-kamyon-ile-hafif-ticari-arac-carpisti-2-kisi-oldu-12-kisi-yaralandi-141357", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-03", dogrulama: "tek-kaynak" },
+    { metin: "Zorlu Holding Yönetim Kurulu Başkanı Ahmet Nazif Zorlu hayatını kaybetti", kaynak: "aa", url: "https://www.aa.com.tr/tr/gundem/zorlu-holding-yonetim-kurulu-baskani-ahmet-nazif-zorlu-hayatini-kaybetti/4109281", tur: "resmi-kurum", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-03", dogrulama: "tek-kaynak" },
+    { metin: "Trump'ın kaderi değişebilir: ABD ara seçimleri neden önemli?", kaynak: "dwtr", url: "https://www.dw.com/tr/trump-ın-kaderi-değişebilir-abd-ara-seçimleri-neden-önemli/a-79783651?maca=tur-rss-tur-all-1495-rdf", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-03", dogrulama: "tek-kaynak" }
   ]
 };

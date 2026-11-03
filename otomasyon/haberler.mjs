@@ -259,8 +259,9 @@ Kurallar:
 - En önemli haber ilk satırda olsun.`;
 
 function istem(kategori, adaylar) {
-  const satirlar = adaylar.map((h, i) =>
-    `${i + 1}. kaynak=${h.kaynak} | tur=${h.tur} | guven=${h.guven} | dil=${h.dil} | tarih=${gun(h.tarih?.toISOString())} | url=${h.url}\n   baslik: ${h.baslik}\n   ozet: ${h.ozet || "(yok)"}`
+  // Ücretsiz katmanın dakikalık token sınırı için istemi küçük tut: en fazla 14 aday, kısa özet.
+  const satirlar = adaylar.slice(0, 14).map((h, i) =>
+    `${i + 1}. kaynak=${h.kaynak} | tur=${h.tur} | guven=${h.guven} | dil=${h.dil} | tarih=${gun(h.tarih?.toISOString())} | url=${h.url}\n   baslik: ${h.baslik}\n   ozet: ${String(h.ozet || "(yok)").slice(0, 150)}`
   );
   return `KATEGORI: ${kategori}\nEn fazla ${SINIR} satır yaz.\n\nADAYLAR:\n${satirlar.join("\n")}`;
 }
@@ -419,6 +420,10 @@ async function main() {
           yol = `model(${MODEL})`;
           break;
         } catch (e) {
+          if (deneme < 3 && /JSON/.test(e.message) && !/HTTP/.test(e.message)) {
+            console.log(`  ${kategori.anahtar}: bozuk JSON, yeniden deneniyor (deneme ${deneme})`);
+            continue;
+          }
           if (deneme < 3 && /HTTP 429/.test(e.message)) {
             console.log(`  ${kategori.anahtar}: sınıra takıldı, 65 sn bekleniyor (deneme ${deneme})`);
             await new Promise((r) => setTimeout(r, 65000));

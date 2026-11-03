@@ -1,0 +1,47 @@
+name: haberler
+
+# Günlük haber toplama — yerel bilgisayardan bağımsız, GitHub sunucusunda çalışır.
+# 04:00 UTC = 07:00 Türkiye saati. GitHub yoğun saatlerde 5-30 dakika geciktirebilir.
+on:
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch: {} # Actions sekmesinden "Run workflow" ile elle de çalıştırılabilir
+
+permissions:
+  contents: write # üretilen .js dosyalarını depoya geri yazmak için
+  models: read # GitHub Models (ücretsiz dil modeli) erişimi için
+
+concurrency:
+  group: haberler
+  cancel-in-progress: false
+
+jobs:
+  topla:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Depoyu al
+        uses: actions/checkout@v4
+
+      - name: Node kur
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Haberleri topla ve dosyaları yaz
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MODEL: mistral-ai/mistral-small-2503 # GitHub Models'teki Mistral; eski: openai/gpt-4o-mini
+        run: node otomasyon/haberler.mjs
+
+      - name: Değişiklikleri yayınla
+        run: |
+          git config user.name "haberler-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add haberler
+          if git diff --cached --quiet; then
+            echo "Değişiklik yok."
+            exit 0
+          fi
+          git commit -m "haberler: günlük özet ($(date -u +%F))"
+          git push

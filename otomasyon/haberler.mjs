@@ -281,8 +281,15 @@ async function modelCagir(govde) {
 }
 
 function jsonAyikla(metin) {
-  const m = metin.match(/\{[\s\S]*\}/);
-  if (!m) throw new Error("model yanıtında JSON yok");
+  // API zarfı: {choices:[{message:{content:"..."}}]} — asıl yanıt content içindedir.
+  let icerik = metin;
+  try {
+    const zarf = JSON.parse(metin);
+    const c = zarf?.choices?.[0]?.message?.content;
+    if (typeof c === "string") icerik = c;
+  } catch {}
+  const m = icerik.match(/\{[\s\S]*\}/);
+  if (!m) throw new Error(`model yanıtında JSON yok: ${String(icerik).slice(0, 200)}`);
   return JSON.parse(m[0]);
 }
 

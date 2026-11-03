@@ -27,6 +27,14 @@ jobs:
         with:
           node-version: "20"
 
+      - name: Groq model listesi (geçici, yalnızca adlar)
+        continue-on-error: true
+        env:
+          K: ${{ secrets.GORQ_API_KEY }}
+        run: |
+          curl -s -H "Authorization: Bearer $K" https://api.groq.com/openai/v1/models \
+            | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{try{console.log("GROQ_MODELLER: "+JSON.parse(s).data.map(m=>m.id).sort().join(" | "))}catch(e){console.log("GROQ_LISTE_HATA: "+s.slice(0,200))}})'
+
       - name: Haberleri topla ve dosyaları yaz
         env:
           MODEL_TOKEN: ${{ secrets.GORQ_API_KEY }} # yoksa model çağrılmaz, ham başlıklar yazılır

@@ -29,9 +29,9 @@ jobs:
 
       - name: Haberleri topla ve dosyaları yaz
         env:
-          MODEL_TOKEN: ${{ secrets.MISTRAL_API_KEY }} # yoksa model çağrılmaz, ham başlıklar yazılır
-          MODEL_URL: https://api.mistral.ai/v1/chat/completions # GitHub Models 30 Temmuz 2026'da kapandı
-          MODEL: mistral-small-latest
+          MODEL_TOKEN: ${{ secrets.GROQ_API_KEY }} # yoksa model çağrılmaz, ham başlıklar yazılır
+          MODEL_URL: https://api.groq.com/openai/v1/chat/completions # GitHub Models 30 Temmuz 2026'da kapandı
+          MODEL: llama-3.3-70b-versatile
         run: node otomasyon/haberler.mjs
 
       - name: Değişiklikleri yayınla

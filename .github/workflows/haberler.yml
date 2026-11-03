@@ -9,7 +9,6 @@ on:
 
 permissions:
   contents: write # üretilen .js dosyalarını depoya geri yazmak için
-  models: read # GitHub Models (ücretsiz dil modeli) erişimi için
 
 concurrency:
   group: haberler
@@ -30,8 +29,9 @@ jobs:
 
       - name: Haberleri topla ve dosyaları yaz
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MODEL: mistral-ai/mistral-small-2503 # GitHub Models'teki Mistral; eski: openai/gpt-4o-mini
+          MODEL_TOKEN: ${{ secrets.MISTRAL_API_KEY }} # yoksa model çağrılmaz, ham başlıklar yazılır
+          MODEL_URL: https://api.mistral.ai/v1/chat/completions # GitHub Models 30 Temmuz 2026'da kapandı
+          MODEL: mistral-small-latest
         run: node otomasyon/haberler.mjs
 
       - name: Değişiklikleri yayınla

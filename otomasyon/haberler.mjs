@@ -12,9 +12,9 @@
      node otomasyon/haberler.mjs --kok <klasor>  (çıktı kökü; varsayılan depo kökü)
 
    Ortam değişkenleri:
-     MODEL_TOKEN / GITHUB_TOKEN  model anahtarı (yoksa model çağrılmaz)
-     MODEL_URL    varsayılan https://models.github.ai/inference/chat/completions
-     MODEL        varsayılan openai/gpt-4o-mini
+     MODEL_TOKEN  model anahtarı (yoksa model çağrılmaz)
+     MODEL_URL    varsayılan https://api.mistral.ai/v1/chat/completions
+     MODEL        varsayılan mistral-small-latest
      SAAT         kaç saat geriye bakılacak (varsayılan 36)
      SINIR        kategori başına satır sayısı (varsayılan 5, en fazla 5)
 */
@@ -33,9 +33,9 @@ const CIKTI = join(KOK, "haberler");
 
 const SAAT = Number(process.env.SAAT || 36);
 const SINIR = Math.min(5, Math.max(1, Number(process.env.SINIR || 5)));
-const MODEL = process.env.MODEL || "openai/gpt-4o-mini";
-const MODEL_URL = process.env.MODEL_URL || "https://models.github.ai/inference/chat/completions";
-const MODEL_TOKEN = process.env.MODEL_TOKEN || process.env.GITHUB_TOKEN || "";
+const MODEL = process.env.MODEL || "mistral-small-latest";
+const MODEL_URL = process.env.MODEL_URL || "https://api.mistral.ai/v1/chat/completions";
+const MODEL_TOKEN = process.env.MODEL_TOKEN || "";
 
 // ---------------------------------------------------------------- kaynaklar
 // tur/guven değerleri OTOMASYON-PROMPT.md Bölüm 1 sözlüğüyle aynıdır.
@@ -271,7 +271,6 @@ async function modelCagir(govde) {
     headers: {
       "content-type": "application/json",
       authorization: `Bearer ${MODEL_TOKEN}`,
-      "x-github-api-version": "2022-11-28",
     },
     body: JSON.stringify(govde),
   });
@@ -399,6 +398,9 @@ async function main() {
 
   if (KONTROL) return;
 
+  // ::warning:: Actions özetinde görünür: yedek modda iş yine "success" biter, sessiz kalmasın.
+  if (!MODEL_TOKEN) console.log("::warning::MODEL_TOKEN yok: model çağrılmadı, ham başlıklar yazılıyor");
+
   const sonuclar = [];
   for (const kategori of KATEGORILER) {
     const havuz = [];
@@ -414,7 +416,7 @@ async function main() {
         haberler = await modelleUret(kategori.baslik, adaylar);
         yol = `model(${MODEL})`;
       } catch (e) {
-        console.log(`  ${kategori.anahtar}: model hatası — ${e.message}`);
+        console.log(`::warning::${kategori.anahtar}: model hatası — ${e.message}`);
       }
     }
     if (!haberler.length) haberler = yedekUret(adaylar);

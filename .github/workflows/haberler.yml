@@ -1,10 +1,11 @@
 name: haberler
 
 # Günlük haber toplama — yerel bilgisayardan bağımsız, GitHub sunucusunda çalışır.
-# 04:00 UTC = 07:00 Türkiye saati. GitHub yoğun saatlerde 5-30 dakika geciktirebilir.
+# GEÇİCİ TEST: 10:30 UTC = 13:30 Türkiye saati. Normal: "0 4 * * *" (07:00).
+# GitHub yoğun saatlerde 5-30 dakika geciktirebilir.
 on:
   schedule:
-    - cron: "0 4 * * *"
+    - cron: "30 10 * * *"
   workflow_dispatch: {} # Actions sekmesinden "Run workflow" ile elle de çalıştırılabilir
 
 permissions:

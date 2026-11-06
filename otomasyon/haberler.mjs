@@ -297,7 +297,7 @@ async function modelleUret(kategori, adaylar) {
   const temel = {
     model: MODEL,
     temperature: 0.2,
-    max_tokens: 1400,
+    max_tokens: 2500, // gpt-oss akıl yürütme token'ları da bu sınırdan harcar
     messages: [
       { role: "system", content: SISTEM },
       { role: "user", content: istem(kategori, adaylar) },
@@ -435,6 +435,14 @@ async function main() {
       }
     }
     if (!haberler.length) haberler = yedekUret(adaylar);
+    else if (haberler.length < SINIR) {
+      // Model az satır verdiyse listeyi ham başlıklarla tamamla (aynı adres tekrar etmesin).
+      const var_ = new Set(haberler.map((h) => h.url));
+      for (const y of yedekUret(adaylar.slice(0, 14))) {
+        if (haberler.length >= SINIR) break;
+        if (!var_.has(y.url)) haberler.push(y);
+      }
+    }
     console.log(`  ${kategori.anahtar}: ${adaylar.length} aday → ${haberler.length} satır [${yol}]`);
     sonuclar.push({ ...kategori, haberler });
   }

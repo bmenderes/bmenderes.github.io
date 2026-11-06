@@ -1,8 +1,10 @@
 name: haberler
 
 # Günlük haber toplama — yerel bilgisayardan bağımsız, GitHub sunucusunda çalışır.
-# Zamanlama kapalı: az haber üretme sorunu çözülünce yeniden açılacak (schedule / cron: "0 4 * * *" = 07:00 Türkiye).
+# 04:00 UTC = 07:00 Türkiye saati. GitHub yoğun saatlerde 5-30 dakika geciktirebilir.
 on:
+  schedule:
+    - cron: "0 4 * * *"
   workflow_dispatch: {} # Actions sekmesinden "Run workflow" ile elle de çalıştırılabilir
 
 permissions:
@@ -24,14 +26,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-
-      - name: Groq model listesi (geçici, yalnızca adlar)
-        continue-on-error: true
-        env:
-          K: ${{ secrets.GORQ_API_KEY }}
-        run: |
-          curl -s -H "Authorization: Bearer $K" https://api.groq.com/openai/v1/models \
-            | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>{try{console.log("GROQ_MODELLER: "+JSON.parse(s).data.map(m=>m.id).sort().join(" | "))}catch(e){console.log("GROQ_LISTE_HATA: "+s.slice(0,200))}})'
 
       - name: Haberleri topla ve dosyaları yaz
         env:

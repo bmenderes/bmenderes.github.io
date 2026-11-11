@@ -1,12 +1,29 @@
-/* Spor manşetleri. Bu dosyayı otomasyon yazar; sayfa bunu okur. */
+/* MANŞET — SPOR. Otomasyon bu dosyayı yeniden yazar; sayfa bunu okur.
+   Biçim:
+   window.MANSET_SPOR = {
+     tarih: "YYYY-AA-GG",
+     baslik: "Spor",
+     mansetler: [ { metin, detay, kaynak, url, tur, guven, dil, yayin_tarihi, dogrulama } ]
+   };
+   - İlk satır büyük manşet, kalanlar liste olarak basılır (en fazla 5 satır gösterilir).
+   - metin  : ana sayfada görünen manşet (tek cümle, ~140 karakter)
+   - detay  : manşete tıklanınca açılan ayrıntı (1-2 cümle, ~220 karakter)
+   - kaynak : kısa kaynak adı (envanterdeki id)
+   - url    : habere git linki, https://
+   - tur    : hizli-haber, teknik-analiz, magazin-kultur, resm-kurum, veri-skor
+   - guven  : bagimsiz
+   - dil    : tr veya en
+   - yayin_tarihi: YYYY-AA-GG
+   - dogrulama: tek-kaynak veya ikinci-kaynak
+*/
 window.MANSET_SPOR = {
-  tarih: "2026-11-10",
+  tarih: "2026-10-29",
   baslik: "Spor",
   mansetler: [
-    { metin: "Fenerbahçe otobüsüne Nisan 2015'teki silahlı saldırı için iddianame kabul edildi.", detay: "İddianame, Nisan 2015'te Trabzon'un Sürmene ilçesinde gerçekleşen silahlı saldırıya ilişkin 2'si tutuklu 5 sanık için düzenlendi.", kaynak: "hurriyet-spor", url: "https://www.hurriyet.com.tr/sporarena/fenerbahce-takim-otobusune-saldiri-iddianamesi-kabul-edildi-43373481", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-10", dogrulama: "tek-kaynak" },
-    { metin: "A Milli Takım antrenmanında yeni teknik direktör Sergen Yalçın'ın hamlesi medyada öne çıktı.", detay: "UEFA Uluslar Ligi'nde Belçika ile karşılaşacak Türkiye A Milli Takımı, yeni teknik direktör Sergen Yalçın'ın antrenmandaki taktik hamlesiyle dikkat topladı.", kaynak: "ntvspor", url: "https://www.ntvspor.net/futbol/galeri-a-milli-takima-sergen-yalcin-dokunusu-antrenmandaki-detay-dikkat-cekti-432810", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-10", dogrulama: "tek-kaynak" },
-    { metin: "Manchester United, Michael Carrick'in görevden ayrılmasının ardından teknik direktör adaylarını netleştirdi.", detay: "Manchester United, son maçlardaki başarısız sonuçların ardından Michael Carrick'in geleceği belirsizliğini sürdürürken, kulüp yönetimi aday listesini netleştirdi.", kaynak: "ntvspor", url: "https://www.ntvspor.net/futbol/galeri-manchester-unitedda-iki-yol-secenegi-var-carrick-sonrasi-adaylar-net-432811", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-10", dogrulama: "tek-kaynak" },
-    { metin: "Castrol, Avrupa Ligi (EuroLeague) ile iki yıllık sponsorluk anlaşması imzalayarak işbirliğini başlattı.", detay: "Castrol, Avrupa Ligi (EuroLeague) organizasyonu ile iki yıllık sponsorluk anlaşması yaparak marka görünürlüğünü artırmayı ve basketbolun gelişimine katkı sağlamayı hedefliyor.", kaynak: "aa-spor", url: "https://www.aa.com.tr/tr/spor/castrol-ile-avrupa-ligi-arasinda-2-yillik-isbirligi-anlasmasi-yapildi/4119322", tur: "resmi-kurum", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-10", dogrulama: "tek-kaynak" },
-    { metin: "Türkiye Futbol Federasyonu, Süper Lig ve 1. Lig'de \"Çoklu Top Sistemi\"nin uygulanacağını resmen duyurdu.", detay: "TFF, Trendyol Süper Lig ve Trendyol 1. Lig'de 2027 sezonundan itibaren \"Çoklu Top Sistemi\"ni devreye alacağını resmi açıklama ile duyurdu.", kaynak: "aa-spor", url: "https://www.aa.com.tr/tr/spor/super-lig-ve-1-ligde-coklu-top-sistemi-uygulanacak/4119018", tur: "resmi-kurum", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-10", dogrulama: "tek-kaynak" }
+    { metin: "Fenerbahçe'de İsmail Kartal dönemi sona erdi; takım geçici olarak Dirk Kuyt'a emanet edildi.", detay: "Kulüp, yeni teknik direktör belirlenene kadar takımın Kuyt yönetiminde çalışacağını duyurdu.", kaynak: "bbc türkçe", url: "https://www.bbc.com/turkce", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
+    { metin: "Ballon d'Or 2026'yı Harry Kane ve Alexia Putellas kazandı.", detay: "Ödüller, erkekler ve kadınlar kategorilerinde yılın en iyi futbolcularına verildi.", kaynak: "bbc türkçe", url: "https://www.bbc.com/turkce", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
+    { metin: "Süper Lig'de 10'uncu hafta başlıyor; Galatasaray Konya deplasmanında.", detay: "Haftanın programı ve puan durumu, ligde üst sıraları yakından ilgilendiren maçlara işaret ediyor.", kaynak: "birgün", url: "https://www.birgun.net/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
+    { metin: "Derbi biter bitmez kavga çıktı: İki futbolcuya kırmızı kart.", detay: "Maç sonrası yaşanan gerginlik, disiplin kuruluna taşınabilir.", kaynak: "diken", url: "https://www.diken.com.tr/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
+    { metin: "Süper Lig'de puan durumu ve gelecek haftanın programı açıklandı.", detay: "Diken'in derlemesine göre ligde zirve yarışı ve alt sıralar arasındaki puan farkı dikkat çekiyor.", kaynak: "diken", url: "https://www.diken.com.tr/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" }
   ]
 };

@@ -1,12 +1,29 @@
-/* Siyaset manşetleri. Bu dosyayı otomasyon yazar; sayfa bunu okur. */
+/* MANŞET — SİYASET. Otomasyon bu dosyayı yeniden yazar; sayfa bunu okur.
+   Biçim:
+   window.MANSET_SIYASET = {
+     tarih: "YYYY-AA-GG",
+     baslik: "Siyaset",
+     mansetler: [ { metin, detay, kaynak, url, tur, guven, dil, yayin_tarihi, dogrulama } ]
+   };
+   - İlk satır büyük manşet, kalanlar liste olarak basılır (en fazla 5 satır gösterilir).
+   - metin  : ana sayfada görünen manşet (tek cümle, ~140 karakter)
+   - detay  : manşete tıklanınca açılan ayrıntı (1-2 cümle, ~220 karakter)
+   - kaynak : kısa kaynak adı (envanterdeki id)
+   - url    : habere git linki, https://
+   - tur    : hizli-haber, teknik-analiz, sektor-ekonomi, arastirma, resm-kurum, veri-skor
+   - guven  : bagimsiz veya uretici
+   - dil    : tr veya en
+   - yayin_tarihi: YYYY-AA-GG
+   - dogrulama: tek-kaynak veya ikinci-kaynak
+*/
 window.MANSET_SIYASET = {
-  tarih: "2026-11-12",
+  tarih: "2026-10-29",
   baslik: "Siyaset",
   mansetler: [
-    { metin: "KKTC Başbakanı Üstel, Türkiye'nin acısını kendi acısı olarak değerlendirdi.", detay: "Malatya'da askeri helikopterin düşmesi sonucu dört asker şehit olurken, Üstel bu kaybı Türkiye ile paylaştığını belirtti.", kaynak: "sozcu", url: "https://www.sozcu.com.tr/kktc-basbakani-ustel-turkiye-nin-acisi-bizim-de-acimizdir-p380771", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-12", dogrulama: "tek-kaynak" },
-    { metin: "Emine Erdoğan, BM Kalkınma Programı Başkanı De Croo ile bir görüşme gerçekleştirdi.", detay: "Görüşmede sürdürülebilir kalkınma ve çevre politikaları üzerine ortak adımlar konuşuldu.", kaynak: "aa", url: "https://www.aa.com.tr/tr/gundem/emine-erdogan-bm-kalkinma-programi-baskani-de-croo-ile-gorustu/4123336", tur: "resmi-kurum", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-12", dogrulama: "tek-kaynak" },
-    { metin: "Emine Erdoğan, IGO Genel Direktörü Amy Pope ile göç konularını görüşmek üzere bir araya geldi.", detay: "Toplantıda Türkiye'nin göç politikaları ve uluslararası iş birliği fırsatları ele alındı.", kaynak: "aa", url: "https://www.aa.com.tr/tr/gundem/emine-erdogan-uluslararasi-goc-orgutu-genel-direktoru-pope-ile-gorustu/4123325", tur: "resmi-kurum", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-12", dogrulama: "tek-kaynak" },
-    { metin: "Cenk Yiğiter, cumhurbaşkanına hakaret suçlaması nedeniyle Ankara Açık Cezaevi'ne gönderildi.", detay: "Mahkeme, Yiğiter'e hapis cezası vererek infazın başlamasına karar verdi.", kaynak: "cumhuriyet", url: "https://www.cumhuriyet.com.tr/turkiye/akademisyen-ve-avukat-cenk-yigiter-cumhurbaskanina-hakaret-suclamasiyla-cezaevine-girdi-2555727", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-12", dogrulama: "tek-kaynak" },
-    { metin: "İBB Başkanı Ekrem İmamoğlu, 19 Mart'ı sivil darbe olarak nitelendirip 602 gündür tutuklu olduğunu söyledi.", detay: "İmamoğlu, adaletin hâlâ bu salonda gerçekleşmediğini vurguladı.", kaynak: "kisadalga", url: "https://kisadalga.net/haber/gundem/ibb-davasi-ekrem-imamoglu-19-mart-darbedir-602-gundur-tutsagiz-adalet-bu-salonda-degil-141592", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-12", dogrulama: "tek-kaynak" }
+    { metin: "Özgür Özel: Fon soruşturmasında 60'a yakın AKP'li vekil ya da yakınının adı geçiyor, Erdoğan listeyi açıklasın.", detay: "Özel, 'AKP içinde güç odaklarının çatışması var' diyerek fon krizinin iktidar içi bir hesaplaşmaya dönüştüğünü savundu.", kaynak: "kısa dalga", url: "https://kisadalga.net/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
+    { metin: "Erdoğan'ın 29 Ekim mesajı: 'Türkiye Yüzyılı' hedefi yinelendi.", detay: "Erdoğan mesajında Cumhuriyet'in 103. yılında birlik ve beraberlik vurgusu yaptı, Türkiye Yüzyılı programını öne çıkardı.", kaynak: "birgün", url: "https://www.birgun.net/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
+    { metin: "Bakırköy Belediyesi'ne operasyon: Beş başkan yardımcısı dahil 62-68 kişi hakkında gözaltı kararı.", detay: "Operasyon kapsamında belediyede aramalar yapıldı. CHP, soruşturmayı siyasi gerekçeli olarak nitelendirdi.", kaynak: "bbc türkçe", url: "https://www.bbc.com/turkce", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
+    { metin: "Mustafa Sarıgül, YENİ Parti üyeliğini 'askıya aldı'; suçlamalar sürüyor.", detay: "Sarıgül'ün eski koruması, vekili cinsel saldırıyla suçladı. Soruşturma kapsamındaki ifadelerin sızdırılması tartışma yarattı.", kaynak: "bianet", url: "https://bianet.org/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "ikinci-kaynak" },
+    { metin: "Fon soruşturmasında eski AKP milletvekili Ertan Aydın yeniden gözaltına alınıp tutuklandı.", detay: "Aydın'ın daha önce de gözaltına alındığı soruşturmada tutuklama kararı verildi.", kaynak: "bbc türkçe", url: "https://www.bbc.com/turkce", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" }
   ]
 };

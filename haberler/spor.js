@@ -1,29 +1,12 @@
-/* MANŞET — SPOR. Otomasyon bu dosyayı yeniden yazar; sayfa bunu okur.
-   Biçim:
-   window.MANSET_SPOR = {
-     tarih: "YYYY-AA-GG",
-     baslik: "Spor",
-     mansetler: [ { metin, detay, kaynak, url, tur, guven, dil, yayin_tarihi, dogrulama } ]
-   };
-   - İlk satır büyük manşet, kalanlar liste olarak basılır (en fazla 5 satır gösterilir).
-   - metin  : ana sayfada görünen manşet (tek cümle, ~140 karakter)
-   - detay  : manşete tıklanınca açılan ayrıntı (1-2 cümle, ~220 karakter)
-   - kaynak : kısa kaynak adı (envanterdeki id)
-   - url    : habere git linki, https://
-   - tur    : hizli-haber, teknik-analiz, magazin-kultur, resm-kurum, veri-skor
-   - guven  : bagimsiz
-   - dil    : tr veya en
-   - yayin_tarihi: YYYY-AA-GG
-   - dogrulama: tek-kaynak veya ikinci-kaynak
-*/
+/* Spor manşetleri. Bu dosyayı otomasyon yazar; sayfa bunu okur. */
 window.MANSET_SPOR = {
-  tarih: "2026-10-29",
+  tarih: "2026-11-13",
   baslik: "Spor",
   mansetler: [
-    { metin: "Fenerbahçe'de İsmail Kartal dönemi sona erdi; takım geçici olarak Dirk Kuyt'a emanet edildi.", detay: "Kulüp, yeni teknik direktör belirlenene kadar takımın Kuyt yönetiminde çalışacağını duyurdu.", kaynak: "bbc türkçe", url: "https://www.bbc.com/turkce", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
-    { metin: "Ballon d'Or 2026'yı Harry Kane ve Alexia Putellas kazandı.", detay: "Ödüller, erkekler ve kadınlar kategorilerinde yılın en iyi futbolcularına verildi.", kaynak: "bbc türkçe", url: "https://www.bbc.com/turkce", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
-    { metin: "Süper Lig'de 10'uncu hafta başlıyor; Galatasaray Konya deplasmanında.", detay: "Haftanın programı ve puan durumu, ligde üst sıraları yakından ilgilendiren maçlara işaret ediyor.", kaynak: "birgün", url: "https://www.birgun.net/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
-    { metin: "Derbi biter bitmez kavga çıktı: İki futbolcuya kırmızı kart.", detay: "Maç sonrası yaşanan gerginlik, disiplin kuruluna taşınabilir.", kaynak: "diken", url: "https://www.diken.com.tr/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
-    { metin: "Süper Lig'de puan durumu ve gelecek haftanın programı açıklandı.", detay: "Diken'in derlemesine göre ligde zirve yarışı ve alt sıralar arasındaki puan farkı dikkat çekiyor.", kaynak: "diken", url: "https://www.diken.com.tr/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" }
+    { metin: "TFF, 14-15 Kasım'da tüm profesyonel maçların öncesinde saygı duruşu yapılacağını duyurdu.", detay: "Türkiye Futbol Federasyonu, bu tarihlerde oynanacak lig ve kupa maçları öncesinde bir dakikalık saygı duruşu kararı aldı.", kaynak: "aa-spor", url: "https://www.aa.com.tr/tr/spor/tffden-bu-hafta-yapilacak-profesyonel-maclar-oncesi-saygi-durusu-karari/4124377", tur: "resmi-kurum", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-13", dogrulama: "tek-kaynak" },
+    { metin: "Baltimore Ravens quarterback Lamar Jackson, kırık ve çıkık başparmak nedeniyle 6-10 hafta sahalardan uzak kalacak.", detay: "Jackson, tedavi sürecinde olacak ve sezonun büyük bir bölümünü kaçırması bekleniyor.", kaynak: "sky-sports", url: "https://www.skysports.com/nfl/news/12040/13611953/nfl-baltimore-ravens-quarterback-lamar-jackson-to-miss-up-to-10-weeks-with-broken-and-dislocated-thumb", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-13", dogrulama: "tek-kaynak" },
+    { metin: "Fenerbahçe, Nathan Ake'nin sağ alt adalesinde yaralanma tespit edildiğini ve MR sonucunun açıklandığını bildirdi.", detay: "Ake, bireysel çalışmaları sırasında ağrı hissedince kontrol edildi, sakatlığının ciddiyeti henüz netleşmedi.", kaynak: "ntvspor", url: "https://www.ntvspor.net/futbol/galeri-fenerbahcede-nathan-ake-soku-yasaniyor-yeniden-sakatlandi-mr-sonucu-aciklandi-432959", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-13", dogrulama: "tek-kaynak" },
+    { metin: "İngiltere, Eddie Jones'un Japonya karşı olası sürpriz iddiasına yanıt vererek takımının hazır olduğunu belirtti.", detay: "Jones'un takımı zayıf gösteren açıklamalarına karşı İngiltere, savunma ve hücum planlarını güçlendirdiğini duyurdu.", kaynak: "sky-sports", url: "https://www.skysports.com/rugby-union/news/12040/13611936/england-respond-to-eddie-jones-mind-games-ahead-of-japan-match-in-nations-championship", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-13", dogrulama: "tek-kaynak" },
+    { metin: "Eski İngiltere propu Mako Vunipola, Leicester Tigers'ta koçluk yaparak emeklilik sonrası kariyerine yöneldi.", detay: "Vunipola, oyunculuk deneyimini gençlere aktarmak için antrenörlük rolünü kabul etti.", kaynak: "bbc-sport", url: "https://www.bbc.co.uk/sport/rugby-union/articles/cj7526lz35x9o?at_medium=RSS&at_campaign=rss", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-13", dogrulama: "tek-kaynak" }
   ]
 };

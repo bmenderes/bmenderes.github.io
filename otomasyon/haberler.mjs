@@ -259,14 +259,20 @@ Kurallar:
 - En önemli haber ilk satırda olsun.`;
 
 function istem(kategori, adaylar) {
-  // Ücretsiz katmanın dakikalık token sınırı için istemi küçük tut: en fazla 40 aday, kısa özet.
-  const satirlar = adaylar.slice(0, 40).map((h, i) =>
+  // Ücretsiz katmanın dakikalık token sınırı (8.000 TPM) için istemi küçük tut: en fazla 24 aday.
+  const satirlar = adaylar.slice(0, 24).map((h, i) =>
     `${i + 1}. kaynak=${h.kaynak} | tur=${h.tur} | guven=${h.guven} | dil=${h.dil} | tarih=${gun(h.tarih?.toISOString())} | url=${h.url}\n   baslik: ${h.baslik}\n   ozet: ${String(h.ozet || "(yok)").slice(0, 150)}`
   );
   return `KATEGORI: ${kategori}\nEn fazla ${SINIR} satır yaz.\n\nADAYLAR:\n${satirlar.join("\n")}`;
 }
 
+let sonModelZamani = 0;
+
 async function modelCagir(govde) {
+  // Groq ücretsiz katmanı dakikada 8.000 token kabul ediyor; çağrıları 60 sn arayla yap.
+  const bekle = 60000 - (Date.now() - sonModelZamani);
+  if (bekle > 0) await new Promise((r) => setTimeout(r, bekle));
+  sonModelZamani = Date.now();
   const yanit = await fetch(MODEL_URL, {
     method: "POST",
     headers: {

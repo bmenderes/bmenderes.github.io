@@ -1,10 +1,11 @@
 name: haberler
 
 # Günlük haber toplama — yerel bilgisayardan bağımsız, GitHub sunucusunda çalışır.
-# GEÇİCİ TEST: 10:30 UTC = 13:30 Türkiye saati. Normal: "0 4 * * *" (07:00).
-# GitHub yoğun saatlerde 5-30 dakika geciktirebilir.
+# İki zamanlama var: 04:00 UTC (07:00 Türkiye) hedef, 10:30 UTC (13:30 Türkiye) yedek.
+# GitHub yoğun saatlerde zamanlanmış işleri saatlerce geciktirebiliyor; bu yüzden günde iki kez denenir.
 on:
   schedule:
+    - cron: "0 4 * * *"
     - cron: "30 10 * * *"
   workflow_dispatch: {} # Actions sekmesinden "Run workflow" ile elle de çalıştırılabilir
 
@@ -33,6 +34,7 @@ jobs:
           MODEL_TOKEN: ${{ secrets.GORQ_API_KEY }} # yoksa model çağrılmaz, ham başlıklar yazılır
           MODEL_URL: https://api.groq.com/openai/v1/chat/completions # GitHub Models 30 Temmuz 2026'da kapandı
           MODEL: openai/gpt-oss-120b
+          SINIR: "20" # kategori başına satır (en fazla 30); sayfa hepsini basar
         run: node otomasyon/haberler.mjs
 
       - name: Değişiklikleri yayınla

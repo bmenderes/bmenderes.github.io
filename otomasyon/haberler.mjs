@@ -16,7 +16,7 @@
      MODEL_URL    varsayılan https://api.mistral.ai/v1/chat/completions
      MODEL        varsayılan mistral-small-latest
      SAAT         kaç saat geriye bakılacak (varsayılan 36)
-     SINIR        kategori başına satır sayısı (varsayılan 5, en fazla 5)
+     SINIR        kategori başına satır sayısı (varsayılan 20, en fazla 30)
 */
 
 import { writeFileSync, mkdirSync, existsSync } from "node:fs";
@@ -32,7 +32,7 @@ const KOK = KOK_ARG >= 0 && ARG[KOK_ARG + 1] ? resolve(ARG[KOK_ARG + 1]) : resol
 const CIKTI = join(KOK, "haberler");
 
 const SAAT = Number(process.env.SAAT || 36);
-const SINIR = Math.min(5, Math.max(1, Number(process.env.SINIR || 5)));
+const SINIR = Math.min(30, Math.max(1, Number(process.env.SINIR || 20)));
 const MODEL = process.env.MODEL || "mistral-small-latest";
 const MODEL_URL = process.env.MODEL_URL || "https://api.mistral.ai/v1/chat/completions";
 const MODEL_TOKEN = process.env.MODEL_TOKEN || "";
@@ -203,8 +203,8 @@ function benzer(a, b) {
   return ortak / Math.min(A.size, B.size) >= 0.6;
 }
 
-// Kaynak başına en çok 3 aday; sonra tarihe göre sırala, toplamı sınırla.
-function adaySec(haberler, toplam = 40) {
+// Kaynak başına en çok 6 aday; sonra tarihe göre sırala, toplamı sınırla.
+function adaySec(haberler, toplam = 60) {
   const eski = esik();
   const gruplar = new Map();
   for (const h of haberler) {
@@ -217,7 +217,7 @@ function adaySec(haberler, toplam = 40) {
   const secilen = [];
   for (const liste of gruplar.values()) {
     liste.sort((a, b) => (b.tarih?.getTime() || 0) - (a.tarih?.getTime() || 0));
-    adaylar.push(...liste.slice(0, 3));
+    adaylar.push(...liste.slice(0, 6));
   }
   adaylar.sort((a, b) => (b.tarih?.getTime() || 0) - (a.tarih?.getTime() || 0));
   const tekil = [];
@@ -259,8 +259,8 @@ Kurallar:
 - En önemli haber ilk satırda olsun.`;
 
 function istem(kategori, adaylar) {
-  // Ücretsiz katmanın dakikalık token sınırı için istemi küçük tut: en fazla 14 aday, kısa özet.
-  const satirlar = adaylar.slice(0, 14).map((h, i) =>
+  // Ücretsiz katmanın dakikalık token sınırı için istemi küçük tut: en fazla 40 aday, kısa özet.
+  const satirlar = adaylar.slice(0, 40).map((h, i) =>
     `${i + 1}. kaynak=${h.kaynak} | tur=${h.tur} | guven=${h.guven} | dil=${h.dil} | tarih=${gun(h.tarih?.toISOString())} | url=${h.url}\n   baslik: ${h.baslik}\n   ozet: ${String(h.ozet || "(yok)").slice(0, 150)}`
   );
   return `KATEGORI: ${kategori}\nEn fazla ${SINIR} satır yaz.\n\nADAYLAR:\n${satirlar.join("\n")}`;
@@ -297,7 +297,7 @@ async function modelleUret(kategori, adaylar) {
   const temel = {
     model: MODEL,
     temperature: 0.2,
-    max_tokens: 2500, // gpt-oss akıl yürütme token'ları da bu sınırdan harcar
+    max_tokens: 7000, // gpt-oss akıl yürütme token'ları da bu sınırdan harcar; çok satır için yüksek tutuldu
     messages: [
       { role: "system", content: SISTEM },
       { role: "user", content: istem(kategori, adaylar) },
@@ -344,6 +344,7 @@ function yedekUret(adaylar) {
 // ---------------------------------------------------------------- yazma
 function jsSatir(h) {
   const alanlar = [
+    h.kategori ? `kategori: ${JSON.stringify(h.kategori)}` : null,
     `metin: ${JSON.stringify(h.metin)}`,
     h.detay ? `detay: ${JSON.stringify(h.detay)}` : null,
     `kaynak: ${JSON.stringify(h.kaynak)}`,
@@ -373,7 +374,7 @@ ${govde}
 function ozetYaz(kategoriler, tarih) {
   const satirlar = [];
   for (const k of kategoriler) {
-    for (const h of k.haberler) satirlar.push({ kategori: k.baslik, ...h });
+    for (const h of k.haberler) satirlar.push({ ...h, kategori: k.baslik });
   }
   const govde = satirlar.map(jsSatir).join(",\n");
   return `/* Günlük özet. Bu dosyayı otomasyon yazar; sayfa bunu okur. */
@@ -438,7 +439,7 @@ async function main() {
     else if (haberler.length < SINIR) {
       // Model az satır verdiyse listeyi ham başlıklarla tamamla (aynı adres tekrar etmesin).
       const var_ = new Set(haberler.map((h) => h.url));
-      for (const y of yedekUret(adaylar.slice(0, 14))) {
+      for (const y of yedekUret(adaylar.slice(0, 40))) {
         if (haberler.length >= SINIR) break;
         if (!var_.has(y.url)) haberler.push(y);
       }

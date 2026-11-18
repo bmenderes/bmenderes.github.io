@@ -1,79 +1,27 @@
-/* MANŞET — TEKNOLOJİ. Otomasyon bu dosyayı yeniden yazar; sayfa bunu okur.
-   Biçim:
-   window.MANSET_TEKNOLOJI = {
-     tarih: "YYYY-AA-GG",
-     baslik: "Teknoloji",
-     mansetler: [ { metin, detay, kaynak, url, tur, guven, dil, yayin_tarihi, dogrulama } ]
-   };
-   - İlk satır büyük manşet, kalanlar liste olarak basılır (en fazla 5 satır gösterilir).
-   - metin  : ana sayfada görünen manşet (tek cümle, ~140 karakter)
-   - detay  : manşete tıklanınca açılan ayrıntı (1-2 cümle, ~220 karakter)
-   - kaynak : kısa kaynak adı (envanterdeki id)
-   - url    : habere git linki, https://
-   - tur    : hizli-haber, teknik-analiz, sektor-ekonomi, arastirma
-   - guven  : bagimsiz veya uretici
-   - dil    : tr veya en
-   - yayin_tarihi: YYYY-AA-GG
-   - dogrulama: tek-kaynak veya ikinci-kaynak
-*/
+/* Teknoloji manşetleri. Bu dosyayı otomasyon yazar; sayfa bunu okur. */
 window.MANSET_TEKNOLOJI = {
-  tarih: "2026-10-30",
+  tarih: "2026-11-18",
   baslik: "Teknoloji",
   mansetler: [
-    {
-      metin: "Binance, kripto tarihinin en büyük soygununda 6,3 milyar dolar çalındığını açıkladı.",
-      detay: "Borsa para çekme işlemlerini durdurdu. Olay TechCrunch, The Verge ve Bloomberg'in ana sayfalarında yer alıyor.",
-      kaynak: "techcrunch",
-      url: "https://techcrunch.com/",
-      tur: "hizli-haber",
-      guven: "bagimsiz",
-      dil: "en",
-      yayin_tarihi: "2026-10-30",
-      dogrulama: "ikinci-kaynak"
-    },
-    {
-      metin: "Anthropic, halka arz için ABD SEC'e S-1 kaydı sundu.",
-      detay: "Şirket, A sınıfı hisselerinin halka arzı için kayıt beyanını duyurdu. Bloomberg ve The Decoder da konuyu işliyor.",
-      kaynak: "anthropic",
-      url: "https://www.anthropic.com/news",
-      tur: "resmi-duyuru",
-      guven: "uretici",
-      dil: "en",
-      yayin_tarihi: "2026-10-30",
-      dogrulama: "ikinci-kaynak"
-    },
-    {
-      metin: "Google DeepMind, Argon'dan iki hafta sonra Gemini 4 Carbon modelini yayınladı.",
-      detay: "Şirket Gemini 4 Carbon'u yeni öncü modeli olarak duyurdu; The Decoder'a göre Argon'a göre genel kazanımlar sunuyor.",
-      kaynak: "deepmind",
-      url: "https://deepmind.google/discover/blog/",
-      tur: "arastirma",
-      guven: "uretici",
-      dil: "en",
-      yayin_tarihi: "2026-10-30",
-      dogrulama: "ikinci-kaynak"
-    },
-    {
-      metin: "DoorDash, Instacart'ı 17 milyar dolara satın alacak.",
-      detay: "TechCrunch'ın bildirdiği anlaşma, yemek ve market teslimat sektöründe büyük bir birleşme anlamına geliyor.",
-      kaynak: "techcrunch",
-      url: "https://techcrunch.com/",
-      tur: "hizli-haber",
-      guven: "bagimsiz",
-      dil: "en",
-      yayin_tarihi: "2026-10-30",
-      dogrulama: "tek-kaynak"
-    },
-    {
-      metin: "Mistral, kodlama odaklı Le Chonk modelini yayınladı; model Hugging Face'te de yer alıyor.",
-      detay: "The Decoder, modelin güçlü olduğunu ancak genel olarak Çinli rakiplerin gerisinde kaldığını yazıyor. Hugging Face blogu da Mistral Large 4 olarak duyurdu.",
-      kaynak: "decoder",
-      url: "https://the-decoder.com/",
-      tur: "hizli-haber",
-      guven: "bagimsiz",
-      dil: "en",
-      yayin_tarihi: "2026-10-29",
-      dogrulama: "ikinci-kaynak"
-    }
+    { metin: "Voyager 1, uzayda bir ışık günü uzaklığa ulaştı.", detay: "49 yıl süren yolculuğun ardından uzay sondası, ışık hızının bir gününe eşit mesafeye ulaştığını duyurdu.", kaynak: "ars", url: "https://arstechnica.com/space/2026/11/voyager-1-at-one-light-day-historian-revisits-golden-records-forgotten-details/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Unsiloed AI, belgeleri yapay zekâ ajanları için kullanılabilir kılmak amacıyla 7,5 milyon dolar topladı.", detay: "Yedi kişilik ekip, büyük teknoloji devleri ve niş girişimlerle rekabet etmeyi hedefliyor.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/18/felicis-leads-7-5m-bet-on-unsiloed-ai-to-make-enterprise-documents-usable-by-ai-agents/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Nubia Redmagic 12 Pro, son derece hızlı ancak bazı kusurlara sahip bir akıllı telefon olarak değerlendirildi.", detay: "Büyük ekran ve uzun pil ömrü öne çıkarken, cihazda bazı performans ve yazılım sorunları bulunuyor.", kaynak: "wired", url: "https://www.wired.com/review/nubia-redmagic-12-pro/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "India’nın Humyn Labs, ABD robotik firmalarına veri sağlamak için 47 milyon dolar topladı.", detay: "Şirket, ABD pazarından gelirinin %90’ını elde ederken, rakipleri arasında Mecka AI ve XDOF yer alıyor.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/18/accel-backs-indias-humyn-labs-to-supply-training-data-needed-by-u-s-robotics-ai-developers/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Suno, müzikle eşleşen AI‑oluşturulmuş görseller ve videolar sunan Visuals özelliğini tanıttı.", detay: "Yeni özellik, kullanıcıların şarkılarına otomatik olarak görüntü ve kısa video eklemelerini sağlıyor.", kaynak: "verge", url: "https://www.theverge.com/ai-artificial-intelligence/1036415/suno-visuals-ai-generated-video-images-feature", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Çin, batarya grafitinde hâkimiyeti sürdürürken, Molten Industries Oakland’da yeni bir fabrika kurarak bu tekeli kırmayı hedefliyor.", detay: "Şirket, batarya üreticilerine daha ucuz ve sürdürülebilir grafit sağlamak istiyor.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/18/china-dominates-battery-graphite-but-this-startup-could-break-the-monopoly/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Grand Theft Auto VI, beklentileri karşılayarak serinin en iyi oyun deneyimini sundu.", detay: "13 yıl aradan sonra çıkan oyun, açık dünya tasarımı ve hikaye derinliğiyle eleştirmenlerden tam not aldı.", kaynak: "verge", url: "https://www.theverge.com/games/1035801/grand-theft-auto-6-review", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Germ DM, şifreli mesajlaşma platformunu Android cihazlara taşıdı.", detay: "Uygulama, telefon numarası yerine yanıcı kartlar kullanarak sohbetleri izole ediyor.", kaynak: "wired", url: "https://www.wired.com/story/germ-dm-is-now-available-on-android/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "OSMO AI, insan koku duyusuna eşdeğer bir yapay burun geliştirdiğini duyurdu.", detay: "Newark Havalimanı yakınlarındaki laboratuvarda 30 uzman, dünya üzerindeki tüm kokuları analiz ediyor.", kaynak: "mit-tr", url: "https://www.technologyreview.com/2026/11/18/1148816/smell-startup-osmo-ai-nose-good-as-humans/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Nvidia’nın özel yatırımları, son dokuz ayda 65 milyar dolara yükseldi.", detay: "Jensen Huang’un agresif yatırım stratejisi, şirketin değerini üç katına çıkardı.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/17/nvidias-startup-stakes-ballooned-to-65b-but-huangs-exit-puts-future-deals-in-doubt/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
+    { metin: "Nvidia, önümüzdeki çeyrekte gelirinin artmaya devam edeceğini açıkladı.", detay: "Şirket, kurucu CEO Jensen Huang’un ayrılığının ardından da büyüme trendini sürdüreceğini belirtti.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/17/nvidia-promises-that-revenue-will-keep-soaring-for-now/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
+    { metin: "Atomico, Avrupa’nın kendi başarı hikâyelerini sahiplenmesi gerektiğini vurguladı.", detay: "VC firması, kıtanın dünyanın en hızlı büyüyen şirketlerine ev sahipliği yaptığını hatırlattı.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/17/stripe-backer-atomico-calls-for-europe-to-own-its-success-stories/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
+    { metin: "Le Groupe Figaro ve OpenAI, Figaro haberlerini ChatGPT’de sunmak için ortaklık kurdu.", detay: "Ortaklık, özetler ve alıntılar aracılığıyla Figaro içeriklerine erişim sağlayacak.", kaynak: "openai", url: "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership", tur: "resmi-duyuru", guven: "uretici", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Microsoft CEO’su Satya Nadella, kendisini AGI‑pilled olarak nitelendirdi.", detay: "Nadella, yapay zekânın ekonomi ve toplum yapısını kökten değiştirebileceğine inanıyor.", kaynak: "verge", url: "https://www.theverge.com/tech/1036111/satya-nadella-says-hes-agi-pilled-now", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
+    { metin: "San Diego, 500’den fazla Flock kamerası ve akıllı sokak lambasını kapatıyor.", detay: "Şehir, üç yıl önce başlatılan akıllı altyapı projesini iptal etti.", kaynak: "ars", url: "https://arstechnica.com/tech-policy/2026/11/san-diego-dumps-both-flock-cameras-and-smart-streetlights/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
+    { metin: "Yeni bir uydu şirketi, Avrupa’nın kritik uzay altyapısı ihtiyacını karşılamak için roket talep ediyor.", detay: "Şirket, hükümetlerin uzay kontrolü gereksinimlerine odaklanıyor.", kaynak: "ars", url: "https://arstechnica.com/space/2026/11/yet-another-satellite-company-is-jockeying-for-a-rocket-but-this-one-makes-sense/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
+    { metin: "Yüzlerce web sitesi, Optimizely üzerinden zararlı kod dağıtarak kripto hırsızlığı ve iOS açıkları sunuyor.", detay: "Bu saldırı, ziyaretçilere çeşitli kötü amaçlı yazılımlar enjekte ediyor.", kaynak: "ars", url: "https://arstechnica.com/security/2026/11/malicious-code-delivered-through-optimizely-hits-visitors-to-hundreds-of-sites/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
+    { metin: "Microsoft, Copilot’ı iş dünyasının yeni işletim sistemi olarak tanıttı.", detay: "Word, Excel ve PowerPoint artık Copilot içinde çalışıyor; sürekli aktif ajanlar da yakında geliyor.", kaynak: "ars", url: "https://arstechnica.com/gadgets/2026/11/microsoft-calls-copilot-the-new-os-for-work-at-ignite-keynote/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "NASA’s Voyager 1 probe is now one light-day away", kaynak: "verge", url: "https://www.theverge.com/science/1036431/nasa-voyager-1-light-day-milestone", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "The Best Gifts Under $25 for Everyone on Your List (2026)", kaynak: "wired", url: "https://www.wired.com/story/best-gifts-under-25-2026/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" }
   ]
 };

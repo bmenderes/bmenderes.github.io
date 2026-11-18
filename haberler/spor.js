@@ -1,29 +1,27 @@
-/* MANŞET — SPOR. Otomasyon bu dosyayı yeniden yazar; sayfa bunu okur.
-   Biçim:
-   window.MANSET_SPOR = {
-     tarih: "YYYY-AA-GG",
-     baslik: "Spor",
-     mansetler: [ { metin, detay, kaynak, url, tur, guven, dil, yayin_tarihi, dogrulama } ]
-   };
-   - İlk satır büyük manşet, kalanlar liste olarak basılır (en fazla 5 satır gösterilir).
-   - metin  : ana sayfada görünen manşet (tek cümle, ~140 karakter)
-   - detay  : manşete tıklanınca açılan ayrıntı (1-2 cümle, ~220 karakter)
-   - kaynak : kısa kaynak adı (envanterdeki id)
-   - url    : habere git linki, https://
-   - tur    : hizli-haber, teknik-analiz, magazin-kultur, resm-kurum, veri-skor
-   - guven  : bagimsiz
-   - dil    : tr veya en
-   - yayin_tarihi: YYYY-AA-GG
-   - dogrulama: tek-kaynak veya ikinci-kaynak
-*/
+/* Spor manşetleri. Bu dosyayı otomasyon yazar; sayfa bunu okur. */
 window.MANSET_SPOR = {
-  tarih: "2026-10-29",
+  tarih: "2026-11-18",
   baslik: "Spor",
   mansetler: [
-    { metin: "Fenerbahçe'de İsmail Kartal dönemi sona erdi; takım geçici olarak Dirk Kuyt'a emanet edildi.", detay: "Kulüp, yeni teknik direktör belirlenene kadar takımın Kuyt yönetiminde çalışacağını duyurdu.", kaynak: "bbc türkçe", url: "https://www.bbc.com/turkce", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
-    { metin: "Ballon d'Or 2026'yı Harry Kane ve Alexia Putellas kazandı.", detay: "Ödüller, erkekler ve kadınlar kategorilerinde yılın en iyi futbolcularına verildi.", kaynak: "bbc türkçe", url: "https://www.bbc.com/turkce", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
-    { metin: "Süper Lig'de 10'uncu hafta başlıyor; Galatasaray Konya deplasmanında.", detay: "Haftanın programı ve puan durumu, ligde üst sıraları yakından ilgilendiren maçlara işaret ediyor.", kaynak: "birgün", url: "https://www.birgun.net/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
-    { metin: "Derbi biter bitmez kavga çıktı: İki futbolcuya kırmızı kart.", detay: "Maç sonrası yaşanan gerginlik, disiplin kuruluna taşınabilir.", kaynak: "diken", url: "https://www.diken.com.tr/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
-    { metin: "Süper Lig'de puan durumu ve gelecek haftanın programı açıklandı.", detay: "Diken'in derlemesine göre ligde zirve yarışı ve alt sıralar arasındaki puan farkı dikkat çekiyor.", kaynak: "diken", url: "https://www.diken.com.tr/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" }
+    { metin: "Serdal Adalı, Vincenzo Italiano'yla ilgili iddialara son noktayı koydu", kaynak: "ntvspor", url: "https://www.ntvspor.net/futbol/galeri-serdal-adali-vincenzo-italianoyla-ilgili-iddialara-son-noktayi-koydu-433208", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Ve Davinson Sanchez'den milyonlarca Galatasaraylının beklediği açıklama resmen geldi", kaynak: "ntvspor", url: "https://www.ntvspor.net/futbol/galeri-ve-davinson-sanchezden-milyonlarca-galatasaraylinin-bekledigi-aciklama-resmen-geldi-433192", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Okan Buruk'un transferini ısrarla istediği isimden beklenen haber geldi | Sporun manşetleri", kaynak: "ntvspor", url: "https://www.ntvspor.net/futbol/galeri-okan-burukun-transferini-israrla-istedigi-isimden-beklenen-haber-geldi-sporun-mansetleri-433193", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Arda Güler'de beklenen sonunda oldu: Real Madrid resmen duyurdu", kaynak: "ntvspor", url: "https://www.ntvspor.net/futbol/galeri-son-dakika-ve-arda-gulerde-beklenen-sonunda-oldu-real-madrid-resmen-duyurdu-433206", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Beşiktaş'a Premier Lig'den 45 milyon euroluk bomba! Gözü kulağı transfer için gelecek yanıtta", kaynak: "ntvspor", url: "https://www.ntvspor.net/futbol/galeri-besiktasa-premier-ligden-45-milyon-euroluk-bomba-gozu-kulagi-transfer-icin-gelecek-yanitta-433195", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Fenerbahçe'de karar çıktı! İki isme yeni sözleşme", kaynak: "ntvspor", url: "https://www.ntvspor.net/futbol/galeri-ve-fenerbahcede-flas-karar-cikti-iki-isim-kalmak-istiyoruz-dedigi-saniye-imzalar-atilacak-433196", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Kylian Mbappe’den Arda Güler paylaşımı: 'Bu gece daha iyi uyuyacağım!'", kaynak: "hurriyet-spor", url: "https://www.hurriyet.com.tr/sporarena/kylian-mbappeden-arda-guler-paylasimi-bu-gece-daha-iyi-uyuyacagim-43382667", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Kadınlar Şampiyonlar Ligi’nde beklenti gollü maçlar! İşte Misli’den Günün Tüyoları", kaynak: "hurriyet-spor", url: "https://www.hurriyet.com.tr/sporarena/kadinlar-sampiyonlar-liginde-beklenti-gollu-maclar-iste-misliden-gunun-tuyolari-43382666", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "İstanbul'da 9 koşuluk program! İşte Misli'den günün altılı analizi...", kaynak: "hurriyet-spor", url: "https://www.hurriyet.com.tr/sporarena/istanbulda-9-kosuluk-program-iste-misliden-gunun-altili-analizi-43382658", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "61. Cumhurbaşkanlığı Türkiye Bisiklet Turu, 190 ülke ve bölgede yayınlandı", kaynak: "aa-spor", url: "https://www.aa.com.tr/tr/spor/61-cumhurbaskanligi-turkiye-bisiklet-turu-190-ulke-ve-bolgede-yayinlandi/4129286", tur: "resmi-kurum", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "World Cup 2030 Early Power Rankings: Spain still No. 1? No USMNT in top 15", kaynak: "espn", url: "https://www.espn.com/soccer/story/_/id/50506499/soccer-world-cup-power-rankings-usmnt-spain", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Man Utd expected to back Poch in January transfer window", kaynak: "sky-sports", url: "https://www.skysports.com/football/news/12040/13613260/man-utd-transfer-news-calvin-bassey-and-jarrad-branthwaite-among-targets-with-mauricio-pochettino-set-to-be-backed-in-january", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Your PL club's 'Unfinished Business' revealed ahead of January window", kaynak: "sky-sports", url: "https://www.skysports.com/football/news/12040/13613290/transfer-news-your-premier-league-clubs-unfinished-business-ahead-of-january-window", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "England should be 'proud' after ODI series win but 'work to do' for Australia", kaynak: "sky-sports", url: "https://www.skysports.com/cricket/live-blog/12040/13612700/australia-vs-england-third-odi-live-latest-cricket-score-and-updates-as-harry-brooks-side-face-mitch-marshs-team-in-series-decider-at-hobart", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Serdal Adalı'dan transfer mesajı: 'Gider alırız'", kaynak: "sozcu-spor", url: "https://www.sozcu.com.tr/serdal-adalidan-transfer-mesaji-gider-aliriz-p382475", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Fenerbahçe'nin yıldızına ABD'liler talip oldu", kaynak: "sozcu-spor", url: "https://www.sozcu.com.tr/fenerbahce-nin-yildizina-abd-liler-talip-oldu-p382474", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "The airman whose rugby career has taken off at Tigers", kaynak: "bbc-sport", url: "https://www.bbc.co.uk/sport/rugby-union/articles/cmp3e1q3yjn4o?at_medium=RSS&at_campaign=rss", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Galatasaray'ın eski yıldızı 38 yaşında futbolu bıraktı", kaynak: "sozcu-spor", url: "https://www.sozcu.com.tr/galatasaray-in-eski-yildizi-38-yasinda-futbolu-birakti-p382473", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Torreira 'hayalim' demişti! Galatasaray'a teklif geliyor", kaynak: "hurriyet-spor", url: "https://www.hurriyet.com.tr/sporarena/torreira-hayalim-demisti-galatasaraya-teklif-geliyor-43382587", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Price now fighting to be Wales' first undisputed world champ", kaynak: "bbc-sport", url: "https://www.bbc.co.uk/sport/boxing/articles/c6pw4xyr84yyo?at_medium=RSS&at_campaign=rss", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" }
   ]
 };

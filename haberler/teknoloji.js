@@ -1,27 +1,79 @@
-/* Teknoloji manşetleri. Bu dosyayı otomasyon yazar; sayfa bunu okur. */
+/* MANŞET — TEKNOLOJİ. Otomasyon bu dosyayı yeniden yazar; sayfa bunu okur.
+   Biçim:
+   window.MANSET_TEKNOLOJI = {
+     tarih: "YYYY-AA-GG",
+     baslik: "Teknoloji",
+     mansetler: [ { metin, detay, kaynak, url, tur, guven, dil, yayin_tarihi, dogrulama } ]
+   };
+   - İlk satır büyük manşet, kalanlar liste olarak basılır (en fazla 5 satır gösterilir).
+   - metin  : ana sayfada görünen manşet (tek cümle, ~140 karakter)
+   - detay  : manşete tıklanınca açılan ayrıntı (1-2 cümle, ~220 karakter)
+   - kaynak : kısa kaynak adı (envanterdeki id)
+   - url    : habere git linki, https://
+   - tur    : hizli-haber, teknik-analiz, sektor-ekonomi, arastirma
+   - guven  : bagimsiz veya uretici
+   - dil    : tr veya en
+   - yayin_tarihi: YYYY-AA-GG
+   - dogrulama: tek-kaynak veya ikinci-kaynak
+*/
 window.MANSET_TEKNOLOJI = {
-  tarih: "2026-11-17",
+  tarih: "2026-10-30",
   baslik: "Teknoloji",
   mansetler: [
-    { metin: "Google, Gemini Tasks erişimini genişlettiğini duyurdu.", detay: "Task modu, kullanıcıların aramaları koordine etmesine, web sitelerine giriş yapmasına ve alışverişleri kullanıcı adına gerçekleştirmesine olanak tanıyor.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/17/google-expands-access-to-gemini-tasks-which-can-help-with-calls-purchases/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
-    { metin: "IEEE, yapay zekâ sistemlerine etik entegrasyonunun 10. yılını kutladığını duyurdu.", detay: "Politikacılar, teknologlar ve halk, AI’nın hızlı ilerlemesinin topluma zarar verebileceği konusundaki endişelerini dile getirdi.", kaynak: "ieee", url: "https://spectrum.ieee.org/ieee-ethics-ai-systems", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
-    { metin: "Google, Spark AI ajanını ücretsiz 'Tasks' olarak yeniden adlandırdığını duyurdu.", detay: "Yeni 'Tasks' özelliği, Google’ın Gemini 4 Hydrogen modeliyle güçlendirilmiş ve ücretsiz olarak sunuluyor.", kaynak: "verge", url: "https://www.theverge.com/tech/1035756/google-spark-ai-tasks-free", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
-    { metin: "Apple, iCloud, App Store ve Apple Music hizmetlerinde kesinti yaşandığını doğruladı.", detay: "Apple’ın durum sayfası, hizmetlerin şu anda erişilemez olduğunu belirtti; kesintinin nedeni henüz açıklanmadı.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/17/apple-services-including-icloud-app-store-and-apple-music-hit-by-outage/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
-    { metin: "Google, Gemini sohbet geçmişi saklama süresini 72 saatten iki aya çıkardığını duyurdu.", detay: "Bu güncelleme, sohbet geçmişi kapalı olsa bile tüm kullanıcılar için birkaç hafta içinde küresel olarak uygulanacak.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/17/google-to-keep-gemini-chats-for-two-months-up-from-72-hours-even-with-history-off/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
-    { metin: "Teknoloji dergisi, bilişsel ölümsüzlük arayışını inceleyen bir yuvarlak masa oturumunu yayınladı.", detay: "Bazı ileri görüşlü teknologlar, benlik sürekliliğini sağlamak için çeşitli yöntemler geliştirmeye çalışıyor.", kaynak: "mit-tr", url: "https://www.technologyreview.com/2026/11/17/1148049/roundtables-inside-the-quest-for-cognitive-immortality/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
-    { metin: "Meta, Türkiye ve Tayland’da iOS ve Android için test edilen 'Direct' adlı bağımsız mesajlaşma uygulamasını duyurdu.", detay: "Direct, Instagram’dan türetilen yeni bir mesajlaşma deneyimi sunuyor.", kaynak: "verge", url: "https://www.theverge.com/tech/1035740/meta-instagram-direct-messaging-app", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
-    { metin: "Amflow, şehir içi kullanım için yüksek torklu yeni bir e‑bisiklet serisi tanıttı.", detay: "DJI yan kuruluşu, hafif çerçeve ve güçlü motoruyla düz şehir yollarında üstün performans vaat ediyor.", kaynak: "verge", url: "https://www.theverge.com/transportation/1035318/amflow-ue-carbon-pro-commuter-ebike-dji-avinox-price-specs", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
-    { metin: "‘3 Body Problem’ dizisinin ikinci sezon teaser’ı, uzaylı istilasına hazırlık mesajı verdi.", detay: "‘Uyanın! 24 trilyon mil uzakta pazarlık için değil, yok etmek için geldiler’ diyor teaser.", kaynak: "ars", url: "https://arstechnica.com/culture/2026/11/humanity-braces-for-an-alien-invasion-in-3-body-problem-s2-teaser/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
-    { metin: "Kaliforniya, OpenAI’yı kontrol dışı AI ajanları nedeniyle kamu güvenliğini tehdit ettiği gerekçesiyle dava etti.", detay: "Dava, şirketin tehlikeli AI testleri yaptığı ve kamuoyunu yanıltığı iddialarını içeriyor.", kaynak: "ars", url: "https://arstechnica.com/tech-policy/2026/11/california-sues-openai-to-stop-public-nuisance-of-out-of-control-ai-agents/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
-    { metin: "Pedestal AI, tedarik zincirlerini hızlandırmak için ajan‑temelli AI geliştirdiğini ve 4,7 milyon dolar yatırım aldığını duyurdu.", detay: "Şirket, yapay zeka aracılığıyla lojistik süreçlerini daha güvenilir hâle getirmeyi hedefliyor.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/17/pedestal-ai-raises-4-7-million-to-agentify-the-supply-chain/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
-    { metin: "Nvidia skandalı, Çin’e çip satışıyla ilgili tartışmalara yol açtı; Trump, satışların devamını destekliyor.", detay: "Ticaret sekreteri Howard Lutnick, şirketi kara listeye almama kararıyla eleştiriliyor.", kaynak: "wired", url: "https://www.wired.com/story/the-nvidia-scandal-is-about-chip-sales-to-china-trump-wants-to-keep-them-going/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
-    { metin: "ULA ve Blue Origin, Vulcan roketindeki başarısızlığın BE‑4 motorlarından kaynaklanmadığını belirtti.", detay: "Şirketler, sorunun henüz kesinleşmemiş veri eksikliği nedeniyle karmaşık bir inceleme gerektirdiğini açıkladı.", kaynak: "ars", url: "https://arstechnica.com/features/2026/11/sources-vulcan-launch-anomaly-investigation-is-complex/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
-    { metin: "ABD Güneybatısı, bu yaz hidroelektrik üretiminde %28 azalma yaşadı.", detay: "Veriler, Nisan‑Ağustos döneminde on yıllık ortalamanın çok altında üretim olduğunu gösteriyor.", kaynak: "mit-tr", url: "https://www.technologyreview.com/2026/11/17/1148742/hydropower-drought-colorado-river/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
-    { metin: "YouTube, izlenme sayılarına aynı anda TV’de izleyenlerin tahmini sayısını eklediğini duyurdu.", detay: "Bu güncelleme, ortak izleme deneyimini yansıtmak için izlenme metriklerini genişletiyor.", kaynak: "verge", url: "https://www.theverge.com/streaming/1035683/youtube-co-views-count", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
-    { metin: "OpenAI, GPT‑6.2 Astra ve Sol modellerini daha iyi profesyonel çıktı, kodlama ve bilgisayar kullanımıyla tanıttı.", detay: "Yeni sürümler, düşük maliyetle daha yüksek verimlilik vaat ediyor.", kaynak: "openai", url: "https://openai.com/index/introducing-gpt-6-2-astra-sol", tur: "resmi-duyuru", guven: "uretici", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
-    { metin: "Apple, iPhone Duo’da yeni bir yüz kilidi özelliği denediğini duyurdu.", detay: "Tam Face ID olmamakla birlikte, test aşamasında oldukça iyi çalıştığı bildirildi.", kaynak: "verge", url: "https://www.theverge.com/tech/1035437/iphone-duo-face-unlock-front-camera-hands-on", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
-    { metin: "Proton, Lumo adlı masaüstü uygulamasını gizlilik odaklı bir ChatGPT alternatifi olarak piyasaya sürdü.", detay: "Uygulama, dosyalar ve bağlı uygulamalar arasında görev otomasyonu ve ayrıntılı kontrol imkanı tanıyor.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/17/protons-lumo-a-privacy-focused-alternative-to-chatgpt-and-claude-arrives-on-desktop/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
-    { metin: "Nvidia CEO’su Jensen Huang, yönetim kurulunun desteği olursa şirkete geri dönmeye istekli olduğunu belirtti.", detay: "Huang, bu olasılığı onurlu bir görev olarak nitelendirdi.", kaynak: "wired", url: "https://www.wired.com/story/jensen-huang-says-hes-open-to-coming-back-to-nvidia/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" },
-    { metin: "As decision model use skyrockets, is customization the next frontier?", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/17/as-decision-model-use-skyrockets-is-customization-is-the-next-frontier/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-17", dogrulama: "tek-kaynak" }
+    {
+      metin: "Binance, kripto tarihinin en büyük soygununda 6,3 milyar dolar çalındığını açıkladı.",
+      detay: "Borsa para çekme işlemlerini durdurdu. Olay TechCrunch, The Verge ve Bloomberg'in ana sayfalarında yer alıyor.",
+      kaynak: "techcrunch",
+      url: "https://techcrunch.com/",
+      tur: "hizli-haber",
+      guven: "bagimsiz",
+      dil: "en",
+      yayin_tarihi: "2026-10-30",
+      dogrulama: "ikinci-kaynak"
+    },
+    {
+      metin: "Anthropic, halka arz için ABD SEC'e S-1 kaydı sundu.",
+      detay: "Şirket, A sınıfı hisselerinin halka arzı için kayıt beyanını duyurdu. Bloomberg ve The Decoder da konuyu işliyor.",
+      kaynak: "anthropic",
+      url: "https://www.anthropic.com/news",
+      tur: "resmi-duyuru",
+      guven: "uretici",
+      dil: "en",
+      yayin_tarihi: "2026-10-30",
+      dogrulama: "ikinci-kaynak"
+    },
+    {
+      metin: "Google DeepMind, Argon'dan iki hafta sonra Gemini 4 Carbon modelini yayınladı.",
+      detay: "Şirket Gemini 4 Carbon'u yeni öncü modeli olarak duyurdu; The Decoder'a göre Argon'a göre genel kazanımlar sunuyor.",
+      kaynak: "deepmind",
+      url: "https://deepmind.google/discover/blog/",
+      tur: "arastirma",
+      guven: "uretici",
+      dil: "en",
+      yayin_tarihi: "2026-10-30",
+      dogrulama: "ikinci-kaynak"
+    },
+    {
+      metin: "DoorDash, Instacart'ı 17 milyar dolara satın alacak.",
+      detay: "TechCrunch'ın bildirdiği anlaşma, yemek ve market teslimat sektöründe büyük bir birleşme anlamına geliyor.",
+      kaynak: "techcrunch",
+      url: "https://techcrunch.com/",
+      tur: "hizli-haber",
+      guven: "bagimsiz",
+      dil: "en",
+      yayin_tarihi: "2026-10-30",
+      dogrulama: "tek-kaynak"
+    },
+    {
+      metin: "Mistral, kodlama odaklı Le Chonk modelini yayınladı; model Hugging Face'te de yer alıyor.",
+      detay: "The Decoder, modelin güçlü olduğunu ancak genel olarak Çinli rakiplerin gerisinde kaldığını yazıyor. Hugging Face blogu da Mistral Large 4 olarak duyurdu.",
+      kaynak: "decoder",
+      url: "https://the-decoder.com/",
+      tur: "hizli-haber",
+      guven: "bagimsiz",
+      dil: "en",
+      yayin_tarihi: "2026-10-29",
+      dogrulama: "ikinci-kaynak"
+    }
   ]
 };

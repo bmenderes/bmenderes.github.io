@@ -1,79 +1,27 @@
-/* MANŞET — TEKNOLOJİ. Otomasyon bu dosyayı yeniden yazar; sayfa bunu okur.
-   Biçim:
-   window.MANSET_TEKNOLOJI = {
-     tarih: "YYYY-AA-GG",
-     baslik: "Teknoloji",
-     mansetler: [ { metin, detay, kaynak, url, tur, guven, dil, yayin_tarihi, dogrulama } ]
-   };
-   - İlk satır büyük manşet, kalanlar liste olarak basılır (en fazla 5 satır gösterilir).
-   - metin  : ana sayfada görünen manşet (tek cümle, ~140 karakter)
-   - detay  : manşete tıklanınca açılan ayrıntı (1-2 cümle, ~220 karakter)
-   - kaynak : kısa kaynak adı (envanterdeki id)
-   - url    : habere git linki, https://
-   - tur    : hizli-haber, teknik-analiz, sektor-ekonomi, arastirma
-   - guven  : bagimsiz veya uretici
-   - dil    : tr veya en
-   - yayin_tarihi: YYYY-AA-GG
-   - dogrulama: tek-kaynak veya ikinci-kaynak
-*/
+/* Teknoloji manşetleri. Bu dosyayı otomasyon yazar; sayfa bunu okur. */
 window.MANSET_TEKNOLOJI = {
-  tarih: "2026-10-30",
+  tarih: "2026-11-19",
   baslik: "Teknoloji",
   mansetler: [
-    {
-      metin: "Binance, kripto tarihinin en büyük soygununda 6,3 milyar dolar çalındığını açıkladı.",
-      detay: "Borsa para çekme işlemlerini durdurdu. Olay TechCrunch, The Verge ve Bloomberg'in ana sayfalarında yer alıyor.",
-      kaynak: "techcrunch",
-      url: "https://techcrunch.com/",
-      tur: "hizli-haber",
-      guven: "bagimsiz",
-      dil: "en",
-      yayin_tarihi: "2026-10-30",
-      dogrulama: "ikinci-kaynak"
-    },
-    {
-      metin: "Anthropic, halka arz için ABD SEC'e S-1 kaydı sundu.",
-      detay: "Şirket, A sınıfı hisselerinin halka arzı için kayıt beyanını duyurdu. Bloomberg ve The Decoder da konuyu işliyor.",
-      kaynak: "anthropic",
-      url: "https://www.anthropic.com/news",
-      tur: "resmi-duyuru",
-      guven: "uretici",
-      dil: "en",
-      yayin_tarihi: "2026-10-30",
-      dogrulama: "ikinci-kaynak"
-    },
-    {
-      metin: "Google DeepMind, Argon'dan iki hafta sonra Gemini 4 Carbon modelini yayınladı.",
-      detay: "Şirket Gemini 4 Carbon'u yeni öncü modeli olarak duyurdu; The Decoder'a göre Argon'a göre genel kazanımlar sunuyor.",
-      kaynak: "deepmind",
-      url: "https://deepmind.google/discover/blog/",
-      tur: "arastirma",
-      guven: "uretici",
-      dil: "en",
-      yayin_tarihi: "2026-10-30",
-      dogrulama: "ikinci-kaynak"
-    },
-    {
-      metin: "DoorDash, Instacart'ı 17 milyar dolara satın alacak.",
-      detay: "TechCrunch'ın bildirdiği anlaşma, yemek ve market teslimat sektöründe büyük bir birleşme anlamına geliyor.",
-      kaynak: "techcrunch",
-      url: "https://techcrunch.com/",
-      tur: "hizli-haber",
-      guven: "bagimsiz",
-      dil: "en",
-      yayin_tarihi: "2026-10-30",
-      dogrulama: "tek-kaynak"
-    },
-    {
-      metin: "Mistral, kodlama odaklı Le Chonk modelini yayınladı; model Hugging Face'te de yer alıyor.",
-      detay: "The Decoder, modelin güçlü olduğunu ancak genel olarak Çinli rakiplerin gerisinde kaldığını yazıyor. Hugging Face blogu da Mistral Large 4 olarak duyurdu.",
-      kaynak: "decoder",
-      url: "https://the-decoder.com/",
-      tur: "hizli-haber",
-      guven: "bagimsiz",
-      dil: "en",
-      yayin_tarihi: "2026-10-29",
-      dogrulama: "ikinci-kaynak"
-    }
+    { metin: "Canva, generatif AI özelliklerini kapatabilen bir 'off' düğmesi ekledi.", detay: "Platform, kullanıcıların tasarım sürecinde AI araçlarını devre dışı bırakmalarına izin veriyor.", kaynak: "verge", url: "https://www.theverge.com/ai-artificial-intelligence/1037126/canva-ai-features-off-button", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
+    { metin: "Google DeepMind, Gemini 4 Neon modelini tanıttı; önceki sürümden iki kat daha hızlı.", detay: "Yeni model, Carbon’dan neredeyse iki kat hızda çalışıyor ve maliyet ve performansta iyileşme sağlıyor.", kaynak: "decoder", url: "https://the-decoder.com/googles-latest-ai-model-is-faster-cheaper-and-smarter-than-its-flagship-predecessor-from-just-weeks-ago/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
+    { metin: "AI tabanlı OCR modelleri, bir milyon sayfayı 130 doların altında dijitalleştiriyor.", detay: "Maliyet, son 18 ayda beş kat azalarak büyük ölçekli tarama projelerini daha uygun hâle getirdi.", kaynak: "decoder", url: "https://the-decoder.com/ocr-models-now-digitize-a-million-pages-for-under-130-as-costs-drop-fivefold-in-18-months/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
+    { metin: "Anthropic, 107 milyar dolar değerleme ile rekor bir IPO gerçekleştirdi.", detay: "Şirket, AI güvenliği stratejisi ve veri merkezi tepkileriyle ilgili tartışmaların ortasında yatırımcıların ilgisini çekti.", kaynak: "wired", url: "https://www.wired.com/story/anthropics-record-breaking-ipo-highlights-the-ai-giants-worst-enemy-itself/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
+    { metin: "Avustralya araştırmacıları, bir insan karaciğerini yedi hafta dışarıda yaşam desteğiyle tutabildi.", detay: "Bu rekor, organ nakli ve ilaç testleri için yeni olasılıkları gündeme getiriyor.", kaynak: "mit-tr", url: "https://www.technologyreview.com/2026/11/19/1148934/a-human-liver-has-been-kept-alive-outside-the-body-for-seven-weeks-setting-a-record/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
+    { metin: "Microsoft CEO’su Satya Nadella, 60.000 çalışanına gönüllü ayrılma teklifi sunduğunu açıkladı.", detay: "Şirket, iş gücünü yeniden yapılandırmak ve maliyetleri düşürmek amacıyla bu teklifi verdi.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/18/microsoft-ceo-satya-nadella-explains-why-he-asked-60k-employees-to-quit/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
+    { metin: "Nadella, AI ajanlarının web ekonomisini yeniden şekillendireceğini öngördü.", detay: "Reklam temelli iş modelleri, yapay zeka destekli hizmetlerle değişime zorlanabilir.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/18/satya-nadella-predicts-ai-agents-will-reshuffle-the-economics-of-the-web/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Satya Nadella, Nvidia’nın yeni geçici CEO’su Kress’e güven duyduğunu belirtti.", detay: "Huang’un ayrılığının ardından Nvidia’nın stratejik yönünün sürdürülebilir olduğuna inandığını söyledi.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/18/microsoft-ceo-satya-nadella-remains-confident-in-nvidia-after-huangs-exit/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Ukrayna, Starlink sınırlamalarını aşmak için ara drone zinciriyle Putin’in köprüsünü imha etti.", detay: "Yerli teknolojiyle geliştirilen dronlar, iletişim kısıtlamalarını aşarak hedefe ulaşmayı sağladı.", kaynak: "ars", url: "https://arstechnica.com/gadgets/2026/11/ukraine-blew-up-putins-bridge-using-relay-drones-to-bypass-starlink-limits/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "ABD’nin en büyük okul bölgeleri, Google Search’i devre dışı bırakmayı değerlendiriyor.", detay: "New York, Los Angeles ve Chicago, arama hizmeti sağlayıcısını değiştirme planları yapıyor.", kaynak: "verge", url: "https://www.theverge.com/ai-artificial-intelligence/1037151/school-districts-ditching-google", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "DeepMind, Gemini 4 Neon modelini duyurdu.", detay: "Model, önceki sürümlere göre daha hızlı ve verimli çalışıyor.", kaynak: "deepmind", url: "https://deepmind.google/blog/introducing-gemini-4-neon/", tur: "arastirma", guven: "uretici", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
+    { metin: "Roblox money is pushing a controversial anorexia treatment", kaynak: "verge", url: "https://www.theverge.com/features/1034740/ketogenic-diet-anorexia-roblox-medical-funding", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
+    { metin: "21 Best Home Entertainment Gifts (2026): TVs, Lights, and More", kaynak: "wired", url: "https://www.wired.com/story/best-home-entertainment-gifts-2026/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
+    { metin: "Voyager Is a Light-Day Away. Here’s How Far That Really Is", kaynak: "wired", url: "https://www.wired.com/story/voyager-light-day-away-how-far-that-really-is/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
+    { metin: "The Best Early Black Friday Deals on Laptops I’ve Tested Myself (2026)", kaynak: "wired", url: "https://www.wired.com/story/best-early-black-friday-laptop-deals-11-18-26/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
+    { metin: "How to tell a cyberattack from a plain old outage", kaynak: "ars", url: "https://arstechnica.com/security/2026/11/how-to-tell-a-cyberattack-from-a-plain-old-outage/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
+    { metin: "Leaked: How Silicon Valley Elites Bankrolled an Anti-Migrant, Pro-Israel Propaganda Machine", kaynak: "wired", url: "https://www.wired.com/story/leaked-how-silicon-valley-elites-bankrolled-anti-migrant-pro-israel-propaganda-machine/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
+    { metin: "What a billion-dollar deal says about the US battery market", kaynak: "mit-tr", url: "https://www.technologyreview.com/2026/11/19/1148922/sila-panasonic-battery-deal/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
+    { metin: "Elon Musk tries to explain what’s going on with Ukraine and Starlink", kaynak: "verge", url: "https://www.theverge.com/tech/1037448/elon-musk-ukraine-starlink-starshield-nyt-dealbook", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
+    { metin: "Elon Musk says: ‘I’m not MAGA’", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/18/elon-musk-says-im-not-maga/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" }
   ]
 };

@@ -1,27 +1,79 @@
-/* Teknoloji manşetleri. Bu dosyayı otomasyon yazar; sayfa bunu okur. */
+/* MANŞET — TEKNOLOJİ. Otomasyon bu dosyayı yeniden yazar; sayfa bunu okur.
+   Biçim:
+   window.MANSET_TEKNOLOJI = {
+     tarih: "YYYY-AA-GG",
+     baslik: "Teknoloji",
+     mansetler: [ { metin, detay, kaynak, url, tur, guven, dil, yayin_tarihi, dogrulama } ]
+   };
+   - İlk satır büyük manşet, kalanlar liste olarak basılır (en fazla 5 satır gösterilir).
+   - metin  : ana sayfada görünen manşet (tek cümle, ~140 karakter)
+   - detay  : manşete tıklanınca açılan ayrıntı (1-2 cümle, ~220 karakter)
+   - kaynak : kısa kaynak adı (envanterdeki id)
+   - url    : habere git linki, https://
+   - tur    : hizli-haber, teknik-analiz, sektor-ekonomi, arastirma
+   - guven  : bagimsiz veya uretici
+   - dil    : tr veya en
+   - yayin_tarihi: YYYY-AA-GG
+   - dogrulama: tek-kaynak veya ikinci-kaynak
+*/
 window.MANSET_TEKNOLOJI = {
-  tarih: "2026-11-18",
+  tarih: "2026-10-30",
   baslik: "Teknoloji",
   mansetler: [
-    { metin: "Hugging Face, ince ayar süresinin FLOP'lara göre neden daha uzun sürdüğünü açıkladı.", detay: "Araştırmacılar, modelin eğitim süresinin sadece FLOP sayısıyla tahmin edilemeyeceğini, veri hazırlığı ve donanım faktörlerinin etkili olduğunu belirtti.", kaynak: "huggingface", url: "https://huggingface.co/blog/Dharma-AI/predicting-fine-tuning-time", tur: "arastirma", guven: "uretici", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
-    { metin: "Microsoft, dış AI modellerini kendi iç çözümleriyle değiştirdiğini duyurdu.", detay: "MAI, kod, güvenlik, görüntü ve dil gibi alanlarda yedi yeni model tanıttı; MAI Code 2, GPT'nin %98 performansına ulaştı.", kaynak: "decoder", url: "https://the-decoder.com/microsoft-is-replacing-outside-ai-models-in-its-own-products-with-cheaper-in-house-alternatives/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
-    { metin: "DeepMind, yeni Genie 4 modelini kullanıma sundu.", detay: "Genie 4, çoklu modalite yetenekleriyle daha geniş görevlerde yüksek doğruluk sağlıyor.", kaynak: "deepmind", url: "https://deepmind.google/blog/genie-4-is-now-available/", tur: "arastirma", guven: "uretici", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
-    { metin: "OpenAI, AMD GPU'larında bir yıllık çip optimizasyonu sağladığını açıkladı.", detay: "OpenAI modelleri, AMD'nin amiral gemisi GPU'sunda %14 performans artışı elde etti, beş ay içinde.", kaynak: "decoder", url: "https://the-decoder.com/openai-says-its-models-delivered-a-years-worth-of-chip-optimization-on-top-of-amds-own-engineering/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
-    { metin: "Google, AI sohbet modunu arama geçmişinden izole eden gizli mod özelliğini getirdi.", detay: "Kullanıcılar, AI yanıtlarını geçmişe kaydetmeden deneyimleyebilecek ve önerilerden etkilenmeyecek.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/18/googles-ai-feature-in-search-gets-its-own-incognito-mode/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
-    { metin: "Nvidia, RTX Spark N1X çipiyle yeni mini PC'leri Asus, Dell ve MSI'den piyasaya sürdü.", detay: "Bu mini bilgisayarlar, yüksek performanslı grafik işleme yeteneğini kompakt tasarımla birleştiriyor.", kaynak: "verge", url: "https://www.theverge.com/tech/1036880/nvidia-rtx-spark-ai-mini-pc-desktops", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
-    { metin: "Google, Android uygulamalarının katlanabilir cihazlarda düzgün çalışmasını zorunlu kılıyor.", detay: "2027 Nisan'ından itibaren, geliştiricilerin katlanabilir uyumluluğu sağlamaları gerekecek.", kaynak: "verge", url: "https://www.theverge.com/tech/1036796/google-android-app-games-developers-foldables-support", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
-    { metin: "Disney, Star Wars animatronic karakterlerini AI ile etkileşimli hâle getirdi.", detay: "Yeni karakterler, ziyaretçilerin sorularına gerçek zamanlı yanıt vererek deneyimi kişiselleştiriyor.", kaynak: "verge", url: "https://www.theverge.com/tech/1036729/disney-star-wars-anzellans-animatronic-amazon-aws-cloud-ai", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
-    { metin: "Will Wright, yeni simülasyon oyununda anılarını AI ile taramayı planladığını duyurdu.", detay: "MyMems projesi, oyuncuların kişisel hafızalarından içerik oluşturarak oyunu içe dönük bir deneyime dönüştürmeyi hedefliyor.", kaynak: "ars", url: "https://arstechnica.com/gaming/2026/11/will-wrights-next-simulation-will-use-ai-to-mine-content-from-your-memories/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
-    { metin: "ULA, Vulcan roketinin motorlarına yetersiz yakıt temini nedeniyle başarısız olduğunu açıkladı.", detay: "Şirket, sorunu çözmek için yakıt dağıtım sisteminde iyileştirmeler yapacağını belirtti.", kaynak: "ars", url: "https://arstechnica.com/space/2026/11/vulcan-failure-caused-by-inadequate-fuel-supply-to-engines-ula-says/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
-    { metin: "Sam Altman, AI'nın insanları geçmesi riskine karşı uyarıda bulundu.", detay: "Altman, kontrol mekanizmalarının güçlendirilmesi gerektiğini vurguladı.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/18/sam-altman-warns-against-a-future-where-ai-not-humans-calls-the-shots/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
-    { metin: "Nvidia, Jensen Huang'un görevden alınmasının ardından ilk tüm çalışan toplantısını yaptı.", detay: "Geçici CEO Collette Kress, maaş artışı ve hisse opsiyonlarıyla çalışanların endişelerini azaltmayı hedefledi.", kaynak: "wired", url: "https://www.wired.com/story/inside-nvidias-first-all-hands-without-jensen-huang-as-ceo/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
-    { metin: "Bir Müslüman yazar, xAI'ye karşı Grok'un başörtüsünü kaldırması nedeniyle dava açtı.", detay: "Avukat Hillary Nappi, büyük teknoloji şirketlerine karşı yasal mücadele gerektiğini belirtti.", kaynak: "wired", url: "https://www.wired.com/story/a-muslim-author-is-suing-xai-after-people-used-grok-to-strip-her-hijab/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
-    { metin: "Trump admin orders Kalshi to halt wagers on what words Trump will say", kaynak: "ars", url: "https://arstechnica.com/tech-policy/2026/11/trump-admin-orders-kalshi-to-halt-wagers-on-what-words-trump-will-say/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
-    { metin: "The best early Black Friday deals you can already shop", kaynak: "verge", url: "https://www.theverge.com/gadgets/1028991/black-friday-best-early-deals-2026", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
-    { metin: "What is Nvidia without AI’s sugar daddy in charge?", kaynak: "verge", url: "https://www.theverge.com/ai-artificial-intelligence/1036776/nvidia-earnings-kress-jensen-huang-petition", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
-    { metin: "The \"shameful\" measles data that lost the US its elimination status", kaynak: "ars", url: "https://arstechnica.com/health/2026/11/the-shameful-measles-data-that-lost-the-us-its-elimination-status/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
-    { metin: "Our favorite accessories to level up your gaming setup ahead of GTA VI", kaynak: "verge", url: "https://www.theverge.com/gadgets/1033262/best-gta-6-gaming-accessories-controllers-headsets-tvs", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
-    { metin: "It shouldn’t be this easy to pedal 25 mph: Specialized’s Turbo Vado 3 Evo", kaynak: "ars", url: "https://arstechnica.com/gadgets/2026/11/it-shouldnt-be-this-easy-to-pedal-25-mph-specializeds-turbo-vado-3-evo/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" },
-    { metin: "The US Lost Its Measles Elimination Status. It’ll Take Years to Get It Back", kaynak: "wired", url: "https://www.wired.com/story/us-lost-measles-elimination-status-years-to-recover/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-18", dogrulama: "tek-kaynak" }
+    {
+      metin: "Binance, kripto tarihinin en büyük soygununda 6,3 milyar dolar çalındığını açıkladı.",
+      detay: "Borsa para çekme işlemlerini durdurdu. Olay TechCrunch, The Verge ve Bloomberg'in ana sayfalarında yer alıyor.",
+      kaynak: "techcrunch",
+      url: "https://techcrunch.com/",
+      tur: "hizli-haber",
+      guven: "bagimsiz",
+      dil: "en",
+      yayin_tarihi: "2026-10-30",
+      dogrulama: "ikinci-kaynak"
+    },
+    {
+      metin: "Anthropic, halka arz için ABD SEC'e S-1 kaydı sundu.",
+      detay: "Şirket, A sınıfı hisselerinin halka arzı için kayıt beyanını duyurdu. Bloomberg ve The Decoder da konuyu işliyor.",
+      kaynak: "anthropic",
+      url: "https://www.anthropic.com/news",
+      tur: "resmi-duyuru",
+      guven: "uretici",
+      dil: "en",
+      yayin_tarihi: "2026-10-30",
+      dogrulama: "ikinci-kaynak"
+    },
+    {
+      metin: "Google DeepMind, Argon'dan iki hafta sonra Gemini 4 Carbon modelini yayınladı.",
+      detay: "Şirket Gemini 4 Carbon'u yeni öncü modeli olarak duyurdu; The Decoder'a göre Argon'a göre genel kazanımlar sunuyor.",
+      kaynak: "deepmind",
+      url: "https://deepmind.google/discover/blog/",
+      tur: "arastirma",
+      guven: "uretici",
+      dil: "en",
+      yayin_tarihi: "2026-10-30",
+      dogrulama: "ikinci-kaynak"
+    },
+    {
+      metin: "DoorDash, Instacart'ı 17 milyar dolara satın alacak.",
+      detay: "TechCrunch'ın bildirdiği anlaşma, yemek ve market teslimat sektöründe büyük bir birleşme anlamına geliyor.",
+      kaynak: "techcrunch",
+      url: "https://techcrunch.com/",
+      tur: "hizli-haber",
+      guven: "bagimsiz",
+      dil: "en",
+      yayin_tarihi: "2026-10-30",
+      dogrulama: "tek-kaynak"
+    },
+    {
+      metin: "Mistral, kodlama odaklı Le Chonk modelini yayınladı; model Hugging Face'te de yer alıyor.",
+      detay: "The Decoder, modelin güçlü olduğunu ancak genel olarak Çinli rakiplerin gerisinde kaldığını yazıyor. Hugging Face blogu da Mistral Large 4 olarak duyurdu.",
+      kaynak: "decoder",
+      url: "https://the-decoder.com/",
+      tur: "hizli-haber",
+      guven: "bagimsiz",
+      dil: "en",
+      yayin_tarihi: "2026-10-29",
+      dogrulama: "ikinci-kaynak"
+    }
   ]
 };

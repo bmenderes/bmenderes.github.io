@@ -1,27 +1,79 @@
-/* Teknoloji manşetleri. Bu dosyayı otomasyon yazar; sayfa bunu okur. */
+/* MANŞET — TEKNOLOJİ. Otomasyon bu dosyayı yeniden yazar; sayfa bunu okur.
+   Biçim:
+   window.MANSET_TEKNOLOJI = {
+     tarih: "YYYY-AA-GG",
+     baslik: "Teknoloji",
+     mansetler: [ { metin, detay, kaynak, url, tur, guven, dil, yayin_tarihi, dogrulama } ]
+   };
+   - İlk satır büyük manşet, kalanlar liste olarak basılır (en fazla 5 satır gösterilir).
+   - metin  : ana sayfada görünen manşet (tek cümle, ~140 karakter)
+   - detay  : manşete tıklanınca açılan ayrıntı (1-2 cümle, ~220 karakter)
+   - kaynak : kısa kaynak adı (envanterdeki id)
+   - url    : habere git linki, https://
+   - tur    : hizli-haber, teknik-analiz, sektor-ekonomi, arastirma
+   - guven  : bagimsiz veya uretici
+   - dil    : tr veya en
+   - yayin_tarihi: YYYY-AA-GG
+   - dogrulama: tek-kaynak veya ikinci-kaynak
+*/
 window.MANSET_TEKNOLOJI = {
-  tarih: "2026-11-19",
+  tarih: "2026-10-30",
   baslik: "Teknoloji",
   mansetler: [
-    { metin: "Colorado’da çiftçiler, yerel teknoloji uzmanı olmadan yapay zeka araçlarını deniyor.", detay: "Doğu Colorado’da birçok çiftçi ve çiftlik sahibi, akademik bir girişimin sunduğu AI araçlarını keşfediyor, ancak yerel bir teknik destek eksikliği var.", kaynak: "ieee", url: "https://spectrum.ieee.org/ai-tools-for-rural-communities", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
-    { metin: "LLM’ler, iklim verilerini sorulduğunda hatalı sonuçlar verebiliyor.", detay: "Bazı modeller daha iyi performans gösterse de, iklim sorularına yanıt verirken benzer hatalar yapıyorlar.", kaynak: "ars", url: "https://arstechnica.com/science/2026/11/llms-will-provide-accurate-climate-info-except-when-they-wont/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
-    { metin: "Google Gemini, macOS’ta bilgisayar kullanımını destekliyor.", detay: "Yeni Gemini macOS uygulaması, yerel dosyalar ve masaüstü uygulamalarıyla çok adımlı görevleri yerine getirebiliyor.", kaynak: "verge", url: "https://www.theverge.com/tech/1037902/google-gemini-macos-ai-computer-use", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
-    { metin: "Motorola’nın yeni geniş ekran katlanabilir telefonu sızdırılan görsellerle ortaya çıktı.", detay: "SammyGuru’nun paylaştığı fotoğraflar, geniş ekranın gelecekteki standart tasarım olabileceğini gösteriyor.", kaynak: "verge", url: "https://www.theverge.com/tech/1037848/motorola-razr-flex-wide-foldable-folding-smartphone-android-leak", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
-    { metin: "Apple’ın iPhone kamera lideri Jon McCormack şirketten ayrıldı.", detay: "Bloomberg’e göre, Apple kamera yazılım mühendisliği başkanı geçen ay emekli oldu.", kaynak: "verge", url: "https://www.theverge.com/tech/1037846/apple-jon-mccormack-retired-iphone-camera", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
-    { metin: "Google, 2027 Ocak’ta Android uygulama doğrulama zorunluluğunu küresel olarak başlatacak.", detay: "Şirket, geliştiricilerin büyük çoğunluğunun zaten doğrulamayı kabul ettiğini belirtiyor.", kaynak: "ars", url: "https://arstechnica.com/gadgets/2026/11/google-will-launch-android-app-verification-requirement-globally-in-january-2027/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
-    { metin: "Amazon, New York’taki Delivery Protection Act’e karşı kullanıcıları uyarıyor.", detay: "Ana sayfada bildirim ve bannerlarla, yeni yasanın sipariş başına 5 dolar ekleyebileceği belirtiliyor.", kaynak: "verge", url: "https://www.theverge.com/tech/1037813/amazon-is-pushing-alerts-to-shoppers-opposing-nycs-delivery-protection-act", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
-    { metin: "Meta’nın Muse AI ajanı, sohbetleri karıştırıp kişisel verileri açığa çıkarıyor.", detay: "Rapor, çalışanların çocuk bakımı ve kariyer tavsiyesi gibi istenmeyen mesajlar gördüğünü ortaya koydu.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
-    { metin: "ABD ihracat kontrolleri, Çin teknoloji firmalarını çip sevkiyatında ve bulut erişiminde zor durumda bırakıyor.", detay: "Moonshot AI, Endonezya’daki 150 milyon dolarlık anlaşmadan çekildi; TSMC ve Samsung da etkileniyor.", kaynak: "decoder", url: "https://the-decoder.com/chinese-tech-firms-face-a-double-hit-as-chip-shipments-stop-and-overseas-cloud-access-disappears/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
-    { metin: "Everful, perakendecileri Çin fabrikalarıyla bağlayan platform için 48,5 milyon dolar topladı.", detay: "Şirket, doğrudan tedarik zinciri çözümünü genişletmek için bu fonu kullanacak.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/19/former-alibaba-execs-everful-raises-48-5m-to-connect-retailers-with-chinese-factories/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
-    { metin: "Google, Chrome AI ajanlarını test etmek için dev bir ‘ayna boyutu’ internet ortamı oluşturdu.", detay: "Bu alternatif ağ, AI tarayıcı ajanlarını gerçek dünyadan izole bir şekilde eğitmek için sandbox görevi görüyor.", kaynak: "wired", url: "https://www.wired.com/story/google-built-a-giant-mirror-dimension-internet-to-test-its-chrome-ai-agents/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
-    { metin: "Anthropic, IPO fiyatının %33 üzerindeki 111 dolar seviyesinden işlem gördü.", detay: "Şirket, 83 dolar başlangıç fiyatının çok üzerinde bir değerleme elde etti.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/19/anthropic-hits-nasdaq-exchanges-at-110-27-above-ipo-price/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
-    { metin: "Anthropic CEO’su, Nasdaq açılış zilinde AI gelişimini yavaşlatma taahhüdünü yineledi.", detay: "Dario Amodei, iş ve politik baskılara rağmen sorumlu AI geliştirmeye devam edeceklerini vurguladı.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/19/at-nasdaq-opening-bell-anthropic-ceo-recommits-to-pacing-ai-development/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
-    { metin: "Birleşik Krallık mahkemesi, Apple’ın gizli arka kapı siparişini açıklamayı zorunlu kıldı.", detay: "Mahkeme, güvenlik endişelerinin bu açıklamayı engelleyecek kadar ciddi olmadığını belirtti.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/19/u-k-government-forced-to-disclose-secret-apple-backdoor-order/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
-    { metin: "Fareler arasındaki ‘savaş kulübü’, şiddet izlemeyi neden sevdiğimizi açıklamaya yardımcı olabilir.", detay: "Araştırma, izleme davranışının pratik deneyimle benzer bir öğrenme süreci sunduğunu gösteriyor.", kaynak: "ars", url: "https://arstechnica.com/science/2026/11/watching-mouse-fight-club-teaches-the-critters-how-to-fight/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
-    { metin: "Anthropic, 81,3 milyar dolarlık IPO ile SpaceX’in rekorunu kırdı.", detay: "Şirket, tarihinin en büyük halka arzını gerçekleştirirken, bazı yatırımcılar politik baskılardan uzak durdu.", kaynak: "decoder", url: "https://the-decoder.com/anthropics-81-3-billion-ipo-shatters-spacexs-record-as-rising-rates-and-political-headwinds-shake-the-sector/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
-    { metin: "NASA’nın yeni Ay planları, Orion uzay aracının tasarımının bu görev için uygun olmadığını ortaya koydu.", detay: "\"Çok hızlı gitmek ve çok fazla köşe kesmekten sorumlu olduğumuzu\" diyor yetkililer.", kaynak: "ars", url: "https://arstechnica.com/space/2026/11/to-make-moon-landings-easier-nasa-is-making-life-harder-for-orion/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
-    { metin: "OpenAI araştırmacıları, AI araçlarını meslektaşlarından daha değerli bulduklarını belirtti.", detay: "Kodlama ajanlarının kullanım maliyetleri, araştırmacıların temel maaşlarını aşıyor.", kaynak: "decoder", url: "https://the-decoder.com/openais-own-researchers-now-say-they-value-their-ai-tools-more-than-nearly-half-their-colleagues/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
-    { metin: "Bir bilgisayar bilimcisi, süperzeka kavramının gerçekleşmeyeceğini savunuyor.", detay: "AI şirketlerinin çalışanları, bu konudaki tartışmaların beklenmedik bir şekilde yaygınlaştığını belirtiyor.", kaynak: "ieee", url: "https://spectrum.ieee.org/ai-superintelligence-debate", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
-    { metin: "Voyager uzay aracının ışık günü mesafesi, insanlık için hâlâ büyüleyici bir ölçekte.", detay: "Uzayın enginliği, bu eski keşif aracının konumunu anlamada yeni perspektifler sunuyor.", kaynak: "wired", url: "https://www.wired.com/story/voyager-light-day-away-how-far-that-really-is/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" }
+    {
+      metin: "Binance, kripto tarihinin en büyük soygununda 6,3 milyar dolar çalındığını açıkladı.",
+      detay: "Borsa para çekme işlemlerini durdurdu. Olay TechCrunch, The Verge ve Bloomberg'in ana sayfalarında yer alıyor.",
+      kaynak: "techcrunch",
+      url: "https://techcrunch.com/",
+      tur: "hizli-haber",
+      guven: "bagimsiz",
+      dil: "en",
+      yayin_tarihi: "2026-10-30",
+      dogrulama: "ikinci-kaynak"
+    },
+    {
+      metin: "Anthropic, halka arz için ABD SEC'e S-1 kaydı sundu.",
+      detay: "Şirket, A sınıfı hisselerinin halka arzı için kayıt beyanını duyurdu. Bloomberg ve The Decoder da konuyu işliyor.",
+      kaynak: "anthropic",
+      url: "https://www.anthropic.com/news",
+      tur: "resmi-duyuru",
+      guven: "uretici",
+      dil: "en",
+      yayin_tarihi: "2026-10-30",
+      dogrulama: "ikinci-kaynak"
+    },
+    {
+      metin: "Google DeepMind, Argon'dan iki hafta sonra Gemini 4 Carbon modelini yayınladı.",
+      detay: "Şirket Gemini 4 Carbon'u yeni öncü modeli olarak duyurdu; The Decoder'a göre Argon'a göre genel kazanımlar sunuyor.",
+      kaynak: "deepmind",
+      url: "https://deepmind.google/discover/blog/",
+      tur: "arastirma",
+      guven: "uretici",
+      dil: "en",
+      yayin_tarihi: "2026-10-30",
+      dogrulama: "ikinci-kaynak"
+    },
+    {
+      metin: "DoorDash, Instacart'ı 17 milyar dolara satın alacak.",
+      detay: "TechCrunch'ın bildirdiği anlaşma, yemek ve market teslimat sektöründe büyük bir birleşme anlamına geliyor.",
+      kaynak: "techcrunch",
+      url: "https://techcrunch.com/",
+      tur: "hizli-haber",
+      guven: "bagimsiz",
+      dil: "en",
+      yayin_tarihi: "2026-10-30",
+      dogrulama: "tek-kaynak"
+    },
+    {
+      metin: "Mistral, kodlama odaklı Le Chonk modelini yayınladı; model Hugging Face'te de yer alıyor.",
+      detay: "The Decoder, modelin güçlü olduğunu ancak genel olarak Çinli rakiplerin gerisinde kaldığını yazıyor. Hugging Face blogu da Mistral Large 4 olarak duyurdu.",
+      kaynak: "decoder",
+      url: "https://the-decoder.com/",
+      tur: "hizli-haber",
+      guven: "bagimsiz",
+      dil: "en",
+      yayin_tarihi: "2026-10-29",
+      dogrulama: "ikinci-kaynak"
+    }
   ]
 };

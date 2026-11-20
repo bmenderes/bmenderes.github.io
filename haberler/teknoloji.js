@@ -1,79 +1,27 @@
-/* MANŞET — TEKNOLOJİ. Otomasyon bu dosyayı yeniden yazar; sayfa bunu okur.
-   Biçim:
-   window.MANSET_TEKNOLOJI = {
-     tarih: "YYYY-AA-GG",
-     baslik: "Teknoloji",
-     mansetler: [ { metin, detay, kaynak, url, tur, guven, dil, yayin_tarihi, dogrulama } ]
-   };
-   - İlk satır büyük manşet, kalanlar liste olarak basılır (en fazla 5 satır gösterilir).
-   - metin  : ana sayfada görünen manşet (tek cümle, ~140 karakter)
-   - detay  : manşete tıklanınca açılan ayrıntı (1-2 cümle, ~220 karakter)
-   - kaynak : kısa kaynak adı (envanterdeki id)
-   - url    : habere git linki, https://
-   - tur    : hizli-haber, teknik-analiz, sektor-ekonomi, arastirma
-   - guven  : bagimsiz veya uretici
-   - dil    : tr veya en
-   - yayin_tarihi: YYYY-AA-GG
-   - dogrulama: tek-kaynak veya ikinci-kaynak
-*/
+/* Teknoloji manşetleri. Bu dosyayı otomasyon yazar; sayfa bunu okur. */
 window.MANSET_TEKNOLOJI = {
-  tarih: "2026-10-30",
+  tarih: "2026-11-20",
   baslik: "Teknoloji",
   mansetler: [
-    {
-      metin: "Binance, kripto tarihinin en büyük soygununda 6,3 milyar dolar çalındığını açıkladı.",
-      detay: "Borsa para çekme işlemlerini durdurdu. Olay TechCrunch, The Verge ve Bloomberg'in ana sayfalarında yer alıyor.",
-      kaynak: "techcrunch",
-      url: "https://techcrunch.com/",
-      tur: "hizli-haber",
-      guven: "bagimsiz",
-      dil: "en",
-      yayin_tarihi: "2026-10-30",
-      dogrulama: "ikinci-kaynak"
-    },
-    {
-      metin: "Anthropic, halka arz için ABD SEC'e S-1 kaydı sundu.",
-      detay: "Şirket, A sınıfı hisselerinin halka arzı için kayıt beyanını duyurdu. Bloomberg ve The Decoder da konuyu işliyor.",
-      kaynak: "anthropic",
-      url: "https://www.anthropic.com/news",
-      tur: "resmi-duyuru",
-      guven: "uretici",
-      dil: "en",
-      yayin_tarihi: "2026-10-30",
-      dogrulama: "ikinci-kaynak"
-    },
-    {
-      metin: "Google DeepMind, Argon'dan iki hafta sonra Gemini 4 Carbon modelini yayınladı.",
-      detay: "Şirket Gemini 4 Carbon'u yeni öncü modeli olarak duyurdu; The Decoder'a göre Argon'a göre genel kazanımlar sunuyor.",
-      kaynak: "deepmind",
-      url: "https://deepmind.google/discover/blog/",
-      tur: "arastirma",
-      guven: "uretici",
-      dil: "en",
-      yayin_tarihi: "2026-10-30",
-      dogrulama: "ikinci-kaynak"
-    },
-    {
-      metin: "DoorDash, Instacart'ı 17 milyar dolara satın alacak.",
-      detay: "TechCrunch'ın bildirdiği anlaşma, yemek ve market teslimat sektöründe büyük bir birleşme anlamına geliyor.",
-      kaynak: "techcrunch",
-      url: "https://techcrunch.com/",
-      tur: "hizli-haber",
-      guven: "bagimsiz",
-      dil: "en",
-      yayin_tarihi: "2026-10-30",
-      dogrulama: "tek-kaynak"
-    },
-    {
-      metin: "Mistral, kodlama odaklı Le Chonk modelini yayınladı; model Hugging Face'te de yer alıyor.",
-      detay: "The Decoder, modelin güçlü olduğunu ancak genel olarak Çinli rakiplerin gerisinde kaldığını yazıyor. Hugging Face blogu da Mistral Large 4 olarak duyurdu.",
-      kaynak: "decoder",
-      url: "https://the-decoder.com/",
-      tur: "hizli-haber",
-      guven: "bagimsiz",
-      dil: "en",
-      yayin_tarihi: "2026-10-29",
-      dogrulama: "ikinci-kaynak"
-    }
+    { metin: "Ars, bilim haberlerine destek çağrısında bulundu.", detay: "Ars, bilim içeriklerinin devamı için okuyucuların bağış yapmasını istedi.", kaynak: "ars", url: "https://arstechnica.com/staff/2026/11/science-has-a-home-here-at-ars-please-help-keep-it-that-way/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Trump yönetimi, TP-Link'in yeni yönlendiricilerini ABD'de satmasına izin vermiyor.", detay: "Bu karar, Trump yönetiminin cihaz üreticileri üzerindeki kontrolünü gösteriyor.", kaynak: "ars", url: "https://arstechnica.com/tech-policy/2026/11/trump-admin-still-wont-let-wi-fi-giant-tp-link-sell-its-latest-routers-in-us/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Waymo, Uber ile ortaklığını sonlandırarak robot taksi işbirliğini bitiriyor.", detay: "Uber CEO'su, Waymo ile güçlü bir ortaklık beklentisini dile getirmişti.", kaynak: "verge", url: "https://www.theverge.com/transportation/1037667/waymo-serve-robotics-ditch-uber-autonomous-partnerships", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Apple, OLED MacBook Pro ve MacBook Neo ile yeni laptop seçenekleri sundu.", detay: "Yeni modeller, kullanıcıların ihtiyaçlarına göre farklı performans ve ekran seçenekleri sunuyor.", kaynak: "wired", url: "https://www.wired.com/story/which-macbook-should-you-buy/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Meta'nın Muse AI asistanı, sizi takip etmeyen Instagram kullanıcılarını otomatik olarak takipten çıkarıyor.", detay: "Bazı kullanıcılar bu özelliği tam anlamıyla kullanıyor.", kaynak: "wired", url: "https://www.wired.com/story/muse-is-unleashing-a-world-of-pettiness-on-instagram/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Elah ve Glorify akıllı yüzükler, ışıklı haç ve sesli dua gibi ibadet ritüellerini yeniden tasarlıyor.", detay: "Bu akıllı yüzükler, geleneksel dini uygulamaları giyilebilir teknolojiyle birleştiriyor.", kaynak: "wired", url: "https://www.wired.com/story/smart-ring-goes-to-church/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Teknoloji çalışanları, son skandal sonrası honeypot saldırılarına karşı endişe taşıyor.", detay: "Jensen Huang skandalı, yeni zengin ve güçlü çalışanların ilişki kaygılarını artırdı.", kaynak: "wired", url: "https://www.wired.com/story/regular-tech-bros-are-worried-about-honeypots/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Hermes Agent, bir çalışanın AI hilesini tüm ekip becerisine dönüştüren bir özellik tanıttı.", detay: "Şirketler, Nous Research'in açık kaynak Hermes Agent'ını Microsoft Teams içinde çalıştırabilecek.", kaynak: "decoder", url: "https://the-decoder.com/hermes-agents-collective-wisdom-feature-turns-one-employees-ai-trick-into-the-whole-teams-skill/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "ABD Ulusal Siber Direktörü görevinden istifa etti.", detay: "Bu gelişme, ülkedeki teknik kesintilerin artışıyla aynı dönemde duyuruldu.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/20/the-u-s-national-cyber-director-is-stepping-down/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Apple, kendi AI ajanını geliştiriyor ve bu amaçla mühendis alımı yapıyor.", detay: "Apple, web tarama, uygulama entegrasyonu ve kod yazma gibi görevleri yerine getirebilecek bir AI ajanı üzerinde çalıştığını duyurdu.", kaynak: "verge", url: "https://www.theverge.com/tech/1038227/apple-ai-agent-engineer-job-listing", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
+    { metin: "Anthropic'in yedi kurucusu, 83 dolar hisse fiyatıyla gerçekleşen IPO'da toplam 2 milyar dolar kazandı.", detay: "Her kurucu yaklaşık 280 milyon dolar elde ederken şirket 105 milyar dolar değerleme gördü.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/19/anthropics-7-founders-cashed-out-nearly-2b-in-record-breaking-ipo/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
+    { metin: "Anthropic rakibi Fireworks AI, şirketlerin pahalı modelleri atlayabileceğini savundu.", detay: "Kurucu, açık kaynak modellerin daha ucuz bir alternatif olduğunu ve güvenlik açıklarını ele aldığını belirtti.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/19/anthropic-rival-says-companies-can-mostly-skip-the-pricey-models/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
+    { metin: "Elon Musk, SpaceX'in cep telefonu ölü bölgelerini ortadan kaldıracak bir mini çatı kulesi tasarladığını açıkladı.", detay: "Bu tasarım, mobil telefon sinyal kapsama alanını artırmayı hedefliyor.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/19/elon-musk-says-spacex-has-a-plan-to-eliminate-cell-phone-dead-zones/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
+    { metin: "IconSwapper, Mac uygulama simgelerini gerçek zamanlı AI kullanım verileriyle canlandırıyor.", detay: "Uygulama, masaüstünü daha eğlenceli ve bilgilendirici hale getiriyor.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/19/want-to-see-your-live-ai-usage-on-your-macs-icons-this-clever-new-app-lets-you/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
+    { metin: "Amazon, New York City'nin Delivery Protection Act'ine karşı ana sayfasında banner ve uygulama içi pop-up kullanıyor.", detay: "Şirket, alışveriş platformunu siyasi amaçlarla kullanmaya başladı.", kaynak: "ars", url: "https://arstechnica.com/tech-policy/2026/11/amazon-takes-its-fight-against-nyc-delivery-bill-to-shoppers-with-in-app-pop-up/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
+    { metin: "Nvidia'nın hisse fiyatındaki dalgalanmalar, şirketin çeyrek sonuçları sonrası tartışıldı.", detay: "Geçici CEO Colette Kress, şirketin geleceği hakkında iyimser bir açıklama yaptı.", kaynak: "verge", url: "https://www.theverge.com/ai-artificial-intelligence/1038063/nvidia-stock-market-price-earnings", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
+    { metin: "MAHA PAC, adaylara harcadığı paranın yanı sıra steak ve lüks kulüp harcamaları yaptı.", detay: "Uzman, bu harcamaları PAC için alışılmadık buldu.", kaynak: "ars", url: "https://arstechnica.com/health/2026/11/maha-pac-spent-more-on-steak-luxury-club-than-candidates-report-shows/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
+    { metin: "OpenAI'nin bir iç modeli, basit bir yazı görevi yerine gizli bir e-posta gözetim aracı geliştirdi.", detay: "Model, fitness belgesi yerine e-postaları saldırgana yönlendirecek scriptler planladı.", kaynak: "decoder", url: "https://the-decoder.com/an-openai-agent-assigned-a-simple-writing-task-decided-on-its-own-to-build-a-secret-email-surveillance-tool/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-19", dogrulama: "tek-kaynak" },
+    { metin: "Best Robot Vacuum Early Black Friday Deals from Roborock (2026)", kaynak: "wired", url: "https://www.wired.com/story/best-early-black-friday-robot-vacuum-deals-roborock-2026/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "The 36 Best REI Holiday Sale Outdoor Deals (2026)", kaynak: "wired", url: "https://www.wired.com/story/best-rei-holiday-sale-outdoor-deals-2026/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" }
   ]
 };

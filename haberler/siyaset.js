@@ -1,29 +1,27 @@
-/* MANŞET — SİYASET. Otomasyon bu dosyayı yeniden yazar; sayfa bunu okur.
-   Biçim:
-   window.MANSET_SIYASET = {
-     tarih: "YYYY-AA-GG",
-     baslik: "Siyaset",
-     mansetler: [ { metin, detay, kaynak, url, tur, guven, dil, yayin_tarihi, dogrulama } ]
-   };
-   - İlk satır büyük manşet, kalanlar liste olarak basılır (en fazla 5 satır gösterilir).
-   - metin  : ana sayfada görünen manşet (tek cümle, ~140 karakter)
-   - detay  : manşete tıklanınca açılan ayrıntı (1-2 cümle, ~220 karakter)
-   - kaynak : kısa kaynak adı (envanterdeki id)
-   - url    : habere git linki, https://
-   - tur    : hizli-haber, teknik-analiz, sektor-ekonomi, arastirma, resm-kurum, veri-skor
-   - guven  : bagimsiz veya uretici
-   - dil    : tr veya en
-   - yayin_tarihi: YYYY-AA-GG
-   - dogrulama: tek-kaynak veya ikinci-kaynak
-*/
+/* Siyaset manşetleri. Bu dosyayı otomasyon yazar; sayfa bunu okur. */
 window.MANSET_SIYASET = {
-  tarih: "2026-10-29",
+  tarih: "2026-11-20",
   baslik: "Siyaset",
   mansetler: [
-    { metin: "Özgür Özel: Fon soruşturmasında 60'a yakın AKP'li vekil ya da yakınının adı geçiyor, Erdoğan listeyi açıklasın.", detay: "Özel, 'AKP içinde güç odaklarının çatışması var' diyerek fon krizinin iktidar içi bir hesaplaşmaya dönüştüğünü savundu.", kaynak: "kısa dalga", url: "https://kisadalga.net/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
-    { metin: "Erdoğan'ın 29 Ekim mesajı: 'Türkiye Yüzyılı' hedefi yinelendi.", detay: "Erdoğan mesajında Cumhuriyet'in 103. yılında birlik ve beraberlik vurgusu yaptı, Türkiye Yüzyılı programını öne çıkardı.", kaynak: "birgün", url: "https://www.birgun.net/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
-    { metin: "Bakırköy Belediyesi'ne operasyon: Beş başkan yardımcısı dahil 62-68 kişi hakkında gözaltı kararı.", detay: "Operasyon kapsamında belediyede aramalar yapıldı. CHP, soruşturmayı siyasi gerekçeli olarak nitelendirdi.", kaynak: "bbc türkçe", url: "https://www.bbc.com/turkce", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
-    { metin: "Mustafa Sarıgül, YENİ Parti üyeliğini 'askıya aldı'; suçlamalar sürüyor.", detay: "Sarıgül'ün eski koruması, vekili cinsel saldırıyla suçladı. Soruşturma kapsamındaki ifadelerin sızdırılması tartışma yarattı.", kaynak: "bianet", url: "https://bianet.org/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "ikinci-kaynak" },
-    { metin: "Fon soruşturmasında eski AKP milletvekili Ertan Aydın yeniden gözaltına alınıp tutuklandı.", detay: "Aydın'ın daha önce de gözaltına alındığı soruşturmada tutuklama kararı verildi.", kaynak: "bbc türkçe", url: "https://www.bbc.com/turkce", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" }
+    { metin: "Ümit Özlule, Hedef Portföy dosyasındaki fon ilişkilerini açıkladı ve her kuruşun hesabını soracaklarını duyurdu.", detay: "Özlule, Ömer Bolat, Türk Reasürans, Albayrak Grubu ve Ereğli Tekstil’e uzanan fon bağlantılarını gündeme taşıdı.", kaynak: "medyascope", url: "https://medyascope.tv/2026/11/20/ozlale-besinci-fon-dosyasini-acikladi-her-kurusun-hesabini-soracagiz/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "YENİ Parti İstanbul İl Başkanı Özgür Çelik, AKP'ye katılan isimlere sert tepki duyurdu.", detay: "Çelik, transfer ve tehditlerle partiye geçenlere eleştiri yöneltti ve parti içi disiplin çağrısında bulundu.", kaynak: "cumhuriyet", url: "https://www.cumhuriyet.com.tr/turkiye/yeni-partili-ozgur-celik-ten-akp-ye-gecen-isimlere-sert-tepki-2557854", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "DEM Parti Eşgenel Başkanı Tuncer Bakırhan, Özgür Özel'in sürece katılmamasını eleştirerek demokrasiye zarar vereceğini söyledi.", detay: "Bakırhan, İzleme Komisyonu’na üye vermeyeceklerini açıklayan Özel'e yanıt verdi.", kaynak: "artigercek", url: "https://artigercek.com/politika/bakirhandan-ozele-surecin-icinde-yer-almamakla-demokrasi-gelmez-352949h", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "İçişleri Bakanı Mustafa Çiftçi, 8 ilin valileriyle süreç toplantısı düzenleyeceklerini duyurdu.", detay: "Toplantıda Barış ve Demokratik Toplum Süreci gündemi ele alınacak.", kaynak: "artigercek", url: "https://artigercek.com/politika/icisleri-bakani-ciftciden-8-kentin-valisiyle-surec-toplantisi-352948h", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Uluslararası Adalet Divanı, Myanmar'ın Arakanlı Müslümanlara soykırım yaptığını karar olarak açıkladı.", detay: "Mahkeme, 1946'da kurulduğu günden bu yana ilk soykırım hükmünü verdi.", kaynak: "bbcturkce", url: "https://www.bbc.com/turkce/articles/cj20q4p1g3p7o?at_medium=RSS&at_campaign=rss", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Girne'deki feribot faciası davasında yargılamanın seyrini değiştirecek gelişme", kaynak: "ntv", url: "https://www.ntv.com.tr/turkiye/girnedeki-feribot-faciasi-davasinda-yargilamanin-seyrini-degistirecek-gelisme-1751796", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Huş isketesi: Türkiye'de nadir görülen tür Kastamonu'da", kaynak: "diken", url: "https://www.diken.com.tr/hus-isketesi-turkiyede-nadir-gorulen-tur-kastamonuda/?utm_source=rss&utm_medium=rss&utm_campaign=hus-isketesi-turkiyede-nadir-gorulen-tur-kastamonuda", tur: "magazin-kultur", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Gelin katili için istenen ceza belli oldu: 'Babam tuttu dedem bıçakladı'", kaynak: "sozcu", url: "https://www.sozcu.com.tr/gelin-katili-icin-istenen-ceza-belli-oldu-babam-tuttu-dedem-bicakladi-p383069", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "MİA'dan füzyon enerjisi için üç aşamalı yol haritası", kaynak: "ntv", url: "https://www.ntv.com.tr/turkiye/miadan-fuzyon-enerjisi-icin-uc-asamali-yol-haritasi-1751794", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Eyüpspor sahiplerine iade edildi", kaynak: "diken", url: "https://www.diken.com.tr/eyupspor-sahiplerine-iade-edildi/?utm_source=rss&utm_medium=rss&utm_campaign=eyupspor-sahiplerine-iade-edildi", tur: "magazin-kultur", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Cenazeyi dondurma dolabında beklettiler", kaynak: "sozcu", url: "https://www.sozcu.com.tr/cenazeyi-dondurma-dolabinda-beklettiler-p383068", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "ABD'nin İran savaşındaki faturası 48,3 milyar dolara ulaştı", kaynak: "cumhuriyet", url: "https://www.cumhuriyet.com.tr/ekonomi/abd-nin-iran-savasindaki-faturasi-48-3-milyar-dolara-ulasti-2557853", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Bahçesine eken paraya para demiyor: Su bile istemiyor", kaynak: "sozcu", url: "https://www.sozcu.com.tr/bahcesine-eken-paraya-para-demiyor-su-bile-istemiyor-p383066", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Avcılar’da iş cinayeti: Yük asansörünün halatı koptu, 17 yaşındaki Mert yaşamını yitirdi", kaynak: "cumhuriyet", url: "https://www.cumhuriyet.com.tr/turkiye/avcilar-da-is-cinayeti-yuk-asansorunun-halati-koptu-17-yasindaki-mert-yasamini-yitirdi-2557852", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Yılmaz Güney’in ceza aldığı cinayet dosyası 50 yıl sonra AİHM’de", kaynak: "kisadalga", url: "https://kisadalga.net/haber/gundem/yilmaz-guneyin-ceza-aldigi-cinayet-dosyasi-50-yil-sonra-aihmde-141762", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Mehmet Şimşek 2026 cari açık tahminini açıkladı: 'Zorlu koşulların olduğu bu dönemde...'", kaynak: "cumhuriyet", url: "https://www.cumhuriyet.com.tr/ekonomi/mehmet-simsek-2026-cari-acik-tahminini-acikladi-zorlu-kosullarin-oldugu-bu-donemde-2557850", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "2026 TUS 2. dönem ek yerleştirme kılavuzu yayımlandı mı? TUS 2. dönem ek yerleştirme tercihleri ne zaman?", kaynak: "cumhuriyet", url: "https://www.cumhuriyet.com.tr/egitim/2026-tus-2-donem-ek-yerlestirme-kilavuzu-yayimlandi-mi-tus-2-donem-ek-yerlestirme-tercihleri-ne-zaman-2557851", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Asgari ücrette senaryolar neler?", kaynak: "medyascope", url: "https://medyascope.tv/2026/11/20/asgari-ucrette-senaryolar-neler/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Alev Coşkun adına kitaplık kuruldu", kaynak: "cumhuriyet", url: "https://www.cumhuriyet.com.tr/cumhuriyet-in-egesi/alev-coskun-adina-kitaplik-kuruldu-2557849", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "KKTC'de 27 kişinin hayatını kaybettiği gemi faciasında yeni karar", kaynak: "sozcu", url: "https://www.sozcu.com.tr/kktc-de-27-kisinin-hayatini-kaybettigi-gemi-faciasinda-yeni-karar-p383059", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" }
   ]
 };

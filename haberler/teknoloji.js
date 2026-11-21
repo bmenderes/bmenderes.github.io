@@ -1,27 +1,79 @@
-/* Teknoloji manşetleri. Bu dosyayı otomasyon yazar; sayfa bunu okur. */
+/* MANŞET — TEKNOLOJİ. Otomasyon bu dosyayı yeniden yazar; sayfa bunu okur.
+   Biçim:
+   window.MANSET_TEKNOLOJI = {
+     tarih: "YYYY-AA-GG",
+     baslik: "Teknoloji",
+     mansetler: [ { metin, detay, kaynak, url, tur, guven, dil, yayin_tarihi, dogrulama } ]
+   };
+   - İlk satır büyük manşet, kalanlar liste olarak basılır (en fazla 5 satır gösterilir).
+   - metin  : ana sayfada görünen manşet (tek cümle, ~140 karakter)
+   - detay  : manşete tıklanınca açılan ayrıntı (1-2 cümle, ~220 karakter)
+   - kaynak : kısa kaynak adı (envanterdeki id)
+   - url    : habere git linki, https://
+   - tur    : hizli-haber, teknik-analiz, sektor-ekonomi, arastirma
+   - guven  : bagimsiz veya uretici
+   - dil    : tr veya en
+   - yayin_tarihi: YYYY-AA-GG
+   - dogrulama: tek-kaynak veya ikinci-kaynak
+*/
 window.MANSET_TEKNOLOJI = {
-  tarih: "2026-11-20",
+  tarih: "2026-10-30",
   baslik: "Teknoloji",
   mansetler: [
-    { metin: "Süper sıcak kaya jeotermali, veri merkezlerinin enerji sorununu çözebilir.", detay: "Yeni jeotermal girişimler, neredeyse her yerde teravat seviyesinde elektrik üretmeyi hedefliyor.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/20/super-hot-rock-geothermal-could-end-data-center-energy-woes/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
-    { metin: "AI değerlendirme grafiği büyük bir güncelleme aldı.", detay: "METR raporu, bazı yapay zeka yeteneklerinin üssel bir ivme gösterdiğini belirtiyor.", kaynak: "mit-tr", url: "https://www.technologyreview.com/2026/11/20/1149399/the-most-misunderstood-graph-in-ai-just-got-a-major-update/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
-    { metin: "Google, önümüzdeki yıl Nest uygulamasını kapatıp Google Asistanı akıllı hoparlörlerde durduracak.", detay: "Şirket, akıllı ev yazılımını yeni bir platforma taşıma planını duyurdu.", kaynak: "verge", url: "https://www.theverge.com/tech/1038834/google-assistant-smart-speakers-nest-app-killed-shut-down", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
-    { metin: "Internet Archive çalışanlarının büyük çoğunluğu CWA'ya katılmak için oy kullandı.", detay: "Dijital kütüphane çalışanları, sendikalaşma sürecini onayladı.", kaynak: "wired", url: "https://www.wired.com/story/internet-archive-staffers-are-unionizing/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
-    { metin: "Apple, cihazları kontrol eden AI ajanı geliştirdiğini açıkladı.", detay: "Yeni ajan, rakiplerin erişimini zorlaştıracak önlemler içeriyor.", kaynak: "decoder", url: "https://the-decoder.com/apple-joins-the-race-for-ai-agents-that-control-your-device-while-raising-new-barriers-for-competitors/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
-    { metin: "Nvidia, Inception'ın difüzyon modellerine en az 500 milyon dolar yatırım yapacak.", detay: "Şirket, açık kaynak Nemotron serisini güçlendirmeyi hedefliyor.", kaynak: "decoder", url: "https://the-decoder.com/nvidia-bets-at-least-500-million-on-inceptions-diffusion-models-to-strengthen-its-open-source-nemotron-lineup/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
-    { metin: "Bending Spoons, Mailchimp'i 3,68 milyar dolara satın aldı.", detay: "Bu fiyat, Intuit'un 2021'deki 12 milyar dolarlık alımının çok altında.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/20/bending-spoons-buys-mailchimp-for-3-68-billion/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
-    { metin: "Anthropic'ten Levent Alpöge, Riemann hipotezini çözdüğünü iddia etti.", detay: "Claude yapay zekasıyla kanıtlandığını belirtti.", kaynak: "verge", url: "https://www.theverge.com/ai-artificial-intelligence/1010051/anthropic-riemann-hypothesis-millennium-prize-problem", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
-    { metin: "Altı AI destekli cihaz, ev ofisinizi daha akıllı hâle getirebilir.", detay: "Not tutuculardan web kameralara kadar çeşitli ürünler tanıtıldı.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
-    { metin: "SpaceX'in borç verenleri, çip teminatının uzaya gönderilmesini istemiyor.", detay: "Bond sahipleri, değerli çiplerin Dünya'da kalmasını talep ediyor.", kaynak: "ars", url: "https://arstechnica.com/space/2026/11/spacex-lenders-dont-want-elon-musk-launching-their-collateral-into-space/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
-    { metin: "Valve, sınırlı sayıda üretilen Steam Machine'ların fiyatını artırabilir.", detay: "Üretim miktarı ve fiyatlandırma henüz netleşmedi.", kaynak: "ars", url: "https://arstechnica.com/gaming/2026/11/valve-says-it-might-have-to-raise-the-price-of-supply-limited-steam-machines/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
-    { metin: "Görsel sahteciliklere karşı güven kaybı artıyor, çözüm bekleniyor.", detay: "Yazar, derin sahte videoların etkilerini ve gelecekteki önlemleri tartışıyor.", kaynak: "ieee", url: "https://spectrum.ieee.org/fighting-back-against-deep-fakes", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
-    { metin: "Apple ürünlerinde erken Black Friday indirimleri gerçek değer sunuyor.", detay: "Yeni AirPods ve Apple Watch, tatil hediyesi olarak cazip ama pahalı.", kaynak: "verge", url: "https://www.theverge.com/gadgets/1035460/best-early-black-friday-apple-deals-2026", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
-    { metin: "2026 için en iyi erken Black Friday fırsatları yayınlandı.", detay: "Teknoloji ürünlerinden ev eşyalarına kadar geniş bir indirim yelpazesi sunuluyor.", kaynak: "wired", url: "https://www.wired.com/story/best-black-friday-deals-11-20-2026/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
-    { metin: "Pura parfüm ve difüzörlerinde Cyber Week indirimleri yüzde 20-30 arasında.", detay: "Ürünler 6 Aralık'a kadar indirimli fiyatlarla satılıyor.", kaynak: "wired", url: "https://www.wired.com/story/pura-black-friday-2026/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
-    { metin: "Chips can survive the space environment. Can their financing?", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/20/chips-can-survive-the-space-environment-can-their-financing/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
-    { metin: "Teenage Engineering’s first CD player puts the spinning disc on display", kaynak: "verge", url: "https://www.theverge.com/tech/1038692/teenage-engineering-ep-bc-1-cd-compact-disc-player-broadcast-series-bluetooth", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
-    { metin: "Boys Noize turns to the club (and an obscure Italian synth) for inspiration on 7LLVSION", kaynak: "verge", url: "https://www.theverge.com/entertainment/1038444/boys-noize-7llvsion-interview", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
-    { metin: "Andrey Zvyagintsev believes filmmakers know what the audience wants — not executives", kaynak: "verge", url: "https://www.theverge.com/entertainment/1038410/andrey-zvyagintsev-minotaur-interview-director", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
-    { metin: "Don’t Bring Jensen Back", kaynak: "wired", url: "https://www.wired.com/story/dont-bring-jensen-back/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" }
+    {
+      metin: "Binance, kripto tarihinin en büyük soygununda 6,3 milyar dolar çalındığını açıkladı.",
+      detay: "Borsa para çekme işlemlerini durdurdu. Olay TechCrunch, The Verge ve Bloomberg'in ana sayfalarında yer alıyor.",
+      kaynak: "techcrunch",
+      url: "https://techcrunch.com/",
+      tur: "hizli-haber",
+      guven: "bagimsiz",
+      dil: "en",
+      yayin_tarihi: "2026-10-30",
+      dogrulama: "ikinci-kaynak"
+    },
+    {
+      metin: "Anthropic, halka arz için ABD SEC'e S-1 kaydı sundu.",
+      detay: "Şirket, A sınıfı hisselerinin halka arzı için kayıt beyanını duyurdu. Bloomberg ve The Decoder da konuyu işliyor.",
+      kaynak: "anthropic",
+      url: "https://www.anthropic.com/news",
+      tur: "resmi-duyuru",
+      guven: "uretici",
+      dil: "en",
+      yayin_tarihi: "2026-10-30",
+      dogrulama: "ikinci-kaynak"
+    },
+    {
+      metin: "Google DeepMind, Argon'dan iki hafta sonra Gemini 4 Carbon modelini yayınladı.",
+      detay: "Şirket Gemini 4 Carbon'u yeni öncü modeli olarak duyurdu; The Decoder'a göre Argon'a göre genel kazanımlar sunuyor.",
+      kaynak: "deepmind",
+      url: "https://deepmind.google/discover/blog/",
+      tur: "arastirma",
+      guven: "uretici",
+      dil: "en",
+      yayin_tarihi: "2026-10-30",
+      dogrulama: "ikinci-kaynak"
+    },
+    {
+      metin: "DoorDash, Instacart'ı 17 milyar dolara satın alacak.",
+      detay: "TechCrunch'ın bildirdiği anlaşma, yemek ve market teslimat sektöründe büyük bir birleşme anlamına geliyor.",
+      kaynak: "techcrunch",
+      url: "https://techcrunch.com/",
+      tur: "hizli-haber",
+      guven: "bagimsiz",
+      dil: "en",
+      yayin_tarihi: "2026-10-30",
+      dogrulama: "tek-kaynak"
+    },
+    {
+      metin: "Mistral, kodlama odaklı Le Chonk modelini yayınladı; model Hugging Face'te de yer alıyor.",
+      detay: "The Decoder, modelin güçlü olduğunu ancak genel olarak Çinli rakiplerin gerisinde kaldığını yazıyor. Hugging Face blogu da Mistral Large 4 olarak duyurdu.",
+      kaynak: "decoder",
+      url: "https://the-decoder.com/",
+      tur: "hizli-haber",
+      guven: "bagimsiz",
+      dil: "en",
+      yayin_tarihi: "2026-10-29",
+      dogrulama: "ikinci-kaynak"
+    }
   ]
 };

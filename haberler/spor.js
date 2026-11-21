@@ -1,29 +1,27 @@
-/* MANŞET — SPOR. Otomasyon bu dosyayı yeniden yazar; sayfa bunu okur.
-   Biçim:
-   window.MANSET_SPOR = {
-     tarih: "YYYY-AA-GG",
-     baslik: "Spor",
-     mansetler: [ { metin, detay, kaynak, url, tur, guven, dil, yayin_tarihi, dogrulama } ]
-   };
-   - İlk satır büyük manşet, kalanlar liste olarak basılır (en fazla 5 satır gösterilir).
-   - metin  : ana sayfada görünen manşet (tek cümle, ~140 karakter)
-   - detay  : manşete tıklanınca açılan ayrıntı (1-2 cümle, ~220 karakter)
-   - kaynak : kısa kaynak adı (envanterdeki id)
-   - url    : habere git linki, https://
-   - tur    : hizli-haber, teknik-analiz, magazin-kultur, resm-kurum, veri-skor
-   - guven  : bagimsiz
-   - dil    : tr veya en
-   - yayin_tarihi: YYYY-AA-GG
-   - dogrulama: tek-kaynak veya ikinci-kaynak
-*/
+/* Spor manşetleri. Bu dosyayı otomasyon yazar; sayfa bunu okur. */
 window.MANSET_SPOR = {
-  tarih: "2026-10-29",
+  tarih: "2026-11-21",
   baslik: "Spor",
   mansetler: [
-    { metin: "Fenerbahçe'de İsmail Kartal dönemi sona erdi; takım geçici olarak Dirk Kuyt'a emanet edildi.", detay: "Kulüp, yeni teknik direktör belirlenene kadar takımın Kuyt yönetiminde çalışacağını duyurdu.", kaynak: "bbc türkçe", url: "https://www.bbc.com/turkce", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
-    { metin: "Ballon d'Or 2026'yı Harry Kane ve Alexia Putellas kazandı.", detay: "Ödüller, erkekler ve kadınlar kategorilerinde yılın en iyi futbolcularına verildi.", kaynak: "bbc türkçe", url: "https://www.bbc.com/turkce", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
-    { metin: "Süper Lig'de 10'uncu hafta başlıyor; Galatasaray Konya deplasmanında.", detay: "Haftanın programı ve puan durumu, ligde üst sıraları yakından ilgilendiren maçlara işaret ediyor.", kaynak: "birgün", url: "https://www.birgun.net/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
-    { metin: "Derbi biter bitmez kavga çıktı: İki futbolcuya kırmızı kart.", detay: "Maç sonrası yaşanan gerginlik, disiplin kuruluna taşınabilir.", kaynak: "diken", url: "https://www.diken.com.tr/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
-    { metin: "Süper Lig'de puan durumu ve gelecek haftanın programı açıklandı.", detay: "Diken'in derlemesine göre ligde zirve yarışı ve alt sıralar arasındaki puan farkı dikkat çekiyor.", kaynak: "diken", url: "https://www.diken.com.tr/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" }
+    { metin: "Alperen Şengün'ün triple-double'ı Rockets'a yetmedi", detay: "NBA'de Denver Nuggets, Alperen Şengün'ün triple-double yaptığı maçta Houston Rockets'ı 133-124 yendi", kaynak: "aa-spor", url: "https://www.aa.com.tr/tr/spor/alperen-sengunun-triple-doublei-rocketsa-yetmedi/4132912", tur: "resmi-kurum", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "Virgil van Dijk gelecek sezon için vedalaşma planı olduğunu açıkladı", detay: "Liverpool yıldızı, yeni sezon hangi takımda oynayacağını açıklamadan, yazın vedalaşacağını belirtti", kaynak: "hurriyet-spor", url: "https://www.hurriyet.com.tr/sporarena/virgil-van-dijktan-gelecegi-hakkinda-aciklama-yazin-vedalasacagim-43385943", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "Harry Kane, ayak bileği ameliyatı sonrası sezonun iş bitiminde sahaya dönmeyi hedefliyor", detay: "Kane, sol ayak bileği bağ yaralanması sonrası iyileşme sürecini tamamlayıp takımıyla birlikte 'iş bitimi' maçlarına katılmak istediğini söyledi", kaynak: "sky-sports", url: "https://www.skysports.com/football/news/12040/13614655/harry-kane-england-and-bayern-munich-striker-vows-to-be-back-for-business-end-of-season-after-ankle-surgery", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "Avustralya'nın Nikhil Chaudhary, İngiltere'yi ilk T20 maçında son overde yenerek galip geldi", detay: "Chaudhary, gergin bir final overinde rakibini alt ederek Avustralya'ya zafer kazandırdı", kaynak: "bbc-sport", url: "https://www.bbc.co.uk/sport/cricket/articles/cme39qlevnrqo?at_medium=RSS&at_campaign=rss", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "Beşiktaş, Fuzul Tasarruf Finansman A.Ş. ile yeni sponsorluk anlaşması imzaladığını duyurdu", detay: "Anlaşma kapsamında Fuzul, 2026-27 sezonunda kulübün resmi sponsoru olacak", kaynak: "sozcu-spor", url: "https://www.sozcu.com.tr/besiktas-yeni-sponsorunu-acikladi-p383240", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "Beşiktaş, Olaitan için çılgın bir plan hazırladığını açıkladı", detay: "Kulüp, Avrupa kulüplerinin radarındaki oyuncuyu elde etmek için uzun vadeli bir strateji izliyor", kaynak: "ntvspor", url: "https://www.ntvspor.net/futbol/galeri-besiktasin-cilgin-olaitan-plani-gedson-fernandesi-bile-geride-birakacak-433328", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "Galatasaray, Juventus'tan 20 milyon euro karşılığında savunmacı transferi hedefliyor", detay: "Kulüp, Ocak transfer döneminde İtalyan savunmacıyı kadrosuna katmak istediğini belirtti", kaynak: "hurriyet-spor", url: "https://www.hurriyet.com.tr/sporarena/galatasaray-juventustan-istiyor-20-milyon-euro-43386129", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "Fenerbahçe, sözleşmesi sona eren İrfan Can Kahveci'ye 1+1 yıllık kontrat teklif etti", detay: "Kulüp, milli futbolcunun sezon sonunda sözleşmesinin biteceğini ve yeni bir anlaşma hazırladığını duyurdu", kaynak: "sozcu-spor", url: "https://www.sozcu.com.tr/fenerbahcede-irfan-can-pazarligi-ipler-gerildi-p383222", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "Southampton ve Derby County maçının canlı yayını başladı", detay: "İngiltere futbol ligi kapsamında iki takım, Skysports üzerinden izleyicilere canlı olarak sunuldu", kaynak: "sky-sports", url: "https://www.skysports.com/football/southampton-vs-derby-county/live/560685", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "Canlı | Galatasaray-Samsunspor maçı canlı anlatım", kaynak: "sozcu-spor", url: "https://www.sozcu.com.tr/canli-veya-galatasaray-samsunspor-maci-canli-anlatim-p383234", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "\"Galatasaray'da çifte imza kapıda\" | Sporun manşetleri", kaynak: "ntvspor", url: "https://www.ntvspor.net/futbol/galeri-galatasarayda-cifte-imza-kapida-sporun-mansetleri-433326", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "Samsunspor maçına saatler kala Okan Buruk'la flaş görüşme: \"Oynamak istiyorum\"", kaynak: "ntvspor", url: "https://www.ntvspor.net/futbol/galeri-samsunspor-macina-saatler-kala-okan-burukla-flas-gorusme-oynamak-istiyorum-433329", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "Ve Asensio'dan sürpriz haber bir anda geldi! Milyonlarca Fenerbahçeli bayram edecek", kaynak: "ntvspor", url: "https://www.ntvspor.net/futbol/galeri-ve-asensiodan-surpriz-haber-bir-anda-geldi-milyonlarca-fenerbahceli-bayram-edecek-433337", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "Önder Özen transferi bitirmeye gidiyor! Beşiktaş'tan sağ kanada da Belçikalı", kaynak: "ntvspor", url: "https://www.ntvspor.net/futbol/galeri-onder-ozen-transferi-bitirmeye-gidiyor-besiktastan-sag-kanada-da-belcikali-433332", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "Ve Kane'den hasta yatağında fotoğraf geldi! Son hali ortaya çıktı", kaynak: "ntvspor", url: "https://www.ntvspor.net/futbol/galeri-ve-kaneden-hasta-yataginda-fotograf-geldi-son-hali-ortaya-cikti-433344", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "Lehmann again denies knowing about sandpaper plot", kaynak: "bbc-sport", url: "https://www.bbc.co.uk/sport/cricket/articles/cm62pxqwzw9go?at_medium=RSS&at_campaign=rss", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "Two SPFL postponements due to frozen pitch", kaynak: "bbc-sport", url: "https://www.bbc.co.uk/sport/football/articles/ckn80vgexz13o?at_medium=RSS&at_campaign=rss", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "Hickman breaks 16-year-old lap record in Macau win", kaynak: "bbc-sport", url: "https://www.bbc.co.uk/sport/motorsport/articles/ckr5gd36d669o?at_medium=RSS&at_campaign=rss", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "TVF Başkanı Mehmet Akif Üstündağ: \"Voleybolun gelecek nesiller için daha güçlü, adil olması hedefiyle çalışıyoruz\"", kaynak: "hurriyet-spor", url: "https://www.hurriyet.com.tr/sporarena/tvf-baskani-mehmet-akif-ustundag-voleybolun-gelecek-nesiller-icin-daha-guclu-adil-olmasi-hedefiyle-calisiyoruz-43386004", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "Galatasaray'dan Erkan Engin tepkisi!", kaynak: "hurriyet-spor", url: "https://www.hurriyet.com.tr/sporarena/galatasaraydan-erkan-engin-tepkisi-43386096", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" }
   ]
 };

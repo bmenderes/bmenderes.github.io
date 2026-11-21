@@ -1,79 +1,27 @@
-/* MANŞET — TEKNOLOJİ. Otomasyon bu dosyayı yeniden yazar; sayfa bunu okur.
-   Biçim:
-   window.MANSET_TEKNOLOJI = {
-     tarih: "YYYY-AA-GG",
-     baslik: "Teknoloji",
-     mansetler: [ { metin, detay, kaynak, url, tur, guven, dil, yayin_tarihi, dogrulama } ]
-   };
-   - İlk satır büyük manşet, kalanlar liste olarak basılır (en fazla 5 satır gösterilir).
-   - metin  : ana sayfada görünen manşet (tek cümle, ~140 karakter)
-   - detay  : manşete tıklanınca açılan ayrıntı (1-2 cümle, ~220 karakter)
-   - kaynak : kısa kaynak adı (envanterdeki id)
-   - url    : habere git linki, https://
-   - tur    : hizli-haber, teknik-analiz, sektor-ekonomi, arastirma
-   - guven  : bagimsiz veya uretici
-   - dil    : tr veya en
-   - yayin_tarihi: YYYY-AA-GG
-   - dogrulama: tek-kaynak veya ikinci-kaynak
-*/
+/* Teknoloji manşetleri. Bu dosyayı otomasyon yazar; sayfa bunu okur. */
 window.MANSET_TEKNOLOJI = {
-  tarih: "2026-10-30",
+  tarih: "2026-11-21",
   baslik: "Teknoloji",
   mansetler: [
-    {
-      metin: "Binance, kripto tarihinin en büyük soygununda 6,3 milyar dolar çalındığını açıkladı.",
-      detay: "Borsa para çekme işlemlerini durdurdu. Olay TechCrunch, The Verge ve Bloomberg'in ana sayfalarında yer alıyor.",
-      kaynak: "techcrunch",
-      url: "https://techcrunch.com/",
-      tur: "hizli-haber",
-      guven: "bagimsiz",
-      dil: "en",
-      yayin_tarihi: "2026-10-30",
-      dogrulama: "ikinci-kaynak"
-    },
-    {
-      metin: "Anthropic, halka arz için ABD SEC'e S-1 kaydı sundu.",
-      detay: "Şirket, A sınıfı hisselerinin halka arzı için kayıt beyanını duyurdu. Bloomberg ve The Decoder da konuyu işliyor.",
-      kaynak: "anthropic",
-      url: "https://www.anthropic.com/news",
-      tur: "resmi-duyuru",
-      guven: "uretici",
-      dil: "en",
-      yayin_tarihi: "2026-10-30",
-      dogrulama: "ikinci-kaynak"
-    },
-    {
-      metin: "Google DeepMind, Argon'dan iki hafta sonra Gemini 4 Carbon modelini yayınladı.",
-      detay: "Şirket Gemini 4 Carbon'u yeni öncü modeli olarak duyurdu; The Decoder'a göre Argon'a göre genel kazanımlar sunuyor.",
-      kaynak: "deepmind",
-      url: "https://deepmind.google/discover/blog/",
-      tur: "arastirma",
-      guven: "uretici",
-      dil: "en",
-      yayin_tarihi: "2026-10-30",
-      dogrulama: "ikinci-kaynak"
-    },
-    {
-      metin: "DoorDash, Instacart'ı 17 milyar dolara satın alacak.",
-      detay: "TechCrunch'ın bildirdiği anlaşma, yemek ve market teslimat sektöründe büyük bir birleşme anlamına geliyor.",
-      kaynak: "techcrunch",
-      url: "https://techcrunch.com/",
-      tur: "hizli-haber",
-      guven: "bagimsiz",
-      dil: "en",
-      yayin_tarihi: "2026-10-30",
-      dogrulama: "tek-kaynak"
-    },
-    {
-      metin: "Mistral, kodlama odaklı Le Chonk modelini yayınladı; model Hugging Face'te de yer alıyor.",
-      detay: "The Decoder, modelin güçlü olduğunu ancak genel olarak Çinli rakiplerin gerisinde kaldığını yazıyor. Hugging Face blogu da Mistral Large 4 olarak duyurdu.",
-      kaynak: "decoder",
-      url: "https://the-decoder.com/",
-      tur: "hizli-haber",
-      guven: "bagimsiz",
-      dil: "en",
-      yayin_tarihi: "2026-10-29",
-      dogrulama: "ikinci-kaynak"
-    }
+    { metin: "Google, arama sayfasını AI sohbet geçmişiyle yeniledi ve arama düğmesini kaldırdı.", detay: "Şirket, yeni ana sayfada yapay zeka sohbet geçmişi ekleyerek kullanıcıların önceki sorgularına hızlı erişim sağlıyor, aynı zamanda klasik arama düğmesini kaldırdı.", kaynak: "ars", url: "https://arstechnica.com/ai/2026/11/googles-latest-search-page-redesign-drops-the-search-button-adds-ai-sidebar/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Meta, AI veri merkezlerindeki rekor emisyonlar nedeniyle 2030 net-sıfır hedefini yeniden değerlendiriyor.", detay: "Şirket, yapay zeka hizmetlerinin enerji tüketiminin artmasıyla sürdürülebilirlik planlarını gözden geçirdiğini açıkladı.", kaynak: "ars", url: "https://arstechnica.com/ai/2026/11/meta-reconsiders-2030-net-zero-goal-amid-record-emissions-from-ai-data-centers/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Araştırmacılar, AI tedarik zincirine 2 milyon izci ekleyerek gizli veri sızıntılarını ortaya çıkardı.", detay: "Benzersiz izlenebilir sırlarla yapılan testler, yapay zeka modellerinin kullanıcı verilerini korumadığını gösterdi.", kaynak: "ars", url: "https://arstechnica.com/security/2026/11/a-leaky-ai-supply-chain-is-exposing-secret-user-data-at-an-alarming-rate/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "OpenAI, GPT‑6.2 modellerinin iç mantığını çıkarmayı saldırganlar için çok zorlaştırdı.", detay: "Şirket, yeni savunma mekanizmalarıyla modelin düşünce sürecine erişimi büyük ölçüde sınırladığını duyurdu.", kaynak: "decoder", url: "https://the-decoder.com/openai-makes-it-much-harder-for-attackers-to-extract-how-its-latest-ai-models-think/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "YouTube, sosyal medya bağımlılığı iddialarını çözmek için 3 milyar dolar ödeyecek.", detay: "Platform, binlerce okul bölgesiyle yaptığı anlaşma kapsamında, gençlere zararlı tasarım unsurlarını kaldırmayı taahhüt ediyor.", kaynak: "verge", url: "https://www.theverge.com/streaming/1039096/youtube-social-media-addiction-school-districts-settlement", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Bir ABD girişimi, Apple’ın Hindistan’da dokunarak kişi paylaşma özelliği için 162 milyon dolar tazminat talep ediyor.", detay: "Şirket, özelliğin haksız rekabet yarattığını ve iPhone ile Apple Watch ithalatını etkileyecek bir davayı başlattığını açıkladı.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/20/startup-sues-apple-in-india-over-tap-to-share-contacts-feature/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Spotify kurucusu Daniel Ek, AI araştırmacısının kurduğu Europa Fusion adlı füzyon girişimini destekliyor.", detay: "Ek, yapay zeka temelli füzyon reaktörünün enerji üretiminde devrim yaratabileceğini belirtti.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/20/daniel-ek-backs-ai-researchers-fusion-power-startup-heres-what-theyre-building/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Signal, iOS 27 ve Android’de ekran görüntüsü almayı engelleyerek AI ajanlarının sohbetleri okumasını önlüyor.", detay: "Yeni özellik, Siri, Gemini ve Muse gibi asistanların özel mesajları analiz etmesini engellemeyi amaçlıyor.", kaynak: "decoder", url: "https://the-decoder.com/signal-blocks-screenshots-on-ios-27-and-android-to-stop-ai-agents-from-reading-private-chats/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "ABD teknoloji hisseleri, AI konusundaki şüpheler nedeniyle pandemiden bu yana en büyük haftalık kaybını yaşadı.", detay: "Nasdaq‑100 düşüşte, Nvidia hisseleri %14 geriledi ve SEC incelemesiyle birlikte endeks ayırt etme riskine girdi.", kaynak: "decoder", url: "https://the-decoder.com/us-technology-stocks-suffer-their-worst-weekly-loss-since-the-pandemic-as-ai-doubts-pile-up/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Anthropic, Claude ile Riemann hipotezini kanıtladığını iddia ederken Stanford, insan odaklı bir taslağı yayımladı.", detay: "Stanford ekibi, yapay zeka kanıtının eksik yönlerini vurgulayarak geleneksel matematiksel yaklaşımı savundu.", kaynak: "decoder", url: "https://the-decoder.com/hours-after-anthropic-claims-a-claude-proof-of-the-riemann-hypothesis-stanford-releases-an-all-human-competing-draft/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "Bytedance, AI eğitim aşamalarının çoğunun gereksiz olduğunu savunarak Axion 1.0 modelini tanıttı.", detay: "Yeni açık model, ABD üniversiteleriyle ortaklaşa geliştirildi ve ticari AI sistemlerine rakip performans gösteriyor.", kaynak: "decoder", url: "https://the-decoder.com/bytedance-argues-most-ai-training-phases-are-unnecessary-and-backs-it-up-with-a-competitive-open-model/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "FCC, Kaliforniya’nın AT&T’ye ev telefonu hizmeti sunma zorunluluğunu uygulamasını engelliyor.", detay: "Federal düzenleyici, eyaletin telefon hizmeti kurallarını geçersiz kılarak operatörün esnekliğini artırdı.", kaynak: "ars", url: "https://arstechnica.com/tech-policy/2026/11/fcc-orders-california-to-stop-enforcing-phone-service-rules-against-att/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "SpaceX’in Starshield projesindeki Ukrayna tartışması, şirketin askeri işlerini tehdit edebilir.", detay: "Ukrayna’da hizmet değişiklikleri, Starshield’in diğer savunma sözleşmelerindeki güvenilirliğini sorgulatıyor.", kaynak: "ars", url: "https://arstechnica.com/space/2026/11/incoming-house-chair-threatens-spacex-funding-over-ukraine-controversy/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" },
+    { metin: "Wired, 100’den fazla cihazı test ederek 2026’nın en iyi taşınabilir şarj cihazlarını seçti.", detay: "Seçilen power bank’ler, telefon, laptop ve oyun konsollarını uzun süre çalıştırma kapasitesiyle öne çıkıyor.", kaynak: "wired", url: "https://www.wired.com/gallery/best-portable-chargers-power-banks/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "Wired, seyahat için en uygun 2026 laptoplarını deneyimleyerek bir liste hazırladı.", detay: "Yazara göre, hafif tasarım ve uzun pil ömrü sunan modeller, iş yolculuklarında tercih ediliyor.", kaynak: "wired", url: "https://www.wired.com/story/best-laptops-for-travel/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "Sony Bravia 9 II, yüksek özelleştirilebilir özellikleriyle premium bir ekran deneyimi sunuyor.", detay: "Yeni model, parlaklık ve renk ayarlarında geniş kontrol imkanı veriyor ancak fiyatı yüksek.", kaynak: "wired", url: "https://www.wired.com/review/sony-bravia-9-ii/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "ESA’nın uzay aracı, NASA’nın asteroid savunma testlerini gerçekleştirdiği bölgeye geri döndü.", detay: "Araç, potansiyel tehlikeli uzay kayaları üzerine yeni savunma teknolojileri deneyecek.", kaynak: "wired", url: "https://www.wired.com/story/a-space-probe-returns-to-astroids-where-nasa-tested-planetary-defense-systems/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "Harbinger, ekonomiyi hareket ettiren sade elektrikli kamyonları geliştiriyor.", detay: "Geleneksel otomobil üreticileri EV’ye yönelirken, startup düşük maliyetli ve dayanıklı kamyonlarla pazara giriyor.", kaynak: "verge", url: "https://www.theverge.com/transportation/1038448/harbinger-ev-startup-240m-series-d-fedex-army-trucks", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "Ars Technica, Race realism kavramının genetik temelli zekâ farklarını desteklemediğini belirtiyor.", detay: "Modern genetik araştırmalar, ırklar arasında doğuştan zekâ farklılığı olmadığını gösteriyor.", kaynak: "ars", url: "https://arstechnica.com/science/2026/11/race-realism-isnt-realistic-and-it-isnt-good-science/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-21", dogrulama: "tek-kaynak" },
+    { metin: "Rockstar, GTA VI’nın ilk gününde 3,79 milyar dolar gelir elde ettiğini açıkladı.", detay: "Şirket, bu rakamın tüm medya tarihindeki en yüksek ilk‑gün satış olduğunu duyurdu.", kaynak: "verge", url: "https://www.theverge.com/games/1036279/gta-vi-sales", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-20", dogrulama: "tek-kaynak" }
   ]
 };

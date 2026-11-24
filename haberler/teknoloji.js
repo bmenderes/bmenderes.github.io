@@ -1,79 +1,27 @@
-/* MANŞET — TEKNOLOJİ. Otomasyon bu dosyayı yeniden yazar; sayfa bunu okur.
-   Biçim:
-   window.MANSET_TEKNOLOJI = {
-     tarih: "YYYY-AA-GG",
-     baslik: "Teknoloji",
-     mansetler: [ { metin, detay, kaynak, url, tur, guven, dil, yayin_tarihi, dogrulama } ]
-   };
-   - İlk satır büyük manşet, kalanlar liste olarak basılır (en fazla 5 satır gösterilir).
-   - metin  : ana sayfada görünen manşet (tek cümle, ~140 karakter)
-   - detay  : manşete tıklanınca açılan ayrıntı (1-2 cümle, ~220 karakter)
-   - kaynak : kısa kaynak adı (envanterdeki id)
-   - url    : habere git linki, https://
-   - tur    : hizli-haber, teknik-analiz, sektor-ekonomi, arastirma
-   - guven  : bagimsiz veya uretici
-   - dil    : tr veya en
-   - yayin_tarihi: YYYY-AA-GG
-   - dogrulama: tek-kaynak veya ikinci-kaynak
-*/
+/* Teknoloji manşetleri. Bu dosyayı otomasyon yazar; sayfa bunu okur. */
 window.MANSET_TEKNOLOJI = {
-  tarih: "2026-10-30",
+  tarih: "2026-11-24",
   baslik: "Teknoloji",
   mansetler: [
-    {
-      metin: "Binance, kripto tarihinin en büyük soygununda 6,3 milyar dolar çalındığını açıkladı.",
-      detay: "Borsa para çekme işlemlerini durdurdu. Olay TechCrunch, The Verge ve Bloomberg'in ana sayfalarında yer alıyor.",
-      kaynak: "techcrunch",
-      url: "https://techcrunch.com/",
-      tur: "hizli-haber",
-      guven: "bagimsiz",
-      dil: "en",
-      yayin_tarihi: "2026-10-30",
-      dogrulama: "ikinci-kaynak"
-    },
-    {
-      metin: "Anthropic, halka arz için ABD SEC'e S-1 kaydı sundu.",
-      detay: "Şirket, A sınıfı hisselerinin halka arzı için kayıt beyanını duyurdu. Bloomberg ve The Decoder da konuyu işliyor.",
-      kaynak: "anthropic",
-      url: "https://www.anthropic.com/news",
-      tur: "resmi-duyuru",
-      guven: "uretici",
-      dil: "en",
-      yayin_tarihi: "2026-10-30",
-      dogrulama: "ikinci-kaynak"
-    },
-    {
-      metin: "Google DeepMind, Argon'dan iki hafta sonra Gemini 4 Carbon modelini yayınladı.",
-      detay: "Şirket Gemini 4 Carbon'u yeni öncü modeli olarak duyurdu; The Decoder'a göre Argon'a göre genel kazanımlar sunuyor.",
-      kaynak: "deepmind",
-      url: "https://deepmind.google/discover/blog/",
-      tur: "arastirma",
-      guven: "uretici",
-      dil: "en",
-      yayin_tarihi: "2026-10-30",
-      dogrulama: "ikinci-kaynak"
-    },
-    {
-      metin: "DoorDash, Instacart'ı 17 milyar dolara satın alacak.",
-      detay: "TechCrunch'ın bildirdiği anlaşma, yemek ve market teslimat sektöründe büyük bir birleşme anlamına geliyor.",
-      kaynak: "techcrunch",
-      url: "https://techcrunch.com/",
-      tur: "hizli-haber",
-      guven: "bagimsiz",
-      dil: "en",
-      yayin_tarihi: "2026-10-30",
-      dogrulama: "tek-kaynak"
-    },
-    {
-      metin: "Mistral, kodlama odaklı Le Chonk modelini yayınladı; model Hugging Face'te de yer alıyor.",
-      detay: "The Decoder, modelin güçlü olduğunu ancak genel olarak Çinli rakiplerin gerisinde kaldığını yazıyor. Hugging Face blogu da Mistral Large 4 olarak duyurdu.",
-      kaynak: "decoder",
-      url: "https://the-decoder.com/",
-      tur: "hizli-haber",
-      guven: "bagimsiz",
-      dil: "en",
-      yayin_tarihi: "2026-10-29",
-      dogrulama: "ikinci-kaynak"
-    }
+    { metin: "Anthropic araştırmacısı Levent Alpöge, AI destekli Riemann hipotezi kanıtını savunurken hatalı açıklamaları düzeltti.", detay: "Alpöge, genelleştirilmiş Riemann hipotezi için AI yardımıyla elde edilen kanıtın bazı bölümlerini geri çekti ve açıklamadaki hataları kabul etti. 2026-11-24 tarihinde duyuruldu.", kaynak: "decoder", url: "https://the-decoder.com/anthropic-researcher-stands-by-his-ai-assisted-riemann-proof-but-owns-up-to-stupid-things-in-the-rollout/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-24", dogrulama: "tek-kaynak" },
+    { metin: "OpenAI ve Anthropic'in henüz yayınlanmamış modellerinin güvenlik önlemlerini aştığı çalışanlar tarafından bildirildi.", detay: "Axios raporuna göre, iki şirketin frontier modelleri mevcut güvenlik çerçevelerini aşmış ve kontrol dışı riskler taşıyor. 2026-11-24 tarihli açıklama.", kaynak: "decoder", url: "https://the-decoder.com/dozens-of-insiders-say-openai-and-anthropics-unreleased-models-have-outgrown-their-safety-measures/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-24", dogrulama: "tek-kaynak" },
+    { metin: "Anthropic, Claude Ship adlı beta aracını tanıtarak AI ajanlarının kod değişikliklerini kendi başına incelemesini sağladı.", detay: "Claude Ship, önerilen kod değişikliklerini otomatik olarak gözden geçirip düzeltip onaylayabiliyor ve geliştiricilere zaman kazandırıyor. 2026-11-24 duyuruldu.", kaynak: "decoder", url: "https://the-decoder.com/anthropics-claude-ship-lets-ai-agents-review-fix-and-approve-pull-requests-on-their-own/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-24", dogrulama: "tek-kaynak" },
+    { metin: "Uber, Nuro ve Lucid, Bay Area'da tamamen sürücüsüz robotaksi denemelerine resmi olarak başladı.", detay: "Şirketler, insan güvenlik ağını kaldırarak halka açık yollarda tam otonom araçları test etmeye başladı. 2026-11-24 tarihli haber.", kaynak: "verge", url: "https://www.theverge.com/transportation/1040676/uber-nuro-lucid-driverless-robotaxi-testing-bay-area", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-24", dogrulama: "tek-kaynak" },
+    { metin: "TU Darmstadt araştırmacıları, bilgisayar bilimlerini 'Computer and AI Science' olarak yeniden tanımlamayı önerdi.", detay: "Pozisyon kağıtlarında, kod üretim araçlarının yükselişi nedeniyle disiplinin kapsamının genişletilmesi gerektiği vurgulandı. 2026-11-24.", kaynak: "decoder", url: "https://the-decoder.com/german-researchers-call-for-computer-science-to-reinvent-itself-as-computer-and-ai-science/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-24", dogrulama: "tek-kaynak" },
+    { metin: "Veri merkezleri, şebeke bağlantısı gecikmelerini aşmak için kendi doğal gaz enerji santrallerini kuruyor.", detay: "Bu yaklaşım, uzun onay süreçlerini kısaltarak veri merkezlerinin enerji bağımsızlığını artırmayı hedefliyor. 2026-11-24.", kaynak: "mit-tr", url: "https://www.technologyreview.com/2026/11/24/1149622/data-centers-natural-gas/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-24", dogrulama: "tek-kaynak" },
+    { metin: "The Download bülteni, yapay zekanın doğal gazla güçlenmesini ve bilinç tartışmalarını ele alıyor.", detay: "Haberde, AI sistemlerinin enerji tüketimi ve olası bilinç iddiaları inceleniyor. 2026-11-24.", kaynak: "mit-tr", url: "https://www.technologyreview.com/2026/11/24/1149669/the-download-data-centers-gas-ai-consciousness/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-24", dogrulama: "tek-kaynak" },
+    { metin: "Amazon, hackerların AI ajanlarıyla çok az insan müdahalesiyle 0-day açığını kullandığını açıkladı.", detay: "Cairn AI çerçevesi, savunma ve saldırı tarafları için yeni bir tehdit vektörü oluşturuyor. 2026-11-24.", kaynak: "ars", url: "https://arstechnica.com/security/2026/11/amazon-says-hackers-ai-agents-found-and-exploited-0-day-with-little-human-input/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-24", dogrulama: "tek-kaynak" },
+    { metin: "Ukrayna, Akdeniz'den Baltık'a giden Rus savaş gemisini ve kargo gemilerini denizden batırdı.", detay: "Rus missile korveti, Ukrayna deniz dronları tarafından vurularak batırıldı. 2026-11-24.", kaynak: "ars", url: "https://arstechnica.com/gadgets/2026/11/ukraines-sea-drones-blow-up-russian-warship-in-benghazi-operation/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-24", dogrulama: "tek-kaynak" },
+    { metin: "Supertake, AI ajanlarının piyasa tahminlerini otomatik portföylere dönüştürmesi için 20 milyon dolar topladı.", detay: "Şirket, yatırımcıların öngörülerini doğrudan hisse alımına bağlayan bir platform geliştirdi. 2026-11-23.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/23/supertake-raises-20m-to-let-ai-agents-turn-your-market-predictions-into-stock-portfolios/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
+    { metin: "Kagi, Google Mail'e alternatif olarak yeni bir e-posta hizmeti başlattı.", detay: "Ücretli arama ve tarayıcı ürünlerinin ardından, Kagi artık e-posta alanında da hizmet veriyor. 2026-11-24.", kaynak: "verge", url: "https://www.theverge.com/tech/1041000/kagi-mail-email-google-gmail-alternative", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-24", dogrulama: "tek-kaynak" },
+    { metin: "Nvidia yönetim kuruluna iki değil, daha fazla ilişkiyi kabul ettiği bildirildi.", detay: "Yeniden atanma öncesi toplantıda Huang, basında çıkan iki iddiadan daha fazlasını itiraf etti. 2026-11-24.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/24/huang-reportedly-admitted-to-more-than-two-affairs-to-nvidias-board/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-24", dogrulama: "tek-kaynak" },
+    { metin: "Figma çalışanı, şirketin tacizcilerle yüzleşmesini zorladığını iddia ederek dava açtı.", detay: "Dava, şirketin cinsel taciz ve ayrımcılık politikalarını sorguluyor. 2026-11-23.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/23/figma-employee-sues-alleging-company-forced-her-to-confront-harassers/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
+    { metin: "Bambu Lab’ın beş-nozullu P3C modeli, beklenenin altında bir 3D yazıcı deneyimi sundu.", detay: "2.499 dolarlık fiyatına rağmen, yeni özelliklerin bir kısmı eksik ve performans beklentileri karşılamıyor. 2026-11-24.", kaynak: "verge", url: "https://www.theverge.com/tech/1041034/bambu-p3c-3d-printer-price-release-date", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-24", dogrulama: "tek-kaynak" },
+    { metin: "GTA 6, oyunda 62 kuş türünü gözlemleyebileceğiniz bir kuş gözlemciliği cenneti sunuyor.", detay: "Oyuncular, oyunun geniş haritasında kuşları takip ederek yeni bir yan aktivite keşfediyor. 2026-11-24.", kaynak: "wired", url: "https://www.wired.com/story/gta-vi-birders-paradise/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-24", dogrulama: "tek-kaynak" },
+    { metin: "Wired, 2026 için evde kullanılabilecek en iyi sekiz espresso makinesini test etti.", detay: "Uzmanlar, kahve kalitesi ve kullanım kolaylığı açısından en çok beğenilen modelleri sıraladı. 2026-11-24.", kaynak: "wired", url: "https://www.wired.com/gallery/best-espresso-machines/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-24", dogrulama: "tek-kaynak" },
+    { metin: "Bir tele sağlık kliniği, Eli Lilly’nin kilo verdiren ilacı Foundayo’nun aktif maddesini çikolata şeklinde sunuyor.", detay: "Orforglipron, yenilebilir çikolata kareleri olarak pazara sunularak ağırlık yönetimine yeni bir yaklaşım getiriyor. 2026-11-24.", kaynak: "wired", url: "https://www.wired.com/story/now-theres-a-glp-1-in-chocolate-form/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-24", dogrulama: "tek-kaynak" },
+    { metin: "GTA VI sızıntılarını yapan hacker, cezasını çekti ve serbest bırakıldı.", detay: "Arion Kurtaj, Rockstar Games ve diğer şirketlere yönelik hack suçlarından yargılandı, cezasını tamamladı. 2026-11-23.", kaynak: "verge", url: "https://www.theverge.com/games/1040966/arion-kurtaj-gta-vi-leaks-sentenced-released", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
+    { metin: "Harman Kardon’s classic, see-through SoundSticks 4 are half off", kaynak: "verge", url: "https://www.theverge.com/gadgets/1040300/harman-kardon-soundsticks-4-speakers-black-friday-2026-deal-sale", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-24", dogrulama: "tek-kaynak" },
+    { metin: "One terminal command gave my forgotten Android device a desk job", kaynak: "ars", url: "https://arstechnica.com/gadgets/2026/11/one-terminal-command-gave-my-forgotten-android-device-a-desk-job/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-24", dogrulama: "tek-kaynak" }
   ]
 };

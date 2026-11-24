@@ -1,27 +1,29 @@
-/* Siyaset manşetleri. Bu dosyayı otomasyon yazar; sayfa bunu okur. */
+/* MANŞET — SİYASET. Otomasyon bu dosyayı yeniden yazar; sayfa bunu okur.
+   Biçim:
+   window.MANSET_SIYASET = {
+     tarih: "YYYY-AA-GG",
+     baslik: "Siyaset",
+     mansetler: [ { metin, detay, kaynak, url, tur, guven, dil, yayin_tarihi, dogrulama } ]
+   };
+   - İlk satır büyük manşet, kalanlar liste olarak basılır (en fazla 5 satır gösterilir).
+   - metin  : ana sayfada görünen manşet (tek cümle, ~140 karakter)
+   - detay  : manşete tıklanınca açılan ayrıntı (1-2 cümle, ~220 karakter)
+   - kaynak : kısa kaynak adı (envanterdeki id)
+   - url    : habere git linki, https://
+   - tur    : hizli-haber, teknik-analiz, sektor-ekonomi, arastirma, resm-kurum, veri-skor
+   - guven  : bagimsiz veya uretici
+   - dil    : tr veya en
+   - yayin_tarihi: YYYY-AA-GG
+   - dogrulama: tek-kaynak veya ikinci-kaynak
+*/
 window.MANSET_SIYASET = {
-  tarih: "2026-11-24",
+  tarih: "2026-10-29",
   baslik: "Siyaset",
   mansetler: [
-    { metin: "Fon soruşturmasında gözaltına alınan 4 şüpheliye tutuklama talebi.", detay: "İstanbul Cumhuriyet Başsavcılığı, 7 şüpheliden 4'üne tutuklama talebiyle sulh ceza hakimliğine sevk etti.", kaynak: "ntv", url: "https://www.ntv.com.tr/turkiye/fon-sorusturmasinda-yeni-gelisme-adliyeye-sevk-edildiler-1752193", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "2026 yılı yeniden değerleme oranı yüzde 27,83 olarak belirlendi.", detay: "Hazine ve Maliye Bakanlığı, Vergi Usul Kanunu Genel Tebliği ile yeni oranı duyurdu.", kaynak: "ntv", url: "https://www.ntv.com.tr/turkiye/2026-yili-yeniden-degerleme-orani-belli-oldu-1752267", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Türkiye'nin BM Daimi Temsilcisi, Karadeniz'deki saldırıların bölgesel istikrarı tehdit ettiğini uyardı.", detay: "Büyükelçi Ahmet Yıldız, Ukrayna-Rusya savaşı bağlamında Karadeniz'in riskli bir bölge hâline geldiğini belirtti.", kaynak: "aa", url: "https://www.aa.com.tr/tr/gundem/turkiyenin-bm-daimi-temsilcisinden-karadenizdeki-saldirilarin-bolgesel-istikrari-tehlikeye-attigi-uyarisi/4135154", tur: "resmi-kurum", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "AK Parti, 24 Kasım Öğretmenler Günü'ne özel video paylaşarak günü kutladı.", detay: "Parti, öğretmenlerin özverisini vurgulayan kısa bir video yayınladı.", kaynak: "aa", url: "https://www.aa.com.tr/tr/gundem/ak-partiden-24-kasim-ogretmenler-gunune-ozel-video-paylasimi/4135147", tur: "resmi-kurum", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Eğitim Sen, 24 Kasım'ı 'süslü övgülerin havada uçuştuğu' bir gün olarak nitelendirerek öğretmenlerin ekonomik sorunlarını dile getirdi.", detay: "Sendika, öğretmenlerin maaş ve çalışma koşullarındaki sıkıntılara dikkat çekti.", kaynak: "diken", url: "https://www.diken.com.tr/egitim-sen-suslu-ovgulerin-havada-ucustugu-bir-24-kasimi-daha-karsiliyoruz/?utm_source=rss&utm_medium=rss&utm_campaign=egitim-sen-suslu-ovgulerin-havada-ucustugu-bir-24-kasimi-daha-karsiliyoruz", tur: "magazin-kultur", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Son dakika deprem mi oldu? Az önce deprem nerede oldu? İstanbul, Ankara, İzmir ve il il AFAD son depremler 24 Kasım 2026", kaynak: "ntv", url: "https://www.ntv.com.tr/turkiye/son-dakika-deprem-mi-oldu-az-once-deprem-nerede-oldu-istanbul-ankara-izmir-ve-il-il-afad-son-depremler-24-kasim-2026-1752265", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Kocaeli'de sağanak etkisini gösterdi: Sokaklar ve otoparklar göle döndü", kaynak: "cumhuriyet", url: "https://www.cumhuriyet.com.tr/turkiye/kocaeli-de-saganak-etkisini-gosterdi-sokaklar-ve-otoparklar-gole-dondu-2558800", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Ormanlık alanda kulübeye saklandı: Operasyonla yakalandı", kaynak: "cumhuriyet", url: "https://www.cumhuriyet.com.tr/turkiye/ormanlik-alanda-kulubeye-saklandi-operasyonla-yakalandi-2558799", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Finale adım adım: MasterChef Türkiye'de yeni haftanın kaptanı belli oldu!", kaynak: "cumhuriyet", url: "https://www.cumhuriyet.com.tr/tv-rehberi/masterchef-kaptanlik-oyunu-kim-kazandi-23-kasim-pazartesi-masterchef-turkiye-haftanin-takimlari-2558790", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Uzak Şehir'in 74. bölümünde neler oldu? 'Bu DNA testi kimin anne?'", kaynak: "hurriyet", url: "https://www.hurriyet.com.tr/kelebek/televizyon/uzak-sehirin-74-bolumunde-neler-oldu-bu-dna-testi-kimin-anne-43388611", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Resmi Gazete'de yayımlandı... Yeniden değerleme oranı belirlendi", kaynak: "hurriyet", url: "https://www.hurriyet.com.tr/gundem/resmi-gazetede-yayimlandi-yeniden-degerleme-orani-belirlendi-43388614", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "28 kişinin öldüğü gemi faciasında yeni gelişme: 400 TL’lik yapıştırıcıyla tamir edildiği ortaya çıktı", kaynak: "cumhuriyet", url: "https://www.cumhuriyet.com.tr/siyaset/28-kisinin-oldugu-gemi-faciasinda-yeni-gelisme-400-tl-lik-yapistiriciyla-tamir-edildigi-ortaya-cikti-2558796", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Eylem Tok Türkiye’ye ne zaman dönecek? Dosyada son gelişmeler neler? Aci ailesi anlattı…", kaynak: "kisadalga", url: "https://kisadalga.net/haber/ozel-haber/eylem-tok-turkiyeye-ne-zaman-donecek-dosyada-son-gelismeler-neler-aci-ailesi-anlatti-141830", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Balıkesir'de sağanak! Asfalt çöktü: 3 kamyon ve 1 kamyonet çukura düştü", kaynak: "cumhuriyet", url: "https://www.cumhuriyet.com.tr/turkiye/balikesir-de-saganak-asfalt-coktu-3-kamyon-ve-1-kamyonet-cukura-dustu-2558795", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Bakan Bayraktar: Sakarya Gaz Sahası'nda doğal gaz üretimi 7,5 milyar metreküpe ulaşacak", kaynak: "hurriyet", url: "https://www.hurriyet.com.tr/gundem/bakan-bayraktar-sakarya-gaz-sahasinda-dogal-gaz-uretimi-7-5-milyar-metrekupe-ulasacak-43388612", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Öğretmenler Günü’nde öğretmenlerin tablosu: Geçim sıkıntısı, angarya, güvensizlik ve kayırmacılık", kaynak: "kisadalga", url: "https://kisadalga.net/haber/ozel-haber/ogretmenler-gununde-ogretmenlerin-tablosu-gecim-sikintisi-angarya-guvensizlik-ve-kayirmacilik-141831", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Büyükçekmece'de depoda çıkan yangın hasara neden oldu", kaynak: "sozcu", url: "https://www.sozcu.com.tr/buyukcekmece-de-depoda-cikan-yangin-hasara-neden-oldu-p383849", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Nvidia CEO'su Huang göreve döndü, Trump 'Şirketi ben ikna ettim' dedi", kaynak: "bbcturkce", url: "https://www.bbc.com/turkce/articles/cm5y1evywyrqo?at_medium=RSS&at_campaign=rss", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Bir araba çalmak için bütün dünya durdu", kaynak: "kisadalga", url: "https://kisadalga.net/yazar/bir-araba-calmak-icin-butun-dunya-durdu-141824", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Nuri Şahin maç sonu açıkladı: 'Sezonu kapattı'", kaynak: "hurriyet", url: "https://www.hurriyet.com.tr/sporarena/nuri-sahin-mac-sonu-acikladi-sezonu-kapatti-43388606", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" }
+    { metin: "Özgür Özel: Fon soruşturmasında 60'a yakın AKP'li vekil ya da yakınının adı geçiyor, Erdoğan listeyi açıklasın.", detay: "Özel, 'AKP içinde güç odaklarının çatışması var' diyerek fon krizinin iktidar içi bir hesaplaşmaya dönüştüğünü savundu.", kaynak: "kısa dalga", url: "https://kisadalga.net/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
+    { metin: "Erdoğan'ın 29 Ekim mesajı: 'Türkiye Yüzyılı' hedefi yinelendi.", detay: "Erdoğan mesajında Cumhuriyet'in 103. yılında birlik ve beraberlik vurgusu yaptı, Türkiye Yüzyılı programını öne çıkardı.", kaynak: "birgün", url: "https://www.birgun.net/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
+    { metin: "Bakırköy Belediyesi'ne operasyon: Beş başkan yardımcısı dahil 62-68 kişi hakkında gözaltı kararı.", detay: "Operasyon kapsamında belediyede aramalar yapıldı. CHP, soruşturmayı siyasi gerekçeli olarak nitelendirdi.", kaynak: "bbc türkçe", url: "https://www.bbc.com/turkce", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" },
+    { metin: "Mustafa Sarıgül, YENİ Parti üyeliğini 'askıya aldı'; suçlamalar sürüyor.", detay: "Sarıgül'ün eski koruması, vekili cinsel saldırıyla suçladı. Soruşturma kapsamındaki ifadelerin sızdırılması tartışma yarattı.", kaynak: "bianet", url: "https://bianet.org/", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "ikinci-kaynak" },
+    { metin: "Fon soruşturmasında eski AKP milletvekili Ertan Aydın yeniden gözaltına alınıp tutuklandı.", detay: "Aydın'ın daha önce de gözaltına alındığı soruşturmada tutuklama kararı verildi.", kaynak: "bbc türkçe", url: "https://www.bbc.com/turkce", tur: "hizli-haber", guven: "bagimsiz", dil: "tr", yayin_tarihi: "2026-10-29", dogrulama: "tek-kaynak" }
   ]
 };

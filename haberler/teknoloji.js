@@ -1,27 +1,79 @@
-/* Teknoloji manşetleri. Bu dosyayı otomasyon yazar; sayfa bunu okur. */
+/* MANŞET — TEKNOLOJİ. Otomasyon bu dosyayı yeniden yazar; sayfa bunu okur.
+   Biçim:
+   window.MANSET_TEKNOLOJI = {
+     tarih: "YYYY-AA-GG",
+     baslik: "Teknoloji",
+     mansetler: [ { metin, detay, kaynak, url, tur, guven, dil, yayin_tarihi, dogrulama } ]
+   };
+   - İlk satır büyük manşet, kalanlar liste olarak basılır (en fazla 5 satır gösterilir).
+   - metin  : ana sayfada görünen manşet (tek cümle, ~140 karakter)
+   - detay  : manşete tıklanınca açılan ayrıntı (1-2 cümle, ~220 karakter)
+   - kaynak : kısa kaynak adı (envanterdeki id)
+   - url    : habere git linki, https://
+   - tur    : hizli-haber, teknik-analiz, sektor-ekonomi, arastirma
+   - guven  : bagimsiz veya uretici
+   - dil    : tr veya en
+   - yayin_tarihi: YYYY-AA-GG
+   - dogrulama: tek-kaynak veya ikinci-kaynak
+*/
 window.MANSET_TEKNOLOJI = {
-  tarih: "2026-11-24",
+  tarih: "2026-10-30",
   baslik: "Teknoloji",
   mansetler: [
-    { metin: "Nvidia, Paradromics’in beyin‑bilgisayar arayüzü verilerini işlemek için donanım ve yazılım sağlıyor.", detay: "Paradromics, Nvidia’nın GPU ve yazılım platformunu kullanarak beyin sinyallerini gerçek zamanlı analiz ediyor.", kaynak: "wired", url: "https://www.wired.com/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Jensen Huang, Nvidia’ya yeniden CEO olarak döndü ve çalışanlar tarafından kahraman gibi karşılandı.", detay: "Elon Musk ve diğer teknoloji liderleri, Huang’ın geri dönüşünü onaylayarak şirketin yönetime yeniden güvenini dile getirdi.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/23/elon-musk-and-others-rejoice-as-jensen-huang-is-reinstated-at-nvidia-amid-scandal/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Anthropic, Claude Ship’i tanıttı; AI ajanları kod inceleme, düzeltme ve onaylamayı otomatikleştiriyor.", detay: "Yeni araç, geliştiricilerin rutin kod onay süreçlerini hızlandırarak AI‑generated kod birikimini azaltmayı hedefliyor.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "OpenAI, ChatGPT’ye GPT‑6.2 Sol modelini ekleyerek karmaşık sorular ve görsel anlayışı iyileştirdi.", detay: "Yeni model, web aramaları ve görüntü işleme yeteneklerinde belirgin bir performans artışı sağlıyor.", kaynak: "decoder", url: "https://the-decoder.com/openai-updates-chatgpt-to-handle-complex-everyday-questions-web-searches-and-images-more-reliably/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Supertake, AI ajanlarıyla piyasa tahminlerini hisse portföylerine dönüştürmek için 20 M$ yatırım aldı.", detay: "Şirket, kullanıcıların hisse seçmeden sadece tahminlerini girerek otomatik yatırım yapmalarını sağlıyor.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/23/supertake-raises-20m-to-let-ai-agents-turn-your-market-predictions-into-stock-portfolios/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Megaspeed, Jensen Huang skandalının ardından ABD kara listesine alınma riskiyle karşı karşıya.", detay: "Şirket, özel izin olmadan ABD firmalarıyla iş yapamayabilir ve operasyonları kısıtlanabilir.", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/23/megaspeed-the-company-at-the-center-of-the-jensen-huang-scandal-appears-headed-for-a-u-s-blacklist/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "ABD eyaletleri, SpaceX’in Grok modelinin çocuk istismarı görüntüleri ürettiğini iddia ederek dava açtı.", detay: "X, tüm çıktıları filtrelediğini söylese de savcılar modelin hâlâ yasa dışı içerik ürettiğini belirtiyor.", kaynak: "ars", url: "https://arstechnica.com/tech-policy/2026/11/states-sue-spacex-to-stop-grok-from-generating-child-sex-images-revenge-porn/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Kişisel veriler, bazı şirketler tarafından dinamik fiyatlandırma için kullanılmaya başlandı.", detay: "Bu uygulama, tüketicilere haksız ve önyargılı fiyatların sunulmasına yol açabiliyor.", kaynak: "ars", url: "https://arstechnica.com/tech-policy/2026/11/surveillance-pricing-uses-our-personal-data-to-make-us-pay-more/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Amazon, paketlerine etiketi ekleyerek Delivery Protection Act’a karşı direniş gösteriyor.", detay: "Şirket, bu adımı politik bir mesaj olarak sunuyor ve yasal tartışmalara yol açıyor.", kaynak: "ars", url: "https://arstechnica.com/tech-policy/2026/11/amazon-fights-delivery-protection-act-by-putting-stickers-on-its-packages/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Anthropic’in yüksek hesaplama ihtiyacı, xAI’nin kiralık altyapı stratejisini hızlandırıyor.", detay: "Şirket, Mayıs’tan beri SpaceX‑SI’den kiralık GPU’lar alıyor ve bu durum rekabetçi AI geliştirmeyi etkiliyor.", kaynak: "decoder", url: "https://the-decoder.com/anthropics-appetite-for-compute-is-pushing-xai-toward-a-rent-over-build-strategy/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Nvidia CEO Jensen Huang is back. What happens next?", kaynak: "verge", url: "https://www.theverge.com/ai-artificial-intelligence/1030422/nvidia-jensen-huang-ai-china-alice-huang", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Welcome to elite impunity, Jensen Huang", kaynak: "verge", url: "https://www.theverge.com/ai-artificial-intelligence/1040819/welcome-to-elite-impunity-jensen-huang", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Trump halts Iowa detonation, says new governor to blame if it blows accidentally", kaynak: "ars", url: "https://arstechnica.com/health/2026/11/trump-halts-iowa-detonation-says-new-governor-to-blame-if-it-blows-accidentally/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "B&H Photo Promo Codes and Deals This November 2026", kaynak: "wired", url: "https://www.wired.com/story/bh-photo-coupon/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "The Apple Watch Series 12 is cheaper than ever ahead of Black Friday", kaynak: "verge", url: "https://www.theverge.com/gadgets/1034512/apple-watch-series-12-black-friday-deal-sale", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "How to Win Big Betting on Jensen Huang? Listen to Trump", kaynak: "wired", url: "https://www.wired.com/story/how-to-win-big-betting-on-jensen-huang-listen-to-trump/", tur: "magazin-kultur", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "AI data centers throw another wrench into chaotic UN climate talks", kaynak: "verge", url: "https://www.theverge.com/science/1040497/ai-data-centers-electricity-un-climate-summit", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Apple renews Ted Lasso for season 5", kaynak: "verge", url: "https://www.theverge.com/entertainment/1040699/ted-lasso-season-5-apple-tv", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Nvidia employees greet Jensen Huang like a hero as he returns to company’s HQ", kaynak: "techcrunch", url: "https://techcrunch.com/2026/11/23/nvidia-employees-greet-jensen-huang-like-a-hero-as-he-returns-to-companys-hq/", tur: "hizli-haber", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" },
-    { metin: "Russia will launch a routine ISS supply mission tomorrow—apparently, it's a big secret", kaynak: "ars", url: "https://arstechnica.com/space/2026/11/russia-will-launch-a-routine-iss-supply-mission-tomorrow-apparently-its-a-big-secret/", tur: "teknik-analiz", guven: "bagimsiz", dil: "en", yayin_tarihi: "2026-11-23", dogrulama: "tek-kaynak" }
+    {
+      metin: "Binance, kripto tarihinin en büyük soygununda 6,3 milyar dolar çalındığını açıkladı.",
+      detay: "Borsa para çekme işlemlerini durdurdu. Olay TechCrunch, The Verge ve Bloomberg'in ana sayfalarında yer alıyor.",
+      kaynak: "techcrunch",
+      url: "https://techcrunch.com/",
+      tur: "hizli-haber",
+      guven: "bagimsiz",
+      dil: "en",
+      yayin_tarihi: "2026-10-30",
+      dogrulama: "ikinci-kaynak"
+    },
+    {
+      metin: "Anthropic, halka arz için ABD SEC'e S-1 kaydı sundu.",
+      detay: "Şirket, A sınıfı hisselerinin halka arzı için kayıt beyanını duyurdu. Bloomberg ve The Decoder da konuyu işliyor.",
+      kaynak: "anthropic",
+      url: "https://www.anthropic.com/news",
+      tur: "resmi-duyuru",
+      guven: "uretici",
+      dil: "en",
+      yayin_tarihi: "2026-10-30",
+      dogrulama: "ikinci-kaynak"
+    },
+    {
+      metin: "Google DeepMind, Argon'dan iki hafta sonra Gemini 4 Carbon modelini yayınladı.",
+      detay: "Şirket Gemini 4 Carbon'u yeni öncü modeli olarak duyurdu; The Decoder'a göre Argon'a göre genel kazanımlar sunuyor.",
+      kaynak: "deepmind",
+      url: "https://deepmind.google/discover/blog/",
+      tur: "arastirma",
+      guven: "uretici",
+      dil: "en",
+      yayin_tarihi: "2026-10-30",
+      dogrulama: "ikinci-kaynak"
+    },
+    {
+      metin: "DoorDash, Instacart'ı 17 milyar dolara satın alacak.",
+      detay: "TechCrunch'ın bildirdiği anlaşma, yemek ve market teslimat sektöründe büyük bir birleşme anlamına geliyor.",
+      kaynak: "techcrunch",
+      url: "https://techcrunch.com/",
+      tur: "hizli-haber",
+      guven: "bagimsiz",
+      dil: "en",
+      yayin_tarihi: "2026-10-30",
+      dogrulama: "tek-kaynak"
+    },
+    {
+      metin: "Mistral, kodlama odaklı Le Chonk modelini yayınladı; model Hugging Face'te de yer alıyor.",
+      detay: "The Decoder, modelin güçlü olduğunu ancak genel olarak Çinli rakiplerin gerisinde kaldığını yazıyor. Hugging Face blogu da Mistral Large 4 olarak duyurdu.",
+      kaynak: "decoder",
+      url: "https://the-decoder.com/",
+      tur: "hizli-haber",
+      guven: "bagimsiz",
+      dil: "en",
+      yayin_tarihi: "2026-10-29",
+      dogrulama: "ikinci-kaynak"
+    }
   ]
 };

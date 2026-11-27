@@ -1,0 +1,85 @@
+{
+  "owner": "bmenderes",
+  "selfRepo": "bmenderes.github.io",
+  "topics": [
+    "urun",
+    "aktapokus",
+    "aktapokus-urun"
+  ],
+  "items": {
+    "hidude": {
+      "featured": true,
+      "alwaysShow": true,
+      "hideSourceLink": true,
+      "icon": "assets/hidude-icon.svg",
+      "category": "android",
+      "title": {
+        "tr": "HiDude",
+        "en": "HiDude"
+      },
+      "tagline": {
+        "tr": "SIM Kartsız İletişim, Çevrimdışı Yapay Zeka Asistanı ve Anlık Çeviri",
+        "en": "SIM-Free Messaging, Offline AI Q&A Assistant & On-Device Translation"
+      },
+      "description": {
+        "tr": "Telefon numarası veya SIM kart olmadan yalnızca Google hesabı ve Wi-Fi üzerinden çalışan güvenli mesajlaşma, görüntülü görüşme ve çevrimdışı yapay zeka asistanı uygulaması. Mesajlar Double Ratchet (X25519 + AES-256-GCM) ile şifrelenir; cihaz içi GGUF modeli hem sohbetleri internetsiz çevirir hem de tarih, bilim ve matematik gibi soruları çevrimdışı yanıtlar.",
+        "en": "Secure Android messaging, calling, and offline AI Q&A assistant over Google Sign-In and Wi-Fi with zero phone number or SIM card required. Messages use Double Ratchet end-to-end encryption, while the on-device GGUF engine powers both offline chat translation and offline history, science, and math Q&A."
+      },
+      "highlights": {
+        "tr": [
+          "SIM kart ve telefon numarası gerekmez — yalnızca Wi-Fi ve Google hesabı",
+          "Cihaz içi çevrimdışı yapay zeka asistanı: internet yokken tarih, bilim, matematik ve genel sorulara yanıt",
+          "Cihaz içi llama.cpp (GGUF) çevirmen: otomatik dil algılama ve ayrı Orijinal / Çeviri kutuları",
+          "Double Ratchet uçtan uca şifreleme, yerel arşiv, şifreli Drive yedeği ve ebeveyn PIN kontrolü"
+        ],
+        "en": [
+          "No SIM card or phone number required — Google Sign-In & Wi-Fi only",
+          "Offline on-device AI assistant for history, science, math, and general questions without internet",
+          "On-device llama.cpp (GGUF) translator with automatic language detection and dual Original / Translation cards",
+          "Double Ratchet E2EE, local SQLite storage, encrypted Google Drive backup, and parental PIN gate"
+        ]
+      },
+      "installNote": {
+        "tr": [
+          "Telefonunuzdan indir düğmesine dokunarak HiDude APK dosyasını indirin.",
+          "İndirilen APK dosyasına dokunun; Android uyarı verirse 'Ayarlar -> Bu kaynaktan izin ver' seçeneğini açın.",
+          "Uygulamayı açıp Google hesabınızla giriş yapın ve ayarlardan çevrimdışı yapay zeka modelini bir kez indirin."
+        ],
+        "en": [
+          "Tap the download button on your Android phone to download the HiDude APK.",
+          "Open the downloaded APK file and allow 'Install unknown apps' if prompted by Android.",
+          "Sign in with your Google account and download the on-device offline AI model once in Settings."
+        ]
+      }
+    },
+    "aktapokus-ai-studio": {
+      "featured": false,
+      "icon": "",
+      "category": "desktop",
+      "title": {
+        "tr": "Aktapokus AI Studio",
+        "en": "Aktapokus AI Studio"
+      },
+      "tagline": {
+        "tr": "Çoklu Proje Kod Ajanı Orkestrasyonu ve Onay Yönetimi",
+        "en": "Multi-Project AI Agent CLI Orchestration & Approval Workbench"
+      },
+      "description": {
+        "tr": "Rol ve model tabanlı yerel kod ajanı orkestratörü: çoklu proje, değişiklik onayı, geri alma (rollback), MCP ve Git iş akışlarını tek yerden yönetir.",
+        "en": "Role- and model-based local coding agent orchestrator featuring multi-project workspaces, change approvals, rollback, MCP, and Git automation."
+      },
+      "highlights": {
+        "tr": [
+          "Çoklu proje ve rol/model bazlı yapay zeka orkestrasyonu",
+          "Adım adım onay ve güvenli geri alma (rollback)",
+          "Masaüstü / yerel paket indirilebilir sürüm"
+        ],
+        "en": [
+          "Multi-project role and model orchestration",
+          "Explicit change approval and safe rollback controls",
+          "Downloadable desktop / local bundle via GitHub Releases"
+        ]
+      }
+    }
+  }
+}

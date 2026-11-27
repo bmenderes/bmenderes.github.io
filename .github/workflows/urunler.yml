@@ -1,0 +1,59 @@
+name: urunler
+
+# Ürün vitrinini ve indirilebilir sürüm bağlantılarını otomatik günceller.
+# Tetikleyiciler:
+#   - Yeni bir GitHub Release yayımlandığında veya güncellendiğinde
+#   - urunler/katalog.json ya da otomasyon/urunler.mjs güncellendiğinde
+#   - Her 6 saatte bir (diğer bmenderes depolarındaki yeni sürümleri yakalamak için)
+#   - Actions sekmesinden elle çalıştırıldığında
+on:
+  release:
+    types: [published, edited, deleted, released]
+  push:
+    branches: [main]
+    paths:
+      - "urunler/katalog.json"
+      - "otomasyon/urunler.mjs"
+  schedule:
+    - cron: "15 */6 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: urunler
+  cancel-in-progress: false
+
+jobs:
+  guncelle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Depoyu al
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Node kur
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Ürün kataloğunu güncelle
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: node otomasyon/urunler.mjs
+
+      - name: Değişiklikleri yayınla
+        run: |
+          git config user.name "urunler-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add urunler/urunler.js
+          if git diff --cached --quiet; then
+            echo "Değişiklik yok."
+            exit 0
+          fi
+          git commit -m "urunler: katalog otomatik güncellendi ($(date -u +%F))"
+          git pull --rebase origin main
+          git push

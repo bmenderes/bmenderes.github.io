@@ -18,25 +18,25 @@
         "en": "HiDude"
       },
       "tagline": {
-        "tr": "SIM Kartsız İletişim, Çevrimdışı Yapay Zeka Asistanı ve Anlık Çeviri",
-        "en": "SIM-Free Messaging, Offline AI Q&A Assistant & On-Device Translation"
+        "tr": "SIM Kartsız İletişim, Çevrimdışı Yapay Zeka Asistanı ve Canlı Kamera Çevirisi",
+        "en": "SIM-Free Messaging, Offline AI Assistant & Live Camera Translation"
       },
       "description": {
-        "tr": "Telefon numarası veya SIM kart olmadan yalnızca Google hesabı ve Wi-Fi üzerinden çalışan güvenli mesajlaşma, görüntülü görüşme ve çevrimdışı yapay zeka asistanı uygulaması. Mesajlar Double Ratchet (X25519 + AES-256-GCM) ile şifrelenir; cihaz içi GGUF modeli hem sohbetleri internetsiz çevirir hem de tarih, bilim ve matematik gibi soruları çevrimdışı yanıtlar.",
-        "en": "Secure Android messaging, calling, and offline AI Q&A assistant over Google Sign-In and Wi-Fi with zero phone number or SIM card required. Messages use Double Ratchet end-to-end encryption, while the on-device GGUF engine powers both offline chat translation and offline history, science, and math Q&A."
+        "tr": "Telefon numarası veya SIM kart olmadan yalnızca Google hesabı ve Wi-Fi üzerinden çalışan güvenli mesajlaşma, görüntülü görüşme, canlı kamera çevirisi ve çevrimdışı yapay zeka asistanı uygulaması. Mesajlar Double Ratchet (X25519 + AES-256-GCM) ile şifrelenir; cihaz içi GGUF modeli sohbetleri, kameradaki yazıları ve çocuklara özel günlük keşif sorularını internetsiz işler.",
+        "en": "Secure Android messaging, video calling, live camera translation, and offline AI Q&A assistant over Google Sign-In and Wi-Fi with zero phone number or SIM card required. Messages use Double Ratchet end-to-end encryption, while the on-device GGUF engine powers offline translation, camera OCR, and daily explorer questions."
       },
       "highlights": {
         "tr": [
-          "SIM kart ve telefon numarası gerekmez — yalnızca Wi-Fi ve Google hesabı",
-          "Cihaz içi çevrimdışı yapay zeka asistanı: internet yokken tarih, bilim, matematik ve genel sorulara yanıt",
-          "Cihaz içi llama.cpp (GGUF) çevirmen: otomatik dil algılama ve ayrı Orijinal / Çeviri kutuları",
-          "Double Ratchet uçtan uca şifreleme, yerel arşiv, şifreli Drive yedeği ve ebeveyn PIN kontrolü"
+          "SIM kart ve telefon numarası gerekmez — yalnızca Wi-Fi, Google hesabı ve anlık FCM push",
+          "Canlı kamera çevirisi: fotoğraf çekmeden tabelaları ve metinleri internetsiz anında çevirir",
+          "Cihaz içi çevrimdışı yapay zeka asistanı ve çocuklara uygun günlük değişen keşif soruları",
+          "Double Ratchet uçtan uca şifreleme, şifreli Drive yedeği, ebeveyn PIN kilidi ve uygulama içi güncelleme"
         ],
         "en": [
-          "No SIM card or phone number required — Google Sign-In & Wi-Fi only",
-          "Offline on-device AI assistant for history, science, math, and general questions without internet",
-          "On-device llama.cpp (GGUF) translator with automatic language detection and dual Original / Translation cards",
-          "Double Ratchet E2EE, local SQLite storage, encrypted Google Drive backup, and parental PIN gate"
+          "No SIM card or phone number required — Google Sign-In, Wi-Fi & instant FCM push",
+          "Live camera OCR translation: point at signs or menus and translate offline in real time",
+          "Offline on-device AI assistant with daily rotating kid-friendly explorer questions",
+          "Double Ratchet E2EE, encrypted Drive backup, parental PIN gate & built-in update alerts"
         ]
       },
       "installNote": {

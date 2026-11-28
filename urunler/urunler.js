@@ -1,6 +1,6 @@
 /* Otomatik üretildi: otomasyon/urunler.mjs — elle düzenlemeyin. */
 window.URUNLER_DATA = {
-  "generatedAt": "2026-11-27T09:00:19.747Z",
+  "generatedAt": "2026-11-28T07:24:05.774Z",
   "owner": "bmenderes",
   "totalCount": 2,
   "items": [
@@ -8,31 +8,31 @@ window.URUNLER_DATA = {
       "slug": "hidude",
       "featured": true,
       "icon": "assets/hidude-icon.svg",
-      "sourceType": "github-repo",
+      "sourceType": "self-release",
       "title": {
         "tr": "HiDude",
         "en": "HiDude"
       },
       "tagline": {
-        "tr": "SIM Kartsız İletişim, Çevrimdışı Yapay Zeka Asistanı ve Anlık Çeviri",
-        "en": "SIM-Free Messaging, Offline AI Q&A Assistant & On-Device Translation"
+        "tr": "SIM Kartsız İletişim, Çevrimdışı Yapay Zeka Asistanı ve Canlı Kamera Çevirisi",
+        "en": "SIM-Free Messaging, Offline AI Assistant & Live Camera Translation"
       },
       "description": {
-        "tr": "Telefon numarası veya SIM kart olmadan yalnızca Google hesabı ve Wi-Fi üzerinden çalışan güvenli mesajlaşma, görüntülü görüşme ve çevrimdışı yapay zeka asistanı uygulaması. Mesajlar Double Ratchet (X25519 + AES-256-GCM) ile şifrelenir; cihaz içi GGUF modeli hem sohbetleri internetsiz çevirir hem de tarih, bilim ve matematik gibi soruları çevrimdışı yanıtlar.",
-        "en": "Secure Android messaging, calling, and offline AI Q&A assistant over Google Sign-In and Wi-Fi with zero phone number or SIM card required. Messages use Double Ratchet end-to-end encryption, while the on-device GGUF engine powers both offline chat translation and offline history, science, and math Q&A."
+        "tr": "Telefon numarası veya SIM kart olmadan yalnızca Google hesabı ve Wi-Fi üzerinden çalışan güvenli mesajlaşma, görüntülü görüşme, canlı kamera çevirisi ve çevrimdışı yapay zeka asistanı uygulaması. Mesajlar Double Ratchet (X25519 + AES-256-GCM) ile şifrelenir; cihaz içi GGUF modeli sohbetleri, kameradaki yazıları ve çocuklara özel günlük keşif sorularını internetsiz işler.",
+        "en": "Secure Android messaging, video calling, live camera translation, and offline AI Q&A assistant over Google Sign-In and Wi-Fi with zero phone number or SIM card required. Messages use Double Ratchet end-to-end encryption, while the on-device GGUF engine powers offline translation, camera OCR, and daily explorer questions."
       },
       "highlights": {
         "tr": [
-          "SIM kart ve telefon numarası gerekmez — yalnızca Wi-Fi ve Google hesabı",
-          "Cihaz içi çevrimdışı yapay zeka asistanı: internet yokken tarih, bilim, matematik ve genel sorulara yanıt",
-          "Cihaz içi llama.cpp (GGUF) çevirmen: otomatik dil algılama ve ayrı Orijinal / Çeviri kutuları",
-          "Double Ratchet uçtan uca şifreleme, yerel arşiv, şifreli Drive yedeği ve ebeveyn PIN kontrolü"
+          "SIM kart ve telefon numarası gerekmez — yalnızca Wi-Fi, Google hesabı ve anlık FCM push",
+          "Canlı kamera çevirisi: fotoğraf çekmeden tabelaları ve metinleri internetsiz anında çevirir",
+          "Cihaz içi çevrimdışı yapay zeka asistanı ve çocuklara uygun günlük değişen keşif soruları",
+          "Double Ratchet uçtan uca şifreleme, şifreli Drive yedeği, ebeveyn PIN kilidi ve uygulama içi güncelleme"
         ],
         "en": [
-          "No SIM card or phone number required — Google Sign-In & Wi-Fi only",
-          "Offline on-device AI assistant for history, science, math, and general questions without internet",
-          "On-device llama.cpp (GGUF) translator with automatic language detection and dual Original / Translation cards",
-          "Double Ratchet E2EE, local SQLite storage, encrypted Google Drive backup, and parental PIN gate"
+          "No SIM card or phone number required — Google Sign-In, Wi-Fi & instant FCM push",
+          "Live camera OCR translation: point at signs or menus and translate offline in real time",
+          "Offline on-device AI assistant with daily rotating kid-friendly explorer questions",
+          "Double Ratchet E2EE, encrypted Drive backup, parental PIN gate & built-in update alerts"
         ]
       },
       "installNote": {
@@ -47,8 +47,8 @@ window.URUNLER_DATA = {
           "Sign in with your Google account and download the on-device offline AI model once in Settings."
         ]
       },
-      "version": "",
-      "updatedAt": "",
+      "version": "v0.1.0",
+      "updatedAt": "2026-11-28T07:23:38Z",
       "categories": [
         "android"
       ],
@@ -57,9 +57,18 @@ window.URUNLER_DATA = {
       "totalDownloads": 0,
       "homepageUrl": "",
       "sourceUrl": "",
-      "releaseUrl": "",
-      "releaseNotes": "",
-      "assets": []
+      "releaseUrl": "https://github.com/bmenderes/bmenderes.github.io/releases/tag/hidude-v0.1.0",
+      "releaseNotes": "HiDude v0.1.0 (Beta) — SIM Kartsiz, Uctan Uca Sifreli Iletisim ve Cevrimdisi Yapay Zeka\n\nBu surumde neler var?\n- Google hesabi ve Wi-Fi uzerinden SIM kartsiz mesajlasma, sesli ve tam ekran goruntulu arama (DTLS-SRTP P2P + Double Ratchet E2EE)\n- Google FCM ile uygulama tamamen kapaliyken <1 saniyede cagri ve mesaj uyandirmasi\n- Canli Kamera Cevirisi (fotograf cekmeden gercek zamanli yazi tarama ve cevrimdisi ceviri)\n- Cevrimdisi HiDude Asistani: cocuklara uygun gunluk degisen kesif sorulari ve otomatik bellek koruma kilidi\n- Uygulama ici otomatik surum kontrolu ve tek tikla Guncelle bildirimi\n\nKurulum Notu:\n1. Indirilen HiDude-v0.1.0-beta.apk dosyasina dokunun; Android izin isterse 'Bu kaynaktan yuklemeye izin ver' secenegini acin.\n2. Google hesabinizla giris yapip Ayarlar bolumunden yerel Qwen3.5-2B modelini bir kez indirin.",
+      "assets": [
+        {
+          "name": "HiDude-v0.1.0-beta.apk",
+          "platform": "android",
+          "sizeBytes": 95955190,
+          "sizeLabel": "91.5 MB",
+          "downloadCount": 0,
+          "url": "https://github.com/bmenderes/bmenderes.github.io/releases/download/hidude-v0.1.0/HiDude-v0.1.0-beta.apk"
+        }
+      ]
     },
     {
       "slug": "aktapokus-ai-studio",

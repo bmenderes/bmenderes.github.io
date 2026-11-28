@@ -6,6 +6,7 @@
     tr: {
       navProducts: "Ürünler",
       navNews: "Günlük Haberler",
+      navAdmin: "Admin Girişi",
       heroBadge: "Otomatik Güncellenen Ürün Vitrini",
       heroTitle: "Üretilen Uygulamalar ve İndirilebilir Sürümler",
       heroLead:
@@ -53,6 +54,7 @@
     en: {
       navProducts: "Products",
       navNews: "Daily News",
+      navAdmin: "Admin Login",
       heroBadge: "Self-Updating Product Portal",
       heroTitle: "Apps, Tools & Direct Downloads",
       heroLead:

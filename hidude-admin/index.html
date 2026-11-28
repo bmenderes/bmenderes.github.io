@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="tr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src https://*.workers.dev http://127.0.0.1:* http://localhost:*; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:;">
+  <title>HiDude Admin — Trafik ve Ücretsiz Kapasite Paneli</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/hidude-icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="admin.js" defer></script>
+  <style>
+    :root {
+      --bg: #F1EFE8;
+      --surface: #FFFFFF;
+      --surface-soft: #FAF8F2;
+      --surface-tint: #FFF4C2;
+      --border: #DDD6C2;
+      --accent: #F5C400;
+      --accent-border: #D9AA00;
+      --accent-ink: #2C2C2A;
+      --gold-text: #8A6900;
+      --text: #2C2C2A;
+      --text-dim: #5A564C;
+      --ok-bg: #E6F7EC;
+      --ok-border: #16A34A;
+      --ok-text: #14532D;
+      --warn-bg: #FFF4C2;
+      --warn-border: #D9AA00;
+      --warn-text: #714E00;
+      --danger-bg: #FEE2E2;
+      --danger-border: #DC2626;
+      --danger-text: #7F1D1D;
+      --shadow: 0 2px 10px rgba(44, 44, 42, 0.06);
+      --mono: "IBM Plex Mono", ui-monospace, monospace;
+      --sans: "Inter", system-ui, -apple-system, sans-serif;
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #181816;
+      --surface: #22221F;
+      --surface-soft: #292925;
+      --surface-tint: #352F1A;
+      --border: #38362F;
+      --accent: #F5C400;
+      --accent-border: #D9AA00;
+      --accent-ink: #2C2C2A;
+      --gold-text: #F5C400;
+      --text: #F1EFE8;
+      --text-dim: #B8B4A7;
+      --ok-bg: #142B1D;
+      --ok-border: #22C55E;
+      --ok-text: #BBF7D0;
+      --warn-bg: #352F1A;
+      --warn-border: #F5C400;
+      --warn-text: #FDE68A;
+      --danger-bg: #3B1818;
+      --danger-border: #EF4444;
+      --danger-text: #FECACA;
+      --shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.55;
+      min-height: 100vh;
+    }
+
+    a { color: var(--gold-text); text-decoration: none; font-weight: 600; }
+    a:hover { text-decoration: underline; }
+    code { font-family: var(--mono); font-size: 0.9em; }
+
+    .hidden { display: none !important; }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 18px; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 62px;
+      flex-wrap: wrap;
+      padding: 8px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--text);
+    }
+
+    .brand img {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      border: 1.5px solid var(--accent-border);
+    }
+
+    .badge-private {
+      background: var(--accent);
+      color: var(--accent-ink);
+      border: 1px solid var(--accent-border);
+      padding: 2px 9px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      padding: 9px 16px;
+      border-radius: 10px;
+      border: 1px solid var(--accent-border);
+      background: var(--accent);
+      color: var(--accent-ink);
+      font-weight: 700;
+      font-size: 13.5px;
+      cursor: pointer;
+    }
+
+    .btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .btn-secondary {
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface-soft);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 13.5px;
+      cursor: pointer;
+    }
+
+    .btn-secondary:hover { border-color: var(--accent-border); }
+
+    .main { padding: 22px 0 48px; }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      margin-bottom: 16px;
+    }
+
+    .login-box {
+      max-width: 480px;
+      margin: 44px auto;
+    }
+
+    .login-box h1 {
+      font-size: 22px;
+      margin-bottom: 6px;
+    }
+
+    .muted { color: var(--text-dim); font-size: 13.5px; }
+    .mono { font-family: var(--mono); }
+
+    .field { margin-top: 14px; }
+    .field label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .field input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--surface-soft);
+      color: var(--text);
+      font-size: 14px;
+      font-family: var(--mono);
+    }
+
+    .alert {
+      margin-top: 14px;
+      padding: 11px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--danger-border);
+      background: var(--danger-bg);
+      color: var(--danger-text);
+      font-size: 13.5px;
+      font-weight: 500;
+    }
+
+    .status-banner {
+      border-radius: 16px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+      border: 1.5px solid var(--ok-border);
+      background: var(--ok-bg);
+      color: var(--ok-text);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .status-banner.amber {
+      border-color: var(--warn-border);
+      background: var(--warn-bg);
+      color: var(--warn-text);
+    }
+
+    .status-banner.red {
+      border-color: var(--danger-border);
+      background: var(--danger-bg);
+      color: var(--danger-text);
+    }
+
+    .status-title { font-size: 16px; font-weight: 700; margin-bottom: 3px; }
+    .status-desc { font-size: 13.5px; }
+    .status-pill {
+      padding: 4px 11px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--accent-ink);
+      border: 1px solid var(--accent-border);
+      font-weight: 700;
+      font-size: 12.5px;
+      white-space: nowrap;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .kpi {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .kpi-label { font-size: 12.5px; color: var(--text-dim); font-weight: 600; }
+    .kpi-value { font-size: 26px; font-weight: 700; margin: 4px 0; }
+    .kpi-sub { font-size: 12px; color: var(--gold-text); font-weight: 600; }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .quota-item { margin-top: 14px; }
+    .quota-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+    .quota-bar {
+      width: 100%;
+      height: 11px;
+      border-radius: 999px;
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .quota-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--accent);
+      border-radius: 999px;
+      transition: width 0.25s ease;
+    }
+    .quota-fill.amber { background: #EAB308; }
+    .quota-fill.red { background: #DC2626; }
+
+    .sim-row { margin-top: 12px; }
+    .sim-row-head {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .sim-row input[type="range"] { width: 100%; accent-color: #D9AA00; }
+
+    .sim-summary {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: var(--surface-tint);
+      border: 1px solid var(--accent-border);
+      color: var(--accent-ink);
+      font-size: 13.5px;
+    }
+    :root[data-theme="dark"] .sim-summary { color: var(--text); }
+
+    .chart-wrap {
+      margin-top: 12px;
+      overflow-x: auto;
+    }
+    .chart-legend {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      margin-top: 8px;
+      color: var(--text-dim);
+    }
+    .legend-dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 3px;
+      margin-right: 5px;
+    }
+
+    .chip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .chip {
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: var(--surface-tint);
+      border: 1px solid var(--accent-border);
+      font-size: 12.5px;
+      font-weight: 600;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 13px;
+    }
+    th, td {
+      text-align: left;
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      color: var(--text-dim);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .links-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px) {
+      .kpi-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <div class="brand">
+        <img src="../assets/hidude-icon.svg" alt="HiDude">
+        <span>HiDude Admin</span>
+        <span class="badge-private">GİZLİ PANEL</span>
+      </div>
+      <div class="top-actions">
+        <span id="lastUpdatedLabel" class="muted mono"></span>
+        <a href="../" class="btn-secondary" style="text-decoration:none;">Ana Sayfa</a>
+        <button id="refreshBtn" class="btn-secondary hidden" type="button">Yenile</button>
+        <button id="logoutBtn" class="btn-secondary hidden" type="button">Çıkış</button>
+        <button id="themeBtn" class="btn-secondary" type="button" title="Tema Değiştir">☀/☾</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap main">
+    <section id="loginSection" class="card login-box">
+      <h1>Yönetici Girişi</h1>
+      <p class="muted">
+        Cloudflare Worker köprüsü üzerinden canlı Firestore kullanıcı sayısını, günlük push trafiğini ve Spark ücretsiz kota doluluğunu izleyin.
+      </p>
+      <form id="loginForm">
+        <div class="field">
+          <label for="workerUrlInput">Cloudflare Worker Adresi</label>
+          <input id="workerUrlInput" type="url" value="https://raspy-dream-0220.bmenderes.workers.dev" required>
+        </div>
+        <div class="field">
+          <label for="adminSecretInput">Admin Şifresi (ADMIN_SECRET)</label>
+          <input id="adminSecretInput" type="password" placeholder="Cloudflare Secrets içindeki ADMIN_SECRET" required autocomplete="current-password">
+        </div>
+        <div id="loginError" class="alert hidden"></div>
+        <div style="margin-top:16px;">
+          <button id="loginSubmitBtn" class="btn-primary" type="submit" style="width:100%;">Panele Bağlan</button>
+        </div>
+      </form>
+      <p class="muted" style="margin-top:12px; font-size:12px;">
+        Gizlilik: Şifreniz yalnızca bu tarayıcı sekmesinde (<code>sessionStorage</code>) tutulur. Panel kullanıcı e-postalarını, mesaj içeriklerini veya ham bildirim anahtarlarını hiçbir zaman çekmez.
+      </p>
+    </section>
+
+    <section id="dashboardSection" class="hidden">
+      <div id="capacityBanner" class="status-banner">
+        <div>
+          <div id="bannerTitle" class="status-title">Ücretsiz Kapasite Durumu</div>
+          <div id="bannerDesc" class="status-desc">Veriler yükleniyor...</div>
+        </div>
+        <div id="bannerBadge" class="status-pill">%0</div>
+      </div>
+
+      <div class="kpi-grid">
+        <div class="kpi">
+          <div class="kpi-label">Toplam Kayıtlı Kullanıcı</div>
+          <div id="kpiTotalUsers" class="kpi-value">0</div>
+          <div id="kpiFcmSub" class="kpi-sub">0 cihaz FCM push aktif</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Aktif Kullanıcılar</div>
+          <div id="kpiActive24h" class="kpi-value">0</div>
+          <div id="kpiActive7d" class="kpi-sub">Son 7 gün: 0</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">Bugünkü Push Trafiği</div>
+          <div id="kpiTodayPush" class="kpi-value">0</div>
+          <div id="kpiTodayBreak" class="kpi-sub">Mesaj: 0 • Arama: 0 • Onay: 0</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-label">P2P Ses / Video Medya</div>
+          <div class="kpi-value">0 KB Sunucu</div>
+          <div class="kpi-sub">WebRTC DTLS-SRTP doğrudan cihazlar arası</div>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h2 class="section-title">Ücretsiz Plan Kota Takibi (Günlük)</h2>
+          <p class="muted">
+            Firebase Spark ve Cloudflare Free günlük sınırlarına göre bugünkü tahmini kullanım (%50 Sarı Uyarı, %80 Kırmızı Dur Eşiği).
+          </p>
+          <div id="quotaList"></div>
+          <p class="muted" style="margin-top:12px; font-size:12px;">
+            Not: Toplam kullanıcı ve günlük push sayıları Firestore'dan birebir ölçülür; Firestore Okuma/Yazma/Silme ise HiDude'un mesaj başına işlem katsayısı üzerinden hesaplanır (kesin fatura/kota grafiği Firebase Console üzerindedir).
+          </p>
+        </div>
+
+        <div class="card">
+          <h2 class="section-title">Kapasite Simülatörü ("Kaç Kullanıcıda Durmalı?")</h2>
+          <p class="muted">
+            Günlük aktif kullanıcı ve kişi başı trafik tahminini kaydırarak ücretsiz planda ne zaman sınıra ulaşacağınızı test edin.
+          </p>
+          <div class="sim-row">
+            <div class="sim-row-head">
+              <span>Günlük Aktif Kullanıcı</span>
+              <span id="simUsersVal" class="mono">250</span>
+            </div>
+            <input id="simUsersRange" type="range" min="10" max="5000" step="10" value="250">
+          </div>
+          <div class="sim-row">
+            <div class="sim-row-head">
+              <span>Kişi Başı Günlük Mesaj (Push)</span>
+              <span id="simMsgVal" class="mono">25</span>
+            </div>
+            <input id="simMsgRange" type="range" min="1" max="200" step="1" value="25">
+          </div>
+          <div class="sim-row">
+            <div class="sim-row-head">
+              <span>Kişi Başı Günlük Arama</span>
+              <span id="simCallVal" class="mono">2</span>
+            </div>
+            <input id="simCallRange" type="range" min="0" max="20" step="1" value="2">
+          </div>
+          <div id="simSummary" class="sim-summary"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="section-title">Son 14 Günlük Günlük Push Trafiği</h2>
+        <p class="muted">Günlük mesaj, sesli/görüntülü arama ve kişi onay uyandırma sinyalleri.</p>
+        <div id="dailyChart" class="chart-wrap"></div>
+        <div class="chart-legend">
+          <span><span class="legend-dot" style="background:#F5C400;"></span>Mesaj</span>
+          <span><span class="legend-dot" style="background:#2C2C2A;"></span>Arama</span>
+          <span><span class="legend-dot" style="background:#8A6900;"></span>Onay</span>
+        </div>
+        <div style="overflow-x:auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>Tarih (UTC)</th>
+                <th>Toplam Push</th>
+                <th>Mesaj</th>
+                <th>Arama (Görüntülü)</th>
+                <th>Onay</th>
+              </tr>
+            </thead>
+            <tbody id="dailyTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h2 class="section-title">Dil Dağılımı &amp; Son Aktif Kullanıcılar</h2>
+          <div id="languageChips" class="chip-list"></div>
+          <div style="overflow-x:auto;">
+            <table>
+              <thead>
+                <tr>
+                  <th>Maskeli UID</th>
+                  <th>Rumuz</th>
+                  <th>Dil</th>
+                  <th>FCM Push</th>
+                  <th>Son Etkinlik</th>
+                </tr>
+              </thead>
+              <tbody id="recentUsersBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 class="section-title">Nerede Dur Demelisiniz? &amp; Hızlı Kontrol</h2>
+          <p class="muted" style="margin-bottom:10px;">
+            HiDude'un tek ücretli sınır noktası <strong>Firebase Spark</strong> günlük <strong>20.000 yazma / 20.000 silme</strong> kotasıdır. Kullanıcı sayısını durdurmak isterseniz:
+          </p>
+          <ul style="padding-left:18px; font-size:13.5px; color:var(--text-dim);">
+            <li><strong>%50–%80 (Sarı):</strong> Kullanıcı artışını izleyin, yeni tanıtımları yavaşlatın.</li>
+            <li><strong>%80+ (Kırmızı):</strong> Firebase Console → Authentication → Settings → User actions üzerinden geçici olarak yeni üye kaydını kapatabilir veya Blaze + bütçe uyarısı tanımlayabilirsiniz.</li>
+            <li><strong>P2P &amp; Çevrimdışı AI:</strong> Arama sesi/videosu ile yapay zeka çevirisi telefonlarda çalıştığı için ek sunucu maliyeti üretmez.</li>
+          </ul>
+          <div class="links-row">
+            <a class="btn-secondary" href="https://console.firebase.google.com/" target="_blank" rel="noopener noreferrer">Firebase Console</a>
+            <a class="btn-secondary" href="https://dash.cloudflare.com/" target="_blank" rel="noopener noreferrer">Cloudflare Dashboard</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
